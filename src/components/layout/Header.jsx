@@ -1,7 +1,5 @@
 import { Menu } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { contactLinks } from '../../data/navigation'
-import { Button } from '../ui/Button'
 import { BrandHomeLink } from './BrandHomeLink'
 import { DesktopNavigation } from './DesktopNavigation'
 import { MobileNavigation } from './MobileNavigation'
@@ -26,13 +24,10 @@ export function Header() {
         }`}
       >
         <div className="container-main flex h-(--header-height) items-center justify-between gap-4">
-          <BrandHomeLink className="text-white" logoClassName="h-13 w-[154px] group-hover:-translate-y-0.5 sm:w-[172px]" />
+          <BrandHomeLink className="text-white" logoClassName="h-16 w-[184px] group-hover:-translate-y-0.5 sm:w-[208px]" />
 
           <div className="flex items-center gap-3">
             <DesktopNavigation />
-            <Button className="hidden xl:inline-flex" to={contactLinks.quotePath} variant="dark">
-              Request a Quote
-            </Button>
             <button
               aria-controls="mobile-navigation"
               aria-expanded={menuOpen}

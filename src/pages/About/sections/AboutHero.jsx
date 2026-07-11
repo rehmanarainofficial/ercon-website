@@ -89,13 +89,13 @@ export function AboutHero() {
               </li>
             </ol>
           </nav>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-about-hero>
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-white" data-about-hero>
             {aboutHero.eyebrow}
           </p>
-          <h1 className="mt-6 text-page max-w-5xl font-bold text-white" data-about-hero>
+          <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.65rem)] max-w-5xl font-bold text-white leading-tight" data-about-hero>
             {aboutHero.title}
           </h1>
-          <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/74" data-about-hero>
+          <p className="mt-6 max-w-3xl text-body-fluid leading-8 text-white/74" data-about-hero>
             {aboutHero.description}
           </p>
           <div className="mt-9" data-about-hero>

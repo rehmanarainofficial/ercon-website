@@ -50,13 +50,13 @@ export function ClienteleHero() {
           <div data-clientele-hero>
             <ProductBreadcrumbs current="Clientele" />
           </div>
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-clientele-hero>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.16em] text-white" data-clientele-hero>
             {clienteleHero.eyebrow}
           </p>
-          <h1 className="mt-6 max-w-5xl text-compact-display font-bold text-white" data-clientele-hero>
+          <h1 className="mt-6 max-w-5xl text-[clamp(1.8rem,3.8vw,3.5rem)] font-bold text-white leading-tight" data-clientele-hero>
             {clienteleHero.title}
           </h1>
-          <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/72" data-clientele-hero>
+          <p className="mt-6 max-w-3xl text-body-fluid leading-8 text-white/72" data-clientele-hero>
             {clienteleHero.description}
           </p>
           <div className="mt-9 grid gap-3 sm:grid-cols-2 lg:max-w-xl" data-clientele-hero>

@@ -11,7 +11,7 @@ export function Footer() {
     { label: 'Gallery', path: '/gallery' },
     { label: 'Career', path: '/career' },
     { label: 'Contact Us', path: '/contact-us' }
-  ]
+  ] 
 
   const productsList = [
     { label: 'MV Type Tested switchgear', path: '/products' },

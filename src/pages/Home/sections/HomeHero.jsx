@@ -81,7 +81,7 @@ export function HomeHero() {
 
       <div className="container-main grid gap-12 pb-12 pt-34 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1fr)_minmax(320px,430px)] lg:items-end lg:pb-16">
         <div className="max-w-6xl lg:pb-10">
-          <p data-hero-reveal className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
+          <p data-hero-reveal className="text-sm font-bold uppercase tracking-[0.16em] text-white">
             {homeHero.eyebrow}
           </p>
           <h1 data-hero-reveal className="mt-6 text-[clamp(2.1rem,4.8vw,4.8rem)] font-bold text-white leading-[1.08] max-w-4xl">

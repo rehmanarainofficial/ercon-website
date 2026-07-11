@@ -18,16 +18,16 @@ export function PageHero({
       <div className={`container-main grid gap-12 pb-20 ${infoCard ? 'lg:grid-cols-[minmax(0,1fr)_380px] lg:items-end' : 'lg:grid-cols-1'}`}>
         <div>
           {eyebrow && (
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.16em] text-white">
               {eyebrow}
             </p>
           )}
           <SplitHeading
             as="h1"
-            className="text-page max-w-5xl font-bold text-white"
+            className="text-[clamp(2rem,4.2vw,3.65rem)] max-w-5xl font-bold text-white leading-tight"
             text={title}
           />
-          <p className="mt-7 max-w-2xl text-body-fluid leading-8 text-white/72">{description}</p>
+          <p className="mt-6 max-w-2xl text-body-fluid leading-8 text-white/72">{description}</p>
           {!hideCta && (
             <div className="mt-9 flex flex-wrap gap-3">
               <Button to="/products">Explore Products</Button>

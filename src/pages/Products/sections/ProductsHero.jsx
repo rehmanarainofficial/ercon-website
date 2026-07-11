@@ -50,13 +50,13 @@ export function ProductsHero() {
           <div data-products-hero>
             <ProductBreadcrumbs current="Products" />
           </div>
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-products-hero>
+          <p className="mt-8 text-sm font-bold uppercase tracking-[0.16em] text-white" data-products-hero>
             Products and solutions
           </p>
-          <h1 className="mt-6 max-w-5xl text-compact-display font-bold text-white" data-products-hero>
+          <h1 className="mt-6 max-w-5xl text-[clamp(1.8rem,3.8vw,3.5rem)] font-bold text-white leading-tight" data-products-hero>
             Engineered Products for Reliable Power Distribution
           </h1>
-          <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/72" data-products-hero>
+          <p className="mt-6 max-w-3xl text-body-fluid leading-8 text-white/72" data-products-hero>
             Browse ERCON’s public product range across switchgear, power distribution, solar energy, cable management,
             and sheet metal fabrication.
           </p>
