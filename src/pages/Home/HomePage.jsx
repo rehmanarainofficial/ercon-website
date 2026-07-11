@@ -1,4 +1,3 @@
-import { AccreditationsPreview } from './sections/AccreditationsPreview'
 import { CompanyIntroduction } from './sections/CompanyIntroduction'
 import { EngineeringCapabilities } from './sections/EngineeringCapabilities'
 import { EngineeringProcess } from './sections/EngineeringProcess'
@@ -30,7 +29,6 @@ export default function HomePage() {
       <WhyErcon />
       <EngineeringProcess />
       <HomeStatistics />
-      <AccreditationsPreview />
       <HomeContactCTA />
     </article>
   )

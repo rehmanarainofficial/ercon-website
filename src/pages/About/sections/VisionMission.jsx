@@ -1,37 +1,71 @@
 import { useRef } from 'react'
+import { Eye, Target } from 'lucide-react'
 import { visionMission } from '../../../data/about'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
 
 export function VisionMission() {
   const sectionRef = useRef(null)
-  useScrollReveal(sectionRef)
+  useScrollReveal(sectionRef, { stagger: 0.05 })
+
+  const items = [
+    {
+      ...visionMission.vision,
+      icon: Eye,
+      isDark: true
+    },
+    {
+      ...visionMission.mission,
+      icon: Target,
+      isDark: false
+    }
+  ]
 
   return (
-    <section className="bg-white section-space" ref={sectionRef}>
+    <section className="bg-white section-space border-t border-line" ref={sectionRef}>
       <div className="container-main">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
-          Vision and mission
+          Vision and Mission
         </p>
-        <div className="mt-8 grid gap-5 lg:grid-cols-2">
-          {[visionMission.vision, visionMission.mission].map((item, index) => (
-            <article
-              className={`rounded-[var(--radius-large)] p-7 sm:p-10 ${
-                index === 0 ? 'bg-surface-dark text-white' : 'border border-line bg-surface-blue text-ink'
-              }`}
-              data-reveal
-              key={item.title}
-            >
-              <p className={`text-sm font-semibold uppercase tracking-[0.2em] ${index === 0 ? 'text-brand-light' : 'text-brand'}`}>
-                {item.title}
-              </p>
-              <h2 className="mt-7 text-[clamp(2rem,3.8vw,4.6rem)] font-bold leading-[1.03]">
-                {item.statement}
-              </h2>
-              <p className={`mt-7 max-w-2xl text-sm leading-7 ${index === 0 ? 'text-white/64' : 'text-muted'}`}>
-                {item.supportingText}
-              </p>
-            </article>
-          ))}
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {items.map((item) => {
+            const Icon = item.icon
+            return (
+              <article
+                key={item.title}
+                className={`rounded-[var(--radius-card)] p-6 sm:p-8 border flex flex-col justify-between transition-all duration-300 hover:shadow-card ${
+                  item.isDark
+                    ? 'bg-surface-dark border-transparent text-white'
+                    : 'border-line bg-surface-blue text-ink'
+                }`}
+                data-reveal
+              >
+                <div>
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${
+                      item.isDark ? 'bg-white/10 text-brand-light' : 'bg-brand/10 text-brand'
+                    }`}>
+                      <Icon size={20} />
+                    </div>
+                    <p className={`text-xs font-bold uppercase tracking-[0.16em] ${
+                      item.isDark ? 'text-brand-light' : 'text-brand'
+                    }`}>
+                      {item.title}
+                    </p>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black leading-snug">
+                    {item.statement}
+                  </h3>
+                </div>
+
+                <p className={`mt-5 text-sm leading-relaxed ${
+                  item.isDark ? 'text-white/60' : 'text-muted'
+                }`}>
+                  {item.supportingText}
+                </p>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -84,12 +84,31 @@ export function HomeHero() {
           <p data-hero-reveal className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
             {homeHero.eyebrow}
           </p>
-          <h1 data-hero-reveal className="mt-6 text-hero max-w-6xl font-bold text-white">
-            {homeHero.title}
+          <h1 data-hero-reveal className="mt-6 text-hero max-w-4xl font-bold text-white leading-[1.08]">
+            Engineering Reliable<br className="hidden sm:inline" />
+            Power Distribution<br className="hidden sm:inline" />
+            Solutions
           </h1>
           <p data-hero-reveal className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/76">
             {homeHero.description}
           </p>
+          
+          {/* Trust Indicators */}
+          <div data-hero-reveal className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-white/70">
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
+              <span>ISO 9001 Certified Quality</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
+              <span>IEC Standards Compliant</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
+              <span>ERCON Group Associate</span>
+            </div>
+          </div>
+
           <div data-hero-reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button to={homeHero.primaryCta.href}>{homeHero.primaryCta.label}</Button>
             <Button to={homeHero.secondaryCta.href} variant="dark">
