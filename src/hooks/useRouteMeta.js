@@ -26,7 +26,7 @@ const upsertLink = (selector, attributes) => {
   })
 }
 
-export function useRouteMeta({ canonical, description, ogDescription, ogImage, ogTitle, schema, title }) {
+export function useRouteMeta({ canonical, description, keywords, ogDescription, ogImage, ogTitle, schema, title }) {
   useEffect(() => {
     if (title) {
       document.title = title
@@ -36,6 +36,13 @@ export function useRouteMeta({ canonical, description, ogDescription, ogImage, o
       upsertMeta('meta[name="description"]', {
         name: 'description',
         content: description,
+      })
+    }
+
+    if (keywords) {
+      upsertMeta('meta[name="keywords"]', {
+        name: 'keywords',
+        content: Array.isArray(keywords) ? keywords.join(', ') : keywords,
       })
     }
 
@@ -82,5 +89,5 @@ export function useRouteMeta({ canonical, description, ogDescription, ogImage, o
     } else if (schemaNode) {
       schemaNode.remove()
     }
-  }, [canonical, description, ogDescription, ogImage, ogTitle, schema, title])
+  }, [canonical, description, keywords, ogDescription, ogImage, ogTitle, schema, title])
 }

@@ -11,6 +11,10 @@ export default function ContactPage() {
   useRouteMeta({
     title: route.title,
     description: route.metaDescription,
+    keywords: [
+      'contact ERCON', 'ERCON sales Karachi', 'switchgear quote Pakistan',
+      'sheet metal factory location', 'ERCON phone number', ' Karahi office address'
+    ],
     ogTitle: route.title,
     ogDescription: route.metaDescription,
     canonical: 'https://erconind.com/contact-us',

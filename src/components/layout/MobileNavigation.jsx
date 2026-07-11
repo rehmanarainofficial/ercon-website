@@ -109,7 +109,7 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
           {mainNavigation.map((item) => (
             <NavLink
               className={({ isActive }) =>
-                `rounded-3xl px-1 py-3 text-[clamp(2rem,12vw,4.75rem)] font-bold leading-none transition ${
+                `rounded-3xl px-1 py-3 text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-tight transition ${
                   isActive ? 'text-brand-light' : 'text-white'
                 }`
               }
@@ -131,7 +131,7 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
           </a>
           <a className="flex min-h-11 items-center gap-3" href={contactLinks.phone}>
             <Phone aria-hidden="true" size={17} />
-            +92 21 34522902
+            +92 311 1444590
           </a>
         </div>
       </div>

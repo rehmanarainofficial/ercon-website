@@ -17,6 +17,10 @@ export default function AboutPage() {
   useRouteMeta({
     canonical: aboutSeo.canonical,
     description: aboutSeo.description,
+    keywords: [
+      'ERCON History', 'ERCON Industries Profile', 'Switchgear Manufacturing Pakistan',
+      'Electrical Engineering Team Karachi', 'ERCON Group Heritage', 'Karachi Switchgear Workshop'
+    ],
     ogDescription: aboutSeo.description,
     ogImage: aboutSeo.ogImage,
     ogTitle: aboutSeo.title,

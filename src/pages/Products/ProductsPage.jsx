@@ -20,6 +20,10 @@ export default function ProductsPage() {
     canonical: 'https://erconind.com/products',
     description:
       'Browse ERCON Industries product families including MV switchgear, LV switchgear, cable management, solar energy systems, and sheet metal fabrication.',
+    keywords: [
+      'ERCON products', 'switchgear catalog Pakistan', 'LV panels Karachi', 'MV type tested switchgear',
+      'cable trays Karachi', 'industrial enclosures', 'solar panels Pakistan', 'sheet metal fabrication'
+    ],
     ogDescription:
       'Browse ERCON Industries product families including MV switchgear, LV switchgear, cable management, solar energy systems, and sheet metal fabrication.',
     ogTitle: 'Products | ERCON Industries',

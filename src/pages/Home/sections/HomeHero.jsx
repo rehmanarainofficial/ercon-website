@@ -84,7 +84,7 @@ export function HomeHero() {
           <p data-hero-reveal className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
             {homeHero.eyebrow}
           </p>
-          <h1 data-hero-reveal className="mt-6 text-hero max-w-4xl font-bold text-white leading-[1.08]">
+          <h1 data-hero-reveal className="mt-6 text-[clamp(2.1rem,4.8vw,4.8rem)] font-bold text-white leading-[1.08] max-w-4xl">
             Engineering Reliable<br className="hidden sm:inline" />
             Power Distribution<br className="hidden sm:inline" />
             Solutions
