@@ -2,7 +2,8 @@ import { Building2 } from 'lucide-react'
 import { useRef } from 'react'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { TextLink } from '../../../components/ui/TextLink'
-import { clientSectors, featuredClients } from '../../../data/clients'
+import { clientSectorLabels } from '../../../data/clientSectors'
+import { featuredClients } from '../../../data/clients'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
 
 export function ClientelePreview() {
@@ -13,10 +14,10 @@ export function ClientelePreview() {
     <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_auto] lg:items-end">
-          <SectionHeading eyebrow="Clientele" title="Client logo presentation is ready for verified names and assets.">
+          <SectionHeading eyebrow="Clientele" title="A verified client-logo directory is prepared for approved assets.">
             <p>
-              ERCON’s current public client bundle exposes sector categories, but not actual client logo records. This section avoids
-              fabricated logos and will become a logo grid when verified client assets are available.
+              ERCON’s public client-sector structure is ready for verified names and logo files. The preview avoids fabricated client
+              claims and will show real logos as soon as approved records are added.
             </p>
           </SectionHeading>
           <div data-reveal>
@@ -45,7 +46,7 @@ export function ClientelePreview() {
                 </p>
               </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-                {clientSectors.map((sector) => (
+                {clientSectorLabels.map((sector) => (
                   <div className="rounded-2xl border border-line bg-surface-blue px-4 py-5 text-center text-sm font-semibold text-brand-dark" key={sector}>
                     {sector}
                   </div>

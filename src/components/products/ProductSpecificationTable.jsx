@@ -19,17 +19,21 @@ export function ProductSpecificationTable({ specifications = [] }) {
           {groups.map((group) => (
             <div className="overflow-hidden rounded-[var(--radius-card)] border border-line bg-white shadow-card" key={group.group}>
               <h3 className="border-b border-line px-5 py-4 text-lg font-bold text-ink">{group.group}</h3>
-              <div className="divide-y divide-line">
-                {group.rows.map((row) => (
-                  <div className="grid gap-2 px-5 py-4 sm:grid-cols-[minmax(180px,0.34fr)_1fr]" key={row.label}>
-                    <dt className="text-sm font-semibold text-muted">{row.label}</dt>
-                    <dd className="text-sm leading-7 text-ink">
-                      {row.value}
-                      {row.unit ? ` ${row.unit}` : ''}
-                    </dd>
-                  </div>
-                ))}
-              </div>
+              <table className="w-full border-collapse">
+                <tbody className="divide-y divide-line">
+                  {group.rows.map((row) => (
+                    <tr className="grid gap-2 px-5 py-4 text-left sm:table-row" key={row.label}>
+                      <th className="text-sm font-semibold text-muted sm:w-[34%] sm:px-5 sm:py-4 sm:align-top" scope="row">
+                        {row.label}
+                      </th>
+                      <td className="text-sm leading-7 text-ink sm:px-5 sm:py-4">
+                        {row.value}
+                        {row.unit ? ` ${row.unit}` : ''}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { contactLinks, mainNavigation } from '../../data/navigation'
 import { Button } from '../ui/Button'
+import { BrandHomeLink } from './BrandHomeLink'
 
 export function Footer() {
   return (
@@ -19,9 +20,7 @@ export function Footer() {
 
         <div className="grid gap-10 pt-12 lg:grid-cols-[1.2fr_1fr_1fr]">
           <div>
-            <Link className="text-2xl font-bold tracking-tight" to="/">
-              ERCON Industries
-            </Link>
+            <BrandHomeLink logoClassName="h-14 w-[176px]" />
             <p className="mt-5 max-w-md text-sm leading-7 text-white/62">
               A modern website foundation prepared for verified ERCON content, products, accreditations, and contact workflows.
             </p>

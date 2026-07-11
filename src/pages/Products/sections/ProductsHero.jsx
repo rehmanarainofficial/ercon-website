@@ -53,7 +53,7 @@ export function ProductsHero() {
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-products-hero>
             Products and solutions
           </p>
-          <h1 className="mt-6 max-w-5xl text-page font-bold text-white" data-products-hero>
+          <h1 className="mt-6 max-w-5xl text-compact-display font-bold text-white" data-products-hero>
             Engineered Products for Reliable Power Distribution
           </h1>
           <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/72" data-products-hero>
@@ -79,7 +79,7 @@ export function ProductsHero() {
         <div className="rounded-[var(--radius-large)] border border-white/12 bg-white/8 p-4 shadow-floating" data-products-hero ref={mediaRef}>
           <SafeImage
             alt={`${heroProduct.name} product visual`}
-            className="aspect-[4/4.2] w-full rounded-[1.8rem] bg-white object-contain p-8"
+            className="aspect-[4/4.2] w-full rounded-[1.8rem] bg-surface-dark-2 object-cover"
             fetchPriority="high"
             height="820"
             loading="eager"

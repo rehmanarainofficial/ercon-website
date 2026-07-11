@@ -14,7 +14,7 @@ export function ProductDetailHero({ product }) {
           <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
             {product.categoryLabel}
           </p>
-          <h1 className="mt-6 max-w-5xl text-page font-bold text-white">{product.name}</h1>
+          <h1 className="mt-6 max-w-5xl text-compact-display font-bold text-white">{product.name}</h1>
           <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/72">{product.shortDescription}</p>
           <div className="mt-8 flex flex-wrap gap-2">
             {product.highlights.map((highlight) => (
@@ -35,7 +35,7 @@ export function ProductDetailHero({ product }) {
         <div className="rounded-[var(--radius-large)] border border-white/12 bg-white/8 p-4 shadow-floating">
           <SafeImage
             alt={`${product.name} product visual`}
-            className="aspect-[4/4.1] w-full rounded-[1.8rem] bg-white object-contain p-8"
+            className="aspect-[4/4.1] w-full rounded-[1.8rem] bg-surface-dark-2 object-cover"
             fetchPriority="high"
             height="820"
             loading="eager"

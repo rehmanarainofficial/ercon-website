@@ -1,10 +1,8 @@
 import { AccreditationsPreview } from './sections/AccreditationsPreview'
-import { ClientelePreview } from './sections/ClientelePreview'
 import { CompanyIntroduction } from './sections/CompanyIntroduction'
 import { EngineeringCapabilities } from './sections/EngineeringCapabilities'
 import { EngineeringProcess } from './sections/EngineeringProcess'
 import { FeaturedProducts } from './sections/FeaturedProducts'
-import { GalleryPreview } from './sections/GalleryPreview'
 import { HomeContactCTA } from './sections/HomeContactCTA'
 import { HomeHero } from './sections/HomeHero'
 import { HomeStatistics } from './sections/HomeStatistics'
@@ -33,8 +31,6 @@ export default function HomePage() {
       <EngineeringProcess />
       <HomeStatistics />
       <AccreditationsPreview />
-      <ClientelePreview />
-      <GalleryPreview />
       <HomeContactCTA />
     </article>
   )

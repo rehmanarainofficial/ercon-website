@@ -1,4 +1,4 @@
-import { Cable, Factory, PanelTop, SunMedium, Zap } from 'lucide-react'
+import { Cable, CircuitBoard, Factory, SunMedium, Zap } from 'lucide-react'
 import { products } from './products'
 
 export const productCategories = [
@@ -14,7 +14,7 @@ export const productCategories = [
     slug: 'low-voltage',
     label: 'Low Voltage',
     description: 'LV switchgear and panel-focused distribution solutions.',
-    icon: PanelTop,
+    icon: CircuitBoard,
   },
   {
     id: 'cable-management',

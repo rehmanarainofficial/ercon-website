@@ -1,8 +1,8 @@
 import { Menu } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { contactLinks } from '../../data/navigation'
 import { Button } from '../ui/Button'
+import { BrandHomeLink } from './BrandHomeLink'
 import { DesktopNavigation } from './DesktopNavigation'
 import { MobileNavigation } from './MobileNavigation'
 
@@ -26,17 +26,7 @@ export function Header() {
         }`}
       >
         <div className="container-main flex h-(--header-height) items-center justify-between gap-4">
-          <Link aria-label="ERCON Industries home" className="group flex items-center gap-3 text-white" to="/">
-            <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white text-brand shadow-card transition group-hover:-translate-y-0.5">
-              <span className="text-base font-bold">E</span>
-            </span>
-            <span className="leading-none">
-              <span className="block text-lg font-bold tracking-tight">ERCON</span>
-              <span className="mt-1 hidden text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-white/55 sm:block">
-                Industries
-              </span>
-            </span>
-          </Link>
+          <BrandHomeLink className="text-white" logoClassName="h-13 w-[154px] group-hover:-translate-y-0.5 sm:w-[172px]" />
 
           <div className="flex items-center gap-3">
             <DesktopNavigation />

@@ -1,11 +1,6 @@
-// TODO: The current public ERCON client bundle exposes sector filters but no actual logo/name records.
-// Replace this with verified client logo assets and names when they are provided.
-export const featuredClients = []
+// Verified client logo assets are not present in the current workspace.
+// Add records here only when the client name and logo file/URL are approved.
+export const clients = []
 
-export const clientSectors = [
-  'Industries',
-  'Infrastructure',
-  'Telecom Sector',
-  'Health Sector',
-  'Government Sector',
-]
+export const featuredClients = clients.filter((client) => client.featured)
+

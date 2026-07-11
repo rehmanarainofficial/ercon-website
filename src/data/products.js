@@ -43,7 +43,7 @@ export const products = [
       'Medium-voltage switchgear for controlling and protecting electrical equipment in power distribution systems.',
     overview:
       'MV Type Tested Switchgear represents ERCON’s medium-voltage switchgear focus for electrical systems that require controlled distribution, protection, and project-ready manufacturing coordination.',
-    heroImage: categoryImages.mediumVoltage,
+    heroImage: generatedHero,
     cardImage: categoryImages.mediumVoltage,
     image: categoryImages.mediumVoltage,
     gallery: [
@@ -95,7 +95,7 @@ export const products = [
       'Switchgear solutions supporting industrial and infrastructure power distribution requirements.',
     overview:
       'Medium Voltage Switchgear supports ERCON’s public product range for power distribution projects where medium-voltage equipment coordination is required.',
-    heroImage: erconAsset('/assets/images13-fgfJBba8.png'),
+    heroImage: generatedHero,
     cardImage: erconAsset('/assets/images13-fgfJBba8.png'),
     image: erconAsset('/assets/images13-fgfJBba8.png'),
     gallery: [
@@ -146,7 +146,7 @@ export const products = [
       'LV panel and distribution solutions aligned with ERCON’s switchgear manufacturing focus.',
     overview:
       'Low Voltage Switchgear sits within ERCON’s LV/MV switchgear manufacturing focus and supports low-voltage distribution and panel requirements.',
-    heroImage: categoryImages.lowVoltage,
+    heroImage: generatedHero,
     cardImage: categoryImages.lowVoltage,
     image: categoryImages.lowVoltage,
     gallery: [
@@ -294,7 +294,7 @@ export const products = [
       'Precision sheet metal fabrication capability supporting ERCON’s electrical cabinets and switchgear production.',
     overview:
       'Sheet Metal Fabrication supports ERCON’s electrical cabinets, enclosures, cable-management elements, and switchgear manufacturing work.',
-    heroImage: categoryImages.fabrication,
+    heroImage: generatedHero,
     cardImage: categoryImages.fabrication,
     image: categoryImages.fabrication,
     gallery: [

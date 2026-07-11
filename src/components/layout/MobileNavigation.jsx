@@ -6,6 +6,7 @@ import { contactLinks, mainNavigation } from '../../data/navigation'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { useScrollLock } from '../../hooks/useScrollLock'
 import { gsap } from '../../utils/gsap'
+import { BrandHomeLink } from './BrandHomeLink'
 
 export function MobileNavigation({ id, open, onClose, triggerRef }) {
   const panelRef = useRef(null)
@@ -92,7 +93,7 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
     >
       <div className="container-main flex min-h-dvh flex-col py-5">
         <div className="flex items-center justify-between" data-mobile-item>
-          <span className="text-lg font-bold tracking-tight">ERCON</span>
+          <BrandHomeLink logoClassName="h-13 w-[154px]" onNavigate={onClose} />
           <button
             aria-label="Close menu"
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white"
