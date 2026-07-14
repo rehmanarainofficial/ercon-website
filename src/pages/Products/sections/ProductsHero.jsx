@@ -53,15 +53,7 @@ export function ProductsHero() {
           >
             Engineered Products for Reliable Power Distribution
           </h1>
-          <p
-            className="mt-6 max-w-3xl text-body-fluid leading-8 text-white/72"
-            data-products-hero
-          >
-            Browse ERCON’s public product range across switchgear, power
-            distribution, solar energy, cable management, and sheet metal
-            fabrication.
-          </p>
-
+         
           <div
             className="mt-10 hidden items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white/50 lg:flex"
             data-products-hero

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { X, ZoomIn, Award, ShieldCheck, CheckCircle } from 'lucide-react'
+import { X, ZoomIn } from 'lucide-react'
 import { certificates } from '../../../data/certificates'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { SafeImage } from '../../../components/ui/SafeImage'
@@ -19,11 +19,11 @@ export function CertificateList() {
     }
     if (activeCert) {
       window.addEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'hidden' // lock scroll
+      document.body.style.overflow = 'hidden' 
     }
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = '' // restore scroll
+      document.body.style.overflow = '' 
     }
   }, [activeCert])
 
@@ -36,8 +36,7 @@ export function CertificateList() {
           className="mb-12"
         >
           <p>
-            ERCON Industries is committed to delivering world-class electrical engineering equipment.
-            Our products undergo rigorous testing and inspection to comply with leading global regulatory frameworks.
+            Our certifications and approvals reflect our commitment to engineering excellence, international quality standards, and reliable manufacturing for every project.
           </p>
         </SectionHeading>
 
@@ -64,27 +63,6 @@ export function CertificateList() {
                   </div>
                 </div>
               </div>
-
-              {/* Title & Info */}
-              <div className="mt-5 flex flex-1 flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand">
-                    <Award size={14} />
-                    <span>{cert.category}</span>
-                  </div>
-                  <h3 className="mt-2 text-xl font-bold leading-tight text-ink group-hover:text-brand transition-colors duration-200">
-                    {cert.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-muted leading-relaxed">
-                    {cert.issuer}
-                  </p>
-                </div>
-
-                <div className="mt-4 flex items-center gap-1.5 text-xs font-semibold text-emerald-600">
-                  <CheckCircle size={14} className="fill-emerald-50" />
-                  <span>Verified Compliance</span>
-                </div>
-              </div>
             </article>
           ))}
         </div>
@@ -108,24 +86,14 @@ export function CertificateList() {
             className="relative max-h-[85vh] max-w-[90vw] overflow-hidden rounded-2xl bg-white p-3 shadow-floating animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="max-h-[75vh] overflow-y-auto rounded-lg">
+            <div className="max-h-[80vh] overflow-y-auto rounded-lg">
               <SafeImage
                 src={activeCert.image}
                 alt={activeCert.title}
-                className="max-h-[72vh] w-auto object-contain mx-auto"
+                className="max-h-[77vh] w-auto object-contain mx-auto"
                 width="800"
                 height="1100"
               />
-            </div>
-            <div className="mt-4 border-t border-line pt-3 px-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <div>
-                <h4 className="text-base font-bold text-ink">{activeCert.title}</h4>
-                <p className="text-xs text-muted">{activeCert.issuer} — {activeCert.category}</p>
-              </div>
-              <div className="flex items-center gap-1.5 self-start sm:self-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 border border-emerald-100">
-                <ShieldCheck size={14} />
-                <span>Regulatory Compliant</span>
-              </div>
             </div>
           </div>
         </div>

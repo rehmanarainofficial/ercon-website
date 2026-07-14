@@ -25,20 +25,12 @@ export function ClientTrustStatement() {
               </p>
             ))}
           </div>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {clientTrustStatement.principles.map((principle) => (
-              <article className="border-t border-line pt-5" data-reveal key={principle.id}>
-                <h3 className="text-lg font-bold leading-tight text-ink">{principle.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-muted">{principle.description}</p>
-              </article>
-            ))}
-          </div>
         </div>
         <div className="lg:sticky lg:top-28" data-reveal>
           <ImageReveal className="bg-surface-blue">
             <SafeImage
               alt={clientTrustStatement.imageAlt}
-              className="aspect-[4/5] h-full w-full object-cover"
+              className="aspect-[1/1] h-full w-full object-cover"
               height="900"
               src={clientTrustStatement.image}
               width="720"

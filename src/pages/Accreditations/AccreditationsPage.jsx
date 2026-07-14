@@ -1,7 +1,6 @@
 import { ShieldCheck } from 'lucide-react'
 import { PageHero } from '../../components/ui/PageHero'
 import { CertificateList } from './sections/CertificateList'
-import { QualitySafety } from '../About/sections/QualitySafety'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 
 export default function AccreditationsPage() {
@@ -60,7 +59,6 @@ export default function AccreditationsPage() {
         ctaLabel="Talk to an Engineer"
       />
       <CertificateList />
-      <QualitySafety />
     </article>
   )
 }

@@ -1,7 +1,6 @@
 import { AboutHero } from './sections/AboutHero'
 import { CompanyOverview } from './sections/CompanyOverview'
 import { CoreValues } from './sections/CoreValues'
-import { QualitySafety } from './sections/QualitySafety'
 import { VisionMission } from './sections/VisionMission'
 import { aboutSeo } from '../../data/about'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
@@ -33,7 +32,6 @@ export default function AboutPage() {
       <CompanyOverview />
       <VisionMission />
       <CoreValues />
-      <QualitySafety />
     </article>
   )
 }

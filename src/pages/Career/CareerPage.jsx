@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { Users } from 'lucide-react'
 import { PageHero } from '../../components/ui/PageHero'
-import { CompanyCulture } from './sections/CompanyCulture'
 import { OpenPositions } from './sections/OpenPositions'
 import { ApplicationForm } from './sections/ApplicationForm'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
@@ -63,7 +62,6 @@ export default function CareerPage() {
         ctaTo="#open-positions"
         ctaLabel="View Open Roles"
       />
-      <CompanyCulture />
       <OpenPositions onSelectPosition={(title) => setSelectedPosition(title)} />
       <ApplicationForm
         selectedPosition={selectedPosition}

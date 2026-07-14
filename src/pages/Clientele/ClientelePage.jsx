@@ -1,11 +1,8 @@
 import { useMemo } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ClientDiscovery } from './sections/ClientDiscovery'
-import { ClientRelationshipStatement } from './sections/ClientRelationshipStatement'
-import { ClientTrustStatement } from './sections/ClientTrustStatement'
 import { ClienteleCTA } from './sections/ClienteleCTA'
 import { ClienteleHero } from './sections/ClienteleHero'
-import { SectorHighlights } from './sections/SectorHighlights'
 import { clientSectors } from '../../data/clientSectors'
 import { clienteleSeo } from '../../data/clientele'
 import { clients } from '../../data/clients'
@@ -65,7 +62,6 @@ export default function ClientelePage() {
   return (
     <article className="overflow-hidden bg-surface-soft" data-page-reveal>
       <ClienteleHero />
-      <ClientTrustStatement />
       <ClientDiscovery
         activeSector={activeSector}
         filteredClients={filteredClients}
@@ -74,8 +70,6 @@ export default function ClientelePage() {
         onSectorChange={(sector) => updateParams({ sector })}
         search={search}
       />
-      <SectorHighlights />
-      <ClientRelationshipStatement />
       <ClienteleCTA />
     </article>
   )

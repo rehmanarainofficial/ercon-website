@@ -1,13 +1,9 @@
-import { Button } from './Button'
 import { SplitHeading } from '../animation/SplitHeading'
 
 export function PageHero({
   eyebrow,
   title,
   description,
-  ctaLabel = 'Contact ERCON',
-  ctaTo = '/contact-us',
-  hideCta = false,
 }) {
   return (
     <section className="relative isolate min-h-[60vh] lg:min-h-[70vh] overflow-hidden bg-surface-dark pt-32 text-white sm:pt-36">
@@ -26,14 +22,7 @@ export function PageHero({
             text={title}
           />
           <p className="mt-6 max-w-2xl text-body-fluid leading-8 text-white/72">{description}</p>
-          {!hideCta && (
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Button to="/products">Explore Divisions</Button>
-              <Button to={ctaTo} variant="dark">
-                {ctaLabel}
-              </Button>
-            </div>
-          )}
+        
         </div>
       </div>
     </section>
