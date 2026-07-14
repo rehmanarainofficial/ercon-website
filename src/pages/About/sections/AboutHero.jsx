@@ -3,7 +3,6 @@ import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useRef } from 'react'
 import { Button } from '../../../components/ui/Button'
-import { GlassCard } from '../../../components/ui/GlassCard'
 import { SafeImage } from '../../../components/ui/SafeImage'
 import { aboutHero } from '../../../data/about'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
@@ -74,7 +73,7 @@ export function AboutHero() {
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(6_27_45/0.62),rgb(6_27_45/0.96)),linear-gradient(90deg,rgb(6_27_45/0.92),rgb(6_27_45/0.42))]" />
       <div className="absolute inset-0 -z-10 technical-grid opacity-30" />
 
-      <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-[minmax(0,0.9fr)_420px] lg:items-end">
+      <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
         <div className="max-w-5xl">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-white/62" data-about-hero>
             <ol className="flex flex-wrap items-center gap-2">
@@ -104,17 +103,6 @@ export function AboutHero() {
             </Button>
           </div>
         </div>
-
-        <GlassCard className="p-5 sm:p-6" data-about-hero>
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/58">Company profile</p>
-          <div className="mt-5 grid gap-3">
-            {aboutHero.metadata.map((item) => (
-              <div className="rounded-2xl border border-white/12 bg-white/7 px-4 py-3 text-sm font-medium text-white/78" key={item}>
-                {item}
-              </div>
-            ))}
-          </div>
-        </GlassCard>
       </div>
     </section>
   )

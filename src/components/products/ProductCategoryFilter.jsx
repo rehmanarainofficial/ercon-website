@@ -12,7 +12,7 @@ export function ProductCategoryFilter({ activeCategory, categories: propCategori
         return (
           <button
             aria-pressed={active}
-            className={`group min-h-32 rounded-[var(--radius-card)] border p-4 text-left transition duration-200 ${
+            className={`group min-h-32 rounded-card border p-4 text-left transition duration-200 ${
               active
                 ? 'border-brand bg-brand text-white shadow-card'
                 : 'border-line bg-white text-ink hover:border-brand/35'

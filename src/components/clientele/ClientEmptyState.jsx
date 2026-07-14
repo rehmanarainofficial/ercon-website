@@ -20,7 +20,7 @@ export function ClientEmptyState({ hasClientRecords, onClear }) {
         </Button>
         <Button to="/contact-us">Contact Us</Button>
         <Button to="/products" variant="secondary">
-          Explore Products
+          Explore Division
         </Button>
       </div>
     </div>

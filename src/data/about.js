@@ -24,15 +24,14 @@ export const aboutHero = {
 export const companyOverview = {
   label: 'Company overview',
   title:
-    'ERCON Industries brings group experience in power distribution and switchgear into localized manufacturing for Pakistan.',
+    'Established in 2012, ERCON Industries (Pvt.) Limited is a premier manufacturer of electrical power distribution solutions in Pakistan.',
   paragraphs: [
-    'Established in 2012, ERCON Industries (Pvt.) Limited is an associated company of the ERCON Group, which is publicly positioned with operations in UAE and KSA since 2002.',
-    'The company specializes in LV/MV switchgear, power distribution systems, solar energy systems, cable tray and cable management solutions, electrical cabinets, and precision sheet metal fabrication.',
-    'Its public material emphasizes advanced technology, a skilled technical team, quality, safety, performance, and standards-compliant solutions for public and private sector requirements in Pakistan.',
+    'The company specializes in the design, engineering, and manufacturing of LV & MV Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, and Custom Sheet Metal Fabrication.',
+    "With state-of-the-art manufacturing facilities, advanced production equipment, and an experienced engineering team, ERCON Industries delivers safe, reliable, and innovative products that comply with international quality standards. Driven by engineering excellence and continuous innovation, the company serves industrial, commercial, energy, and infrastructure sectors, contributing to the development of Pakistan's electrical and power distribution industry.",
   ],
   image: aboutMedia.testing,
   imageAlt: 'Engineer inspecting a blue electrical switchgear panel with testing instruments',
-  highlight: 'Engineering-led manufacturing for reliable electrical infrastructure.',
+  highlight: 'Engineering excellence and continuous innovation serving the industry.',
 }
 
 export const visionMission = {

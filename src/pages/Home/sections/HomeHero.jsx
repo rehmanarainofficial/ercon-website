@@ -1,8 +1,7 @@
 import { useGSAP } from '@gsap/react'
-import { ArrowDown, CircuitBoard, ShieldCheck } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 import { useRef } from 'react'
 import { Button } from '../../../components/ui/Button'
-import { GlassCard } from '../../../components/ui/GlassCard'
 import { SafeImage } from '../../../components/ui/SafeImage'
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { ScrollTrigger, gsap } from '../../../utils/gsap'
@@ -79,7 +78,7 @@ export function HomeHero() {
       <div className="absolute left-[8%] top-[18%] -z-10 h-72 w-72 rounded-full bg-brand/28 blur-3xl" />
       <div className="absolute bottom-[8%] right-[10%] -z-10 h-80 w-80 rounded-full bg-accent/18 blur-3xl" />
 
-      <div className="container-main grid gap-12 pb-12 pt-34 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-[minmax(0,1fr)_minmax(320px,430px)] lg:items-end lg:pb-16">
+      <div className="container-main grid gap-12 pb-12 pt-34 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-1 lg:items-end lg:pb-16">
         <div className="max-w-6xl lg:pb-10">
           <p data-hero-reveal className="text-sm font-bold uppercase tracking-[0.16em] text-white">
             {homeHero.eyebrow}
@@ -93,49 +92,10 @@ export function HomeHero() {
             {homeHero.description}
           </p>
           
-          {/* Trust Indicators */}
-          <div data-hero-reveal className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-xs font-semibold text-white/70">
-            <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
-              <span>ISO 9001 Certified Quality</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
-              <span>IEC Standards Compliant</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-light/20 text-brand-light text-[10px] font-bold">✓</span>
-              <span>ERCON Group Associate</span>
-            </div>
-          </div>
 
           <div data-hero-reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button to={homeHero.primaryCta.href}>{homeHero.primaryCta.label}</Button>
-            <Button to={homeHero.secondaryCta.href} variant="dark">
-              {homeHero.secondaryCta.label}
-            </Button>
           </div>
-        </div>
-
-        <div data-hero-reveal className="pb-4 lg:pb-10">
-          <GlassCard className="p-5 sm:p-6">
-            <div className="flex items-start gap-4">
-              <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-white/12 text-brand-light">
-                <CircuitBoard aria-hidden="true" size={24} />
-              </div>
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">
-                  {homeHero.panel.label}
-                </p>
-                <h2 className="mt-3 text-2xl font-bold leading-tight text-white">{homeHero.panel.title}</h2>
-                <p className="mt-4 text-sm leading-7 text-white/68">{homeHero.panel.description}</p>
-              </div>
-            </div>
-            <div className="mt-6 flex items-center gap-3 border-t border-white/12 pt-5 text-sm font-bold text-white/74">
-              <ShieldCheck aria-hidden="true" className="text-brand-light" size={18} />
-              Quality, safety, and performance focused
-            </div>
-          </GlassCard>
         </div>
 
         <div data-hero-reveal className="hidden items-center gap-3 pb-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/52 lg:flex">

@@ -34,9 +34,9 @@ export const homeIntroduction = {
   title:
     'Our Engineering & Power Solutions: What We Do at ERCON Industries',
   description1:
-    'At ERCON Industries (Pvt.) Limited, we specialize in delivering integrated power distribution and energy solutions for industrial and infrastructure projects across Pakistan. As part of the ERCON Group with operations in the UAE and KSA since 2002, we bring global expertise to the local market with a strong focus on LV/MV switchgear, solar energy systems, and cable tray & sheet metal fabrication.',
+    'Established in 2012, ERCON Industries (Pvt.) Limited is a premier manufacturer of electrical power distribution solutions in Pakistan. The company specializes in the design, engineering, and manufacturing of LV & MV Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, and Custom Sheet Metal Fabrication.',
   description2:
-    'Our manufacturing facility is equipped with advanced technology and driven by a skilled technical team committed to quality, safety, and performance. From powering critical systems to supporting energy transitions, we provide reliable and standards-compliant solutions that help clients build with confidence and scale with efficiency.',
+    "With state-of-the-art manufacturing facilities, advanced production equipment, and an experienced engineering team, ERCON Industries delivers safe, reliable, and innovative products that comply with international quality standards. Driven by engineering excellence and continuous innovation, the company serves industrial, commercial, energy, and infrastructure sectors, contributing to the development of Pakistan's electrical and power distribution industry",
   image: media.introduction,
   imageAlt: 'ERCON electrical engineering and power solutions visual',
   link: {
