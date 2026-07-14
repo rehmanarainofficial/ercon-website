@@ -84,7 +84,7 @@ export function FeaturedProducts() {
                   <div className="pt-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand">{product.category}</p>
+                        <p className="text-xs font-semibold tracking-[0.18em] text-brand">{product.category}</p>
                         <h3 className="mt-3 text-card-title font-bold leading-tight text-ink group-hover:text-brand transition-colors duration-200">{product.name}</h3>
                       </div>
                       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-line text-brand transition group-hover:border-brand group-hover:bg-brand group-hover:text-white">

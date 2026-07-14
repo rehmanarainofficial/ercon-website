@@ -2,7 +2,7 @@ import { cn } from '../../utils/cn'
 
 export function SectionLabel({ children, className }) {
   return (
-    <p className={cn('mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand', className)}>
+    <p className={cn('mb-4 text-xs font-semibold tracking-[0.18em] text-brand', className)}>
       {children}
     </p>
   )

@@ -22,7 +22,7 @@ export function ProductDiscovery({
     <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main">
         <div className="max-w-4xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
+          <p className="text-xs font-semibold tracking-[0.2em] text-brand" data-reveal>
             Product discovery
           </p>
           <h2 className="mt-5 text-compact-display font-bold text-ink" data-reveal>

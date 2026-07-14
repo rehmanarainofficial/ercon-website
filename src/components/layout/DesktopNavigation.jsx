@@ -25,7 +25,7 @@ export function DesktopNavigation() {
     <span className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 flex gap-1 items-center justify-center pointer-events-none">
       <span className="h-1.5 w-1.5 rounded-full bg-[#E52421]" />
       <span className="h-1.5 w-1.5 rounded-full bg-[#F9A01B]" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#005FAE]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#0F6B4A]" />
     </span>
   )
 
@@ -92,7 +92,7 @@ export function DesktopNavigation() {
                     <span className="flex gap-0.5 items-center">
                       <span className="h-1 w-1 rounded-full bg-[#E52421]" />
                       <span className="h-1 w-1 rounded-full bg-[#F9A01B]" />
-                      <span className="h-1 w-1 rounded-full bg-[#005FAE]" />
+                      <span className="h-1 w-1 rounded-full bg-[#0F6B4A]" />
                     </span>
                   )}
                 </div>

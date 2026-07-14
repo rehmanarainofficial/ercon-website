@@ -26,13 +26,13 @@ export function Footer() {
 
   return (
     <footer className="relative overflow-hidden bg-surface-dark text-white border-t border-white/10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgb(0_95_174/0.2),transparent_35rem),radial-gradient(circle_at_92%_18%,rgb(0_95_174/0.08),transparent_25rem)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgb(15_107_74/0.2),transparent_35rem),radial-gradient(circle_at_92%_18%,rgb(15_107_74/0.08),transparent_25rem)] pointer-events-none" />
 
       <div className="container-main relative pt-16 pb-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] border-b border-white/10 pb-12">
           {/* Column 1: Brand Info */}
           <div>
-            <BrandHomeLink logoClassName="h-14 w-[176px]" />
+            <BrandHomeLink logoClassName="h-23 w-[250px]" />
             <p className="mt-5 max-w-sm text-[13px] leading-relaxed text-white/60 text-justify">
               Delivering reliable electrical power distribution and precision
               manufacturing solutions with quality, innovation, and engineering

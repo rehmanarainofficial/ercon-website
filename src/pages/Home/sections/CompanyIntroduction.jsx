@@ -17,7 +17,7 @@ export function CompanyIntroduction() {
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Heading, Narrative */}
           <div className="lg:col-span-6" data-reveal>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 uppercase tracking-wide">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide">
               {homeIntroduction.label}
             </h2>
             <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight">
@@ -53,7 +53,7 @@ export function CompanyIntroduction() {
             <div className="absolute -bottom-6 -left-6 hidden sm:block max-w-xs rounded-2xl border border-white/20 bg-white/76 p-5 shadow-floating backdrop-blur-md">
               <div className="flex items-center gap-2.5 mb-2">
                 <div className="h-2 w-2 rounded-full bg-brand animate-ping" />
-                <p className="text-xs font-black text-brand-dark uppercase tracking-wider">Quality Operations</p>
+                <p className="text-xs font-black text-brand-dark tracking-wider">Quality Operations</p>
               </div>
               <p className="text-xs leading-relaxed text-muted">
                 Routine tests are conducted in-house using calibrated current injection kits to certify every panel before dispatch.

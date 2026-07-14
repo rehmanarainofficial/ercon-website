@@ -93,7 +93,7 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
     >
       <div className="container-main flex min-h-dvh flex-col py-5">
         <div className="flex items-center justify-between" data-mobile-item>
-          <BrandHomeLink logoClassName="h-13 w-[154px]" onNavigate={onClose} />
+          <BrandHomeLink logoClassName="h-15 w-[176px]" onNavigate={onClose} />
           <button
             aria-label="Close menu"
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white"

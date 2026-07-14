@@ -70,7 +70,7 @@ export function AboutHero() {
           width="1800"
         />
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(6_27_45/0.62),rgb(6_27_45/0.96)),linear-gradient(90deg,rgb(6_27_45/0.92),rgb(6_27_45/0.42))]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(5_22_16/0.62),rgb(5_22_16/0.96)),linear-gradient(90deg,rgb(5_22_16/0.92),rgb(5_22_16/0.42))]" />
       <div className="absolute inset-0 -z-10 technical-grid opacity-30" />
 
       <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
@@ -88,7 +88,7 @@ export function AboutHero() {
               </li>
             </ol>
           </nav>
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-white" data-about-hero>
+          <p className="text-sm font-bold tracking-[0.16em] text-white" data-about-hero>
             {aboutHero.eyebrow}
           </p>
           <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.65rem)] max-w-5xl font-bold text-white leading-tight" data-about-hero>

@@ -24,10 +24,10 @@ export const aboutHero = {
 export const companyOverview = {
   label: 'Company overview',
   title:
-    'Established in 2012, ERCON Industries (Pvt.) Limited is a premier manufacturer of electrical power distribution solutions in Pakistan.',
+    'Established in 2012, ERCON Industries (Pvt.) Limited is a leading manufacturer of electrical power distribution and precision engineering solutions in Pakistan.',
   paragraphs: [
-    'The company specializes in the design, engineering, and manufacturing of LV & MV Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, and Custom Sheet Metal Fabrication.',
-    "With state-of-the-art manufacturing facilities, advanced production equipment, and an experienced engineering team, ERCON Industries delivers safe, reliable, and innovative products that comply with international quality standards. Driven by engineering excellence and continuous innovation, the company serves industrial, commercial, energy, and infrastructure sectors, contributing to the development of Pakistan's electrical and power distribution industry.",
+    'The company specializes in the design, engineering, and manufacturing of Low Voltage (LV) & Medium Voltage (MV) Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, Custom Sheet Metal Fabrication, and Stainless Steel (SS) products for hospitals and healthcare facilities.',
+    'Equipped with state-of-the-art manufacturing facilities, advanced production technologies, and a highly experienced engineering team, ERCON Industries delivers safe, reliable, and innovative products that comply with international quality standards. Serving the industrial, commercial, healthcare, energy, and infrastructure sectors, the company is committed to engineering excellence, continuous innovation, and supporting the sustainable development of Pakistan through high-quality electrical and fabricated metal solutions.',
   ],
   image: aboutMedia.testing,
   imageAlt: 'Engineer inspecting a blue electrical switchgear panel with testing instruments',

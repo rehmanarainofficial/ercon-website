@@ -2,17 +2,14 @@ import { useGSAP } from '@gsap/react'
 import { ArrowDown } from 'lucide-react'
 import { useRef } from 'react'
 import { ProductBreadcrumbs } from '../../../components/products/ProductBreadcrumbs'
-import { SafeImage } from '../../../components/ui/SafeImage'
 import { allProductsCategory, productCategories } from '../../../data/productCategories'
-import { products } from '../../../data/products'
+
 import { useReducedMotion } from '../../../hooks/useReducedMotion'
 import { ScrollTrigger, gsap } from '../../../utils/gsap'
 
 export function ProductsHero() {
   const sectionRef = useRef(null)
-  const mediaRef = useRef(null)
   const reducedMotion = useReducedMotion()
-  const heroProduct = products[0]
 
   useGSAP(
     () => {
@@ -20,7 +17,7 @@ export function ProductsHero() {
       const items = sectionRef.current.querySelectorAll('[data-products-hero]')
 
       if (reducedMotion) {
-        gsap.set([items, mediaRef.current], { autoAlpha: 1, y: 0, clipPath: 'inset(0% 0% 0% 0%)' })
+        gsap.set(items, { autoAlpha: 1, y: 0 })
         ScrollTrigger.refresh()
         return undefined
       }
@@ -28,12 +25,6 @@ export function ProductsHero() {
       const timeline = gsap.timeline({ defaults: { ease: 'power4.out' } })
       timeline
         .fromTo(items, { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.9, stagger: 0.075 })
-        .fromTo(
-          mediaRef.current,
-          { autoAlpha: 0, scale: 1.04, clipPath: 'inset(9% 0% 9% 0%)' },
-          { autoAlpha: 1, scale: 1, clipPath: 'inset(0% 0% 0% 0%)', duration: 1 },
-          '-=0.6',
-        )
 
       return () => timeline.kill()
     },
@@ -45,12 +36,12 @@ export function ProductsHero() {
       <div className="absolute inset-0 -z-20 bg-surface-dark" />
       <div className="absolute inset-0 -z-10 technical-grid opacity-25" />
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-brand/18 blur-3xl" />
-      <div className="container-main grid min-h-[76svh] gap-10 pb-14 lg:grid-cols-[minmax(0,0.74fr)_minmax(340px,0.55fr)] lg:items-end">
+      <div className="container-main grid min-h-[76svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
         <div>
           <div data-products-hero>
-            <ProductBreadcrumbs current="Products" />
+            <ProductBreadcrumbs current="Divisions" />
           </div>
-          <p className="mt-8 text-sm font-bold uppercase tracking-[0.16em] text-white" data-products-hero>
+          <p className="mt-8 text-sm font-bold tracking-[0.16em] text-white" data-products-hero>
             Products and solutions
           </p>
           <h1 className="mt-6 max-w-5xl text-[clamp(1.8rem,3.8vw,3.5rem)] font-bold text-white leading-tight" data-products-hero>
@@ -75,17 +66,6 @@ export function ProductsHero() {
             Browse range
             <ArrowDown aria-hidden="true" size={16} />
           </div>
-        </div>
-        <div className="rounded-[var(--radius-large)] border border-white/12 bg-white/8 p-4 shadow-floating" data-products-hero ref={mediaRef}>
-          <SafeImage
-            alt={`${heroProduct.name} product visual`}
-            className="aspect-[4/4.2] w-full rounded-[1.8rem] bg-surface-dark-2 object-cover"
-            fetchPriority="high"
-            height="820"
-            loading="eager"
-            src={heroProduct.heroImage}
-            width="760"
-          />
         </div>
       </div>
     </section>
