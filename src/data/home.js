@@ -13,7 +13,7 @@ export const homeHero = {
   description:
     'ERCON Industries manufactures LV/MV switchgear, power distribution systems, solar energy solutions, cable management systems, and precision sheet metal fabrication for industrial and infrastructure projects across Pakistan.',
   primaryCta: {
-    label: 'Explore Products',
+    label: 'Explore Divisions',
     href: '/products',
   },
   secondaryCta: {
@@ -30,7 +30,7 @@ export const homeHero = {
 }
 
 export const homeIntroduction = {
-  label: 'ABOUT ERCON',
+  label: 'About Ercon',
   title:
     'Our Engineering & Power Solutions: What We Do at ERCON Industries',
   description1:
@@ -55,7 +55,7 @@ export const finalCta = {
     href: '/contact-us',
   },
   secondaryCta: {
-    label: 'Explore Products',
+    label: 'Explore Divisions',
     href: '/products',
   },
 }

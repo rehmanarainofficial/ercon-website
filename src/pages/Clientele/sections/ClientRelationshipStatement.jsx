@@ -26,7 +26,7 @@ export function ClientRelationshipStatement() {
                 Contact Us
               </Button>
               <Button to="/products" variant="dark">
-                Explore Products
+                Explore Divisions
               </Button>
             </div>
           </div>

@@ -28,7 +28,7 @@ export function PageHero({
           <p className="mt-6 max-w-2xl text-body-fluid leading-8 text-white/72">{description}</p>
           {!hideCta && (
             <div className="mt-9 flex flex-wrap gap-3">
-              <Button to="/products">Explore Products</Button>
+              <Button to="/products">Explore Divisions</Button>
               <Button to={ctaTo} variant="dark">
                 {ctaLabel}
               </Button>

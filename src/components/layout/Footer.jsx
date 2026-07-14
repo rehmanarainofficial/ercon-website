@@ -45,7 +45,7 @@ export function Footer() {
             <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -64,7 +64,7 @@ export function Footer() {
             <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
               Divisions
             </h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-base">
               {productsList.map((prod, i) => (
                 <li key={i}>
                   <Link
@@ -83,7 +83,7 @@ export function Footer() {
             <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
               Follow us
             </h3>
-            <ul className="space-y-3.5 text-sm mb-6">
+            <ul className="space-y-3.5 text-base mb-6">
               <li>
                 <a
                   href="https://www.facebook.com/people/ERCON-Industries-PVT-Limited/61591925099821/"
@@ -143,7 +143,7 @@ export function Footer() {
               </li>
             </ul>
 
-            <div className="text-[13px] text-white/60 space-y-2.5 max-w-sm border-t border-white/10 pt-5">
+            <div className="text-sm text-white/60 space-y-2.5 max-w-sm border-t border-white/10 pt-5">
               <p className="flex items-start gap-2">
                 <span className="font-bold text-brand-light">Address:</span>
                 <span>

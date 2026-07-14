@@ -15,7 +15,7 @@ export const aboutHero = {
   image: aboutMedia.hero,
   imageAlt: 'Modern switchgear manufacturing floor with blue electrical panels and copper busbar details',
   primaryCta: {
-    label: 'Explore Products',
+    label: 'Explore Divisions',
     href: '/products',
   },
   metadata: ['Established in Pakistan: 2012', 'Associated with ERCON Group', 'LV/MV switchgear focus'],
@@ -82,7 +82,7 @@ export const aboutFinalCta = {
     href: '/contact-us',
   },
   secondaryCta: {
-    label: 'Explore Products',
+    label: 'Explore Divisions',
     href: '/products',
   },
 }
