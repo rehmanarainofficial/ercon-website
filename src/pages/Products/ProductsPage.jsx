@@ -7,6 +7,8 @@ import { fetchProducts, fetchCategories } from '../../services/api'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 import { filterProducts } from '../../utils/productFilters'
 
+import { LayoutGrid } from 'lucide-react'
+
 export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const requestedCategory = searchParams.get('category') || 'all'
@@ -26,6 +28,7 @@ export default function ProductsPage() {
           setProductsList(apiProds)
           const apiCats = await fetchCategories(apiProds)
           if (apiCats && active) {
+            setProductsList(apiProds)
             setCategoriesList(apiCats)
           }
         }
@@ -46,9 +49,10 @@ export default function ProductsPage() {
     const allCategory = {
       id: 'all',
       slug: 'all',
-      label: 'All Products',
-      description: 'Browse the full ERCON product range.',
+      label: 'All Divisions',
+      description: 'Browse the full ERCON divisions and product range.',
       productCount: productsList.length,
+      icon: LayoutGrid,
     }
     return [allCategory, ...categoriesList]
   }, [categoriesList, productsList])

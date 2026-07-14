@@ -25,9 +25,6 @@ export function ProductCategoryFilter({ activeCategory, categories: propCategori
               <span className={`grid h-11 w-11 place-items-center rounded-2xl ${active ? 'bg-white/14 text-white' : 'bg-surface-blue text-brand'}`}>
                 {Icon ? <Icon aria-hidden="true" size={21} /> : null}
               </span>
-              <span className={`text-xs font-semibold uppercase tracking-[0.16em] ${active ? 'text-white/66' : 'text-muted'}`}>
-                {category.productCount}
-              </span>
             </div>
             <span className="mt-5 block text-base font-bold leading-tight">{category.label}</span>
             <span className={`mt-2 block text-xs leading-5 ${active ? 'text-white/68' : 'text-muted'}`}>

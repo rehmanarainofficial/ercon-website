@@ -41,12 +41,13 @@ export const fetchCategories = async (products = []) => {
     const res = await axios.get(`${BASE_URL}/category_api.php`)
     if (res.data && res.data.status === 'success' && Array.isArray(res.data.data)) {
       return res.data.data.map((item) => {
-        const slug = item.category_name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+        const rawName = item.category_name || 'General'
+        const slug = rawName.toLowerCase().replace(/[^a-z0-9]+/g, '-')
         return {
           id: slug,
           slug: slug,
-          label: item.category_name,
-          description: `${item.category_name} product families for power distribution and protection roles.`,
+          label: rawName,
+          description: `${rawName} product families for power distribution and protection roles.`,
           icon: getCategoryIcon(slug),
           productCount: products.filter(p => p.categoryId === slug).length,
         }
@@ -64,15 +65,16 @@ export const fetchProducts = async () => {
     const res = await axios.get(`${BASE_URL}/product_api.php`)
     if (res.data && res.data.status === 'success' && Array.isArray(res.data.data)) {
       return res.data.data.map((item) => {
-        const categorySlug = item.category.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+        const rawCategory = item.category || 'General'
+        const categorySlug = rawCategory.toLowerCase().replace(/[^a-z0-9]+/g, '-')
         const productSlug = item.id
         return {
           id: item.id,
           slug: productSlug,
           name: item.title,
           categoryId: categorySlug,
-          categoryLabel: item.category,
-          category: item.category,
+          categoryLabel: rawCategory,
+          category: rawCategory,
           shortDescription: item.description || 'Verified product information from ERCON Industries database.',
           overview: item.description || 'Verified product overview from ERCON Industries database.',
           heroImage: item.image1 || '',
@@ -82,7 +84,7 @@ export const fetchProducts = async () => {
             item.image1 && { id: `${item.id}-img1`, src: item.image1, alt: item.title, caption: 'Primary product image' },
             item.image2 && { id: `${item.id}-img2`, src: item.image2, alt: item.title, caption: 'Secondary product image' },
           ].filter(Boolean),
-          highlights: [item.category, 'Type Tested'],
+          highlights: [rawCategory, 'Type Tested'].filter(Boolean),
           features: [
             {
               id: `feat-${item.id}-1`,
@@ -102,7 +104,7 @@ export const fetchProducts = async () => {
               group: 'Technical details',
               rows: [
                 { label: 'Product Model', value: item.title },
-                { label: 'Category', value: item.category },
+                { label: 'Category', value: rawCategory },
               ]
             }
           ],
