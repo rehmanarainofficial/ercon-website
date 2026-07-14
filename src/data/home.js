@@ -30,7 +30,7 @@ export const homeHero = {
 }
 
 export const homeIntroduction = {
-  label: 'About Ercon',
+  label: 'About ERCON',
   title:
     'Our Engineering & Power Solutions: What We Do at ERCON Industries',
   description1:

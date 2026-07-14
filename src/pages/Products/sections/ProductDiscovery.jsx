@@ -22,12 +22,12 @@ export function ProductDiscovery({
     <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main">
         <div className="max-w-4xl">
-          <p className="text-xs font-semibold tracking-[0.2em] text-brand" data-reveal>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
             Product discovery
-          </p>
-          <h2 className="mt-5 text-compact-display font-bold text-ink" data-reveal>
-            Filter by category, then open the product detail view for technical context.
           </h2>
+          <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
+            Filter by category, then open the product detail view for technical context.
+          </h3>
         </div>
 
         <div className="mt-10" data-reveal>

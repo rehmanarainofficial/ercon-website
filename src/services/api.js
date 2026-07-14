@@ -20,7 +20,7 @@ const getCategoryIcon = (slug) => {
 
 export const fetchGallery = async () => {
   try {
-    const res = await axios.get(`${BASE_URL}/gallery_api.php`)
+    const res = await axios.get(`${BASE_URL}/gallery_api.php?t=${Date.now()}`)
     if (res.data && res.data.status === 'success' && Array.isArray(res.data.data)) {
       return res.data.data.map((item) => ({
         id: `gallery-${item.id}`,
@@ -38,7 +38,7 @@ export const fetchGallery = async () => {
 
 export const fetchCategories = async (products = []) => {
   try {
-    const res = await axios.get(`${BASE_URL}/category_api.php`)
+    const res = await axios.get(`${BASE_URL}/category_live_api.php?t=${Date.now()}`)
     if (res.data && res.data.status === 'success' && Array.isArray(res.data.data)) {
       return res.data.data.map((item) => {
         const rawName = item.category_name || 'General'
@@ -62,7 +62,7 @@ export const fetchCategories = async (products = []) => {
 
 export const fetchProducts = async () => {
   try {
-    const res = await axios.get(`${BASE_URL}/product_api.php`)
+    const res = await axios.get(`${BASE_URL}/product_api.php?t=${Date.now()}`)
     if (res.data && res.data.status === 'success' && Array.isArray(res.data.data)) {
       return res.data.data.map((item) => {
         const rawCategory = item.category || 'General'

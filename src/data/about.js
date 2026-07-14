@@ -38,14 +38,14 @@ export const visionMission = {
   vision: {
     title: 'Vision',
     statement:
-      'To support reliable electrical infrastructure through disciplined engineering, localized manufacturing, and long-term power distribution capability.',
+      "To lead Pakistan's engineering and manufacturing industry through innovation, quality, and sustainable solutions.",
     supportingText:
       'Formal vision wording should be replaced with approved company language when provided.',
   },
   mission: {
     title: 'Mission',
     statement:
-      'To manufacture and supply dependable switchgear, power distribution, solar energy, cable management, and fabrication solutions with a focus on quality, safety, and technical support.',
+      'To deliver reliable electrical, renewable energy, and precision manufacturing solutions that exceed customer expectations while upholding the highest standards of quality, safety, and engineering excellence.',
     supportingText:
       'This presentation preserves ERCON’s public positioning without adding unsupported claims.',
   },

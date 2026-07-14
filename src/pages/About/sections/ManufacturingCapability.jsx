@@ -22,12 +22,12 @@ export function ManufacturingCapability() {
           {/* Left Column: Title, Description, and Features Grid */}
           <div className="lg:col-span-7 flex flex-col justify-between h-full" data-reveal>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide">
                 {manufacturingCapability.label}
-              </p>
-              <h2 className="mt-5 text-section font-bold text-white leading-tight">
-                {manufacturingCapability.title}
               </h2>
+              <h3 className="text-lg sm:text-xl font-bold text-white leading-snug tracking-tight">
+                {manufacturingCapability.title}
+              </h3>
               <p className="mt-6 text-base leading-8 text-white/70">
                 {manufacturingCapability.description}
               </p>

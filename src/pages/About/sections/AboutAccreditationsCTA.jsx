@@ -15,12 +15,12 @@ export function AboutAccreditationsCTA() {
       <div className="container-main rounded-[var(--radius-large)] border border-line bg-surface-dark p-6 text-white sm:p-10">
         <div className="grid gap-9 lg:grid-cols-[minmax(0,0.72fr)_minmax(300px,0.46fr)] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-reveal>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
               Accreditations
-            </p>
-            <h2 className="mt-5 text-section font-bold text-white" data-reveal>
-              Quality claims should connect to documented evidence.
             </h2>
+            <h3 className="text-lg sm:text-xl font-bold text-white leading-snug tracking-tight" data-reveal>
+              Quality claims should connect to documented evidence.
+            </h3>
             <p className="mt-6 max-w-2xl text-body-fluid leading-8 text-white/66" data-reveal>
               ERCON’s certificate previews are linked through the Accreditations route for detailed verification in its own phase.
             </p>

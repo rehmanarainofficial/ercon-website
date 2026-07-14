@@ -23,9 +23,9 @@ export function DesktopNavigation() {
 
   const dots = (
     <span className="absolute bottom-[-6px] left-1/2 -translate-x-1/2 flex gap-1 items-center justify-center pointer-events-none">
-      <span className="h-1.5 w-1.5 rounded-full bg-[#E52421]" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#F9A01B]" />
-      <span className="h-1.5 w-1.5 rounded-full bg-[#0F6B4A]" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#1877F2]" /> {/* Blue */}
+      <span className="h-1.5 w-1.5 rounded-full bg-[#F9A01B]" /> {/* Yellow */}
+      <span className="h-1.5 w-1.5 rounded-full bg-[#E52421]" /> {/* Red */}
     </span>
   )
 

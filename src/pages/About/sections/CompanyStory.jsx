@@ -10,12 +10,12 @@ export function CompanyStory() {
     <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main grid gap-12 lg:grid-cols-[minmax(300px,0.38fr)_1fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
             Company story
-          </p>
-          <h2 className="mt-5 text-section font-bold text-ink" data-reveal>
-            A concise timeline built only from verified public dates.
           </h2>
+          <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
+            A concise timeline built only from verified public dates.
+          </h3>
         </div>
         <div className="relative">
           <div className="absolute bottom-8 left-5 top-8 hidden w-px bg-line sm:block" />

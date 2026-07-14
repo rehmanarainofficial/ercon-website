@@ -47,7 +47,7 @@ export function FeaturedProducts() {
             </p>
           </SectionHeading>
           <div data-reveal>
-            <TextLink to="/products">View All Products</TextLink>
+            <TextLink to="/products">View All Divisions</TextLink>
           </div>
         </div>
 

@@ -10,12 +10,12 @@ export function CoreValues() {
     <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main">
         <div className="max-w-5xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
             Core values
-          </p>
-          <h2 className="mt-5 text-section font-bold text-ink" data-reveal>
-            Values that keep the work practical, technical, and accountable.
           </h2>
+          <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
+            Values that keep the work practical, technical, and accountable.
+          </h3>
         </div>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {coreValues.map(({ description, icon: Icon, id, number, title }) => (

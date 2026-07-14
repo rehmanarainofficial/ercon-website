@@ -12,14 +12,14 @@ export function AboutContactCTA() {
       <div className="absolute inset-0 technical-grid opacity-24" />
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-accent/18 blur-3xl" />
       <div className="container-main relative">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/68" data-reveal>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
           {aboutFinalCta.eyebrow}
-        </p>
+        </h2>
         <div className="mt-5 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_auto] lg:items-end">
           <div>
-            <h2 className="max-w-5xl text-section font-bold text-white" data-reveal>
+            <h3 className="max-w-5xl text-lg sm:text-xl font-bold text-white leading-snug tracking-tight" data-reveal>
               {aboutFinalCta.title}
-            </h2>
+            </h3>
             <p className="mt-6 max-w-2xl text-body-fluid leading-8 text-white/76" data-reveal>
               {aboutFinalCta.description}
             </p>

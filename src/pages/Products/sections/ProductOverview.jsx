@@ -8,13 +8,13 @@ export function ProductOverview({ product }) {
   return (
     <section className="bg-white section-space" ref={sectionRef}>
       <div className="container-main grid gap-10 lg:grid-cols-[0.34fr_1fr]">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
           Product overview
-        </p>
+        </h2>
         <div>
-          <h2 className="text-compact-display max-w-5xl font-bold text-ink" data-reveal>
+          <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
             {product.name} in the ERCON product range.
-          </h2>
+          </h3>
           <p className="mt-7 max-w-4xl text-body-fluid leading-8 text-muted" data-reveal>
             {product.overview}
           </p>

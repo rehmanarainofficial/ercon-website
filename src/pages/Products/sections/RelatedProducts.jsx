@@ -9,10 +9,10 @@ export function RelatedProducts({ products }) {
       <div className="container-main">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand">Related products</p>
-            <h2 className="mt-5 text-compact-display font-bold text-ink">Continue exploring the ERCON range.</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide">Related products</h2>
+            <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight">Continue exploring the ERCON range.</h3>
           </div>
-          <TextLink to="/products">View All Products</TextLink>
+          <TextLink to="/products">View All Divisions</TextLink>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {products.map((product, index) => (

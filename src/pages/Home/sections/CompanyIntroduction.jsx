@@ -23,10 +23,10 @@ export function CompanyIntroduction() {
             <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight">
               {homeIntroduction.title}
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-muted text-justify">
+            <p className="mt-5 text-md leading-relaxed text-muted text-justify">
               {homeIntroduction.description1}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted text-justify">
+            <p className="mt-4 text-md leading-relaxed text-muted text-justify">
               {homeIntroduction.description2}
             </p>
 

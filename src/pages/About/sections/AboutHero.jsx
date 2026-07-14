@@ -62,7 +62,7 @@ export function AboutHero() {
       <div ref={mediaRef} className="absolute inset-0 -z-10">
         <SafeImage
           alt={aboutHero.imageAlt}
-          className="h-full w-full object-cover opacity-52"
+          className="h-full w-full object-cover opacity-60 saturate-110"
           fetchPriority="high"
           height="1200"
           loading="eager"
@@ -70,8 +70,8 @@ export function AboutHero() {
           width="1800"
         />
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(5_22_16/0.62),rgb(5_22_16/0.96)),linear-gradient(90deg,rgb(5_22_16/0.92),rgb(5_22_16/0.42))]" />
-      <div className="absolute inset-0 -z-10 technical-grid opacity-30" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(5_22_16/0.95)_0%,rgb(5_22_16/0.72)_42%,rgb(5_22_16/0.2)_100%)]" />
+      <div className="absolute inset-0 -z-10 technical-grid opacity-35" />
 
       <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
         <div className="max-w-5xl">

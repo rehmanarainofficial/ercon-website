@@ -1,6 +1,4 @@
 import { useRef } from 'react'
-import { ImageReveal } from '../../../components/animation/ImageReveal'
-import { SafeImage } from '../../../components/ui/SafeImage'
 import { TextLink } from '../../../components/ui/TextLink'
 import { companyOverview } from '../../../data/about'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
@@ -20,27 +18,18 @@ export function CompanyOverview() {
             <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
               {companyOverview.title}
             </h3>
-            <div className="mt-10 grid gap-9 lg:grid-cols-[minmax(0,0.75fr)_minmax(320px,0.55fr)] lg:items-end">
+            <div className="mt-10 max-w-4xl">
               <div className="grid gap-5" data-reveal>
                 {companyOverview.paragraphs.map((paragraph) => (
-                  <p className="text-body-fluid leading-8 text-muted" key={paragraph}>
+                  <p className="text-md leading-relaxed text-muted" key={paragraph}>
                     {paragraph}
                   </p>
                 ))}
                 <div className="mt-3 border-l-2 border-brand pl-5 text-xl font-semibold leading-8 text-ink">
                   {companyOverview.highlight}
                 </div>
-                <TextLink to="/products">Explore ERCON Products</TextLink>
+                <TextLink to="/products">Explore ERCON Divisions</TextLink>
               </div>
-              <ImageReveal className="bg-surface-blue">
-                <SafeImage
-                  alt={companyOverview.imageAlt}
-                  className="aspect-[4/5] h-full w-full object-cover"
-                  height="900"
-                  src={companyOverview.image}
-                  width="720"
-                />
-              </ImageReveal>
             </div>
           </div>
         </div>

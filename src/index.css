@@ -100,6 +100,10 @@
     font: inherit;
   }
 
+  p {
+    text-align: justify;
+  }
+
   button {
     cursor: pointer;
   }

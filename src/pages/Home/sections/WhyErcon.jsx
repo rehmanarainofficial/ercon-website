@@ -25,8 +25,8 @@ export function WhyErcon() {
           </p>
         </SectionHeading>
 
-        {/* 4-Column Card Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 3-Column Card Grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {whyErcon.map((item, index) => {
             const Icon = icons[index]
             const stepNum = String(index + 1).padStart(2, '0')

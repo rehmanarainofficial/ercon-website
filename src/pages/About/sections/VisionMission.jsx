@@ -23,9 +23,9 @@ export function VisionMission() {
   return (
     <section className="bg-white section-space border-t border-line" ref={sectionRef}>
       <div className="container-main">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand" data-reveal>
-          Vision and Mission
-        </p>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
+          Vision and mission
+        </h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {items.map((item) => {
             const Icon = item.icon
@@ -46,23 +46,18 @@ export function VisionMission() {
                     }`}>
                       <Icon size={20} />
                     </div>
-                    <p className={`text-xs font-bold uppercase tracking-[0.16em] ${
+                    <p className={`text-lg font-bold tracking-[0.16em] ${
                       item.isDark ? 'text-brand-light' : 'text-brand'
                     }`}>
                       {item.title}
                     </p>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-black leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug">
                     {item.statement}
                   </h3>
                 </div>
 
-                <p className={`mt-5 text-sm leading-relaxed ${
-                  item.isDark ? 'text-white/60' : 'text-muted'
-                }`}>
-                  {item.supportingText}
-                </p>
               </article>
             )
           })}

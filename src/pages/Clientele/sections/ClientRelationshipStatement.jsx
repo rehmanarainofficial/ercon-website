@@ -12,12 +12,12 @@ export function ClientRelationshipStatement() {
       <div className="container-main">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.44fr)_1fr] lg:items-start">
           <div className="lg:sticky lg:top-28">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light" data-reveal>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
               Working with ERCON
-            </p>
-            <h2 className="mt-5 text-section font-bold text-white" data-reveal>
-              From Technical Requirements to Reliable Delivery
             </h2>
+            <h3 className="mt-5 text-lg sm:text-xl font-bold text-white leading-snug tracking-tight" data-reveal>
+              From Technical Requirements to Reliable Delivery
+            </h3>
             <p className="mt-6 text-body-fluid leading-8 text-white/70" data-reveal>
               A client inquiry can move from requirement review into product selection, technical coordination, and delivery planning without turning the page into unsupported case studies.
             </p>
