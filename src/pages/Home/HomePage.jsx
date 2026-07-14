@@ -10,14 +10,18 @@ export default function HomePage() {
     canonical: seo.canonical,
     description: seo.description,
     keywords: [
-      'ERCON Industries', 'LV Switchgear Pakistan', 'MV Switchgear Karachi', 
-      'Electrical Enclosures Karachi', 'Power Distribution Boards Pakistan', 
-      'Cable Tray Manufacturers Karachi', 'Sheet Metal Fabrication Karachi', 
-      'ERCON Group KSA UAE', 'Certified Switchgear Pakistan'
+      'ERCON Industries Pakistan', 'LV Switchgear Manufacturer Pakistan', 'MV Switchgear Manufacturer Pakistan',
+      'Power Distribution Board Pakistan', 'Type-Tested Enclosures Pakistan', 'Busway Trunking System Pakistan',
+      'Cable Management System Pakistan', 'Cable Tray Manufacturer Karachi', 'Solar Solutions Pakistan',
+      'Sheet Metal Fabrication Pakistan', 'Stainless Steel Fabrication Hospital Pakistan',
+      'Electrical Panel Manufacturer Kasur', 'Switchgear Factory Pakistan', 'ERCON Group UAE KSA',
+      'Industrial Electrical Contractor Pakistan', 'Meter Security Box Pakistan', 'ISO Certified Switchgear Pakistan',
+      'IEC Standard Switchgear Pakistan', 'MV Switchgear 11kV Pakistan', 'LV Distribution Board 415V Pakistan',
     ],
     ogDescription: seo.description,
     ogImage: seo.ogImage,
     ogTitle: seo.title,
+    ogType: 'website',
     schema: seo.schema,
     title: seo.title,
   })

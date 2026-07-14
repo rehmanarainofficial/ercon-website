@@ -12,11 +12,35 @@ export default function CareerPage() {
   const route = routes.find((r) => r.path === '/career')
 
   useRouteMeta({
-    title: route.title,
-    description: route.metaDescription,
-    ogTitle: route.title,
-    ogDescription: route.metaDescription,
+    title: 'Careers at ERCON Industries | Engineering Jobs Pakistan',
+    description:
+      'Join ERCON Industries — a leading electrical manufacturer in Pakistan. We offer engineering careers in LV/MV switchgear, panel assembly, sheet metal fabrication, and precision manufacturing in Kasur, Punjab.',
+    keywords: [
+      'ERCON Industries Jobs', 'Engineering Jobs Pakistan', 'Electrical Engineer Jobs Karachi',
+      'Switchgear Manufacturing Jobs Pakistan', 'Sheet Metal Fabrication Jobs Pakistan',
+      'Panel Wiring Technician Jobs', 'ERCON Careers Kasur', 'Manufacturing Jobs Punjab Pakistan',
+      'Electrical Technician Jobs Pakistan', 'ERCON Industries Hiring',
+    ],
+    ogTitle: 'Careers at ERCON Industries | Engineering Jobs Pakistan',
+    ogDescription:
+      'Explore engineering and technical careers at ERCON Industries. Join our team in LV/MV switchgear manufacturing, sheet metal fabrication, and precision engineering in Pakistan.',
+    ogType: 'website',
     canonical: 'https://erconind.com/career',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://erconind.com/career#webpage',
+      name: 'Careers at ERCON Industries',
+      url: 'https://erconind.com/career',
+      description: 'Engineering and technical career opportunities at ERCON Industries (Pvt.) Limited, Pakistan.',
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Careers', item: 'https://erconind.com/career' },
+        ],
+      },
+    },
   })
 
   const heroCard = (

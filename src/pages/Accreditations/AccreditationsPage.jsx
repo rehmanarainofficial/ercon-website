@@ -9,11 +9,35 @@ export default function AccreditationsPage() {
   const route = routes.find((r) => r.path === '/accreditations')
   
   useRouteMeta({
-    title: route.title,
-    description: route.metaDescription,
-    ogTitle: route.title,
-    ogDescription: route.metaDescription,
+    title: 'Accreditations & Certifications | ERCON Industries — ISO 9001 Compliant Pakistan',
+    description:
+      'ERCON Industries holds ISO 9001 quality management certification and aligns all LV/MV switchgear, sheet metal fabrication, and cable management manufacturing processes with IEC international standards in Pakistan.',
+    keywords: [
+      'ERCON Industries ISO 9001', 'ISO Certified Switchgear Pakistan', 'IEC Standard Switchgear Pakistan',
+      'LV Switchgear Certified Pakistan', 'MV Switchgear Type-Tested Pakistan',
+      'Accreditation Electrical Manufacturer Pakistan', 'Quality Certified Panel Board Pakistan',
+      'ERCON IEC Compliant', 'ISO 9001 Electrical Factory Pakistan', 'Certified Manufacturing Pakistan',
+    ],
+    ogTitle: 'Accreditations | ERCON Industries — ISO 9001 & IEC Compliant Pakistan',
+    ogDescription:
+      'ERCON Industries maintains ISO 9001 certification and IEC compliance for LV/MV switchgear, fabrication, and cable management manufacturing in Pakistan.',
+    ogType: 'website',
     canonical: 'https://erconind.com/accreditations',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      '@id': 'https://erconind.com/accreditations#webpage',
+      name: 'Accreditations & Certifications | ERCON Industries',
+      url: 'https://erconind.com/accreditations',
+      description: 'Quality certifications and accreditation details for ERCON Industries manufacturing operations in Pakistan.',
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Accreditations', item: 'https://erconind.com/accreditations' },
+        ],
+      },
+    },
   })
 
   const heroCard = (

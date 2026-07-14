@@ -92,26 +92,63 @@ export default function ProductDetailsPage() {
     };
   }, [slug]);
 
+  const productUrl = product ? `https://erconind.com/products/${product.slug || product.id}` : undefined
+
   useRouteMeta({
-    canonical: product
-      ? `https://erconind.com/products/${product.slug}`
+    canonical: productUrl,
+    description: product
+      ? `${product.name} — ${product.shortDescription || product.description || 'Manufactured by ERCON Industries (Pvt.) Limited, Pakistan. ISO-compliant LV/MV electrical product.'}`
       : undefined,
-    description: product?.shortDescription,
-    ogDescription: product?.shortDescription,
-    ogImage: product?.heroImage,
+    keywords: product
+      ? [
+          product.name, `${product.name} Pakistan`, `${product.categoryLabel || ''} Pakistan`,
+          'ERCON Industries Product', 'LV MV Switchgear Pakistan', 'Electrical Product Pakistan',
+          'ERCON Manufacturer', 'Power Distribution Equipment Pakistan',
+        ]
+      : undefined,
+    ogDescription: product?.shortDescription || product?.description,
+    ogImage: product?.heroImage || product?.image1,
     ogTitle: product ? `${product.name} | ERCON Industries` : undefined,
+    ogType: 'product',
     title: product ? `${product.name} | ERCON Industries` : undefined,
     schema: product
       ? {
-          "@context": "https://schema.org",
-          "@type": "Product",
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          '@id': productUrl,
           name: product.name,
-          description: product.shortDescription,
-          category: product.categoryLabel,
-          image: product.heroImage,
+          description: product.shortDescription || product.description,
+          category: product.categoryLabel || product.category,
+          image: product.heroImage || product.image1,
+          brand: {
+            '@type': 'Brand',
+            name: 'ERCON Industries',
+          },
+          manufacturer: {
+            '@type': 'Organization',
+            name: 'ERCON Industries (Pvt.) Limited',
+            url: 'https://erconind.com/',
+          },
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'PKR',
+            availability: 'https://schema.org/InStock',
+            seller: {
+              '@type': 'Organization',
+              name: 'ERCON Industries (Pvt.) Limited',
+            },
+          },
+          breadcrumb: {
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+              { '@type': 'ListItem', position: 2, name: 'Divisions', item: 'https://erconind.com/products' },
+              { '@type': 'ListItem', position: 3, name: product.name, item: productUrl },
+            ],
+          },
         }
       : undefined,
-  });
+  })
 
   if (loading) {
     return <LoadingScreen />;

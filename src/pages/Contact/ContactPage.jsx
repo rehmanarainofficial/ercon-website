@@ -9,15 +9,56 @@ export default function ContactPage() {
   const route = routes.find((r) => r.path === '/contact-us')
 
   useRouteMeta({
-    title: route.title,
-    description: route.metaDescription,
+    title: 'Contact ERCON Industries | Sales & Engineering Inquiries Pakistan',
+    description:
+      'Contact ERCON Industries for LV/MV Switchgear, Busway Trunking, Cable Management, Solar Solutions, SS Fabrication, and Sheet Metal products. UAN: +92 3111 444 590. Email: info@erconind.com. Located in Kasur, Punjab, Pakistan.',
     keywords: [
-      'contact ERCON', 'ERCON sales Karachi', 'switchgear quote Pakistan',
-      'sheet metal factory location', 'ERCON phone number', ' Karahi office address'
+      'Contact ERCON Industries', 'ERCON Industries Phone Number', 'ERCON Industries Email',
+      'ERCON Industries Address Kasur', 'Switchgear Quote Pakistan', 'LV MV Panel Inquiry Pakistan',
+      'Electrical Products Inquiry Pakistan', 'Sheet Metal Fabrication Quote Pakistan',
+      'Solar Solutions Inquiry Pakistan', 'ERCON Sales Contact', 'UAN +92 3111 444 590',
     ],
-    ogTitle: route.title,
-    ogDescription: route.metaDescription,
+    ogTitle: 'Contact ERCON Industries | Sales & Engineering Inquiries',
+    ogDescription:
+      'Reach ERCON Industries for switchgear, power distribution, solar, and fabrication inquiries. UAN: +92 3111 444 590 | Email: info@erconind.com | Kasur, Punjab, Pakistan.',
+    ogType: 'website',
     canonical: 'https://erconind.com/contact-us',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      '@id': 'https://erconind.com/contact-us#webpage',
+      name: 'Contact ERCON Industries',
+      url: 'https://erconind.com/contact-us',
+      description: 'Contact page for ERCON Industries (Pvt.) Limited — sales, engineering, and product inquiries.',
+      mainEntity: {
+        '@type': 'LocalBusiness',
+        name: 'ERCON Industries (Pvt.) Limited',
+        telephone: '+92-3111-444-590',
+        email: 'info@erconind.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '6.2 KM from Lillyani Toll Plaza, Near Pakki Haveli, Mustafabad Bayron',
+          addressLocality: 'Kasur',
+          addressRegion: 'Punjab',
+          addressCountry: 'PK',
+        },
+        contactPoint: {
+          '@type': 'ContactPoint',
+          telephone: '+92-3111-444-590',
+          email: 'info@erconind.com',
+          contactType: 'sales',
+          areaServed: 'PK',
+          availableLanguage: ['English', 'Urdu'],
+        },
+      },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Contact Us', item: 'https://erconind.com/contact-us' },
+        ],
+      },
+    },
   })
 
   const heroCard = (

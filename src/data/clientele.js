@@ -66,10 +66,26 @@ export const clientRelationshipSteps = [
 ]
 
 export const clienteleSeo = {
-  title: 'Clientele | ERCON Industries',
+  title: 'Clientele | ERCON Industries Pakistan — Industrial, Commercial & Healthcare Sectors',
   description:
-    'Explore ERCON Industries clientele presentation with verified client logo support, sector browsing, and factual industry context.',
+    'ERCON Industries serves a diverse clientele across industrial, commercial, healthcare, energy, and infrastructure sectors in Pakistan. Explore our verified client portfolio and sector expertise.',
   canonical: 'https://erconind.com/clientele',
-  ogImage: heroImage,
+  ogImage: 'https://erconind.com/og-image.jpg',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': 'https://erconind.com/clientele#webpage',
+    name: 'ERCON Industries Clientele',
+    url: 'https://erconind.com/clientele',
+    description:
+      'Verified directory of ERCON Industries clients across industrial, commercial, healthcare, energy, and infrastructure sectors in Pakistan.',
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Clientele', item: 'https://erconind.com/clientele' },
+      ],
+    },
+  },
 }
 

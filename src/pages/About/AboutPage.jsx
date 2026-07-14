@@ -11,12 +11,19 @@ export default function AboutPage() {
     canonical: aboutSeo.canonical,
     description: aboutSeo.description,
     keywords: [
-      'ERCON History', 'ERCON Industries Profile', 'Switchgear Manufacturing Pakistan',
-      'Electrical Engineering Team Karachi', 'ERCON Group Heritage', 'Karachi Switchgear Workshop'
+      'About ERCON Industries', 'ERCON Industries History', 'ERCON Pakistan Founded 2012',
+      'Switchgear Manufacturer Pakistan Profile', 'Electrical Engineering Company Pakistan',
+      'ERCON Group Heritage UAE KSA', 'ISO 9001 Switchgear Manufacturer Pakistan',
+      'LV MV Panel Manufacturer Karachi', 'Power Distribution Company Pakistan',
+      'Sheet Metal Fabrication Company Pakistan', 'Stainless Steel SS Products Hospital Pakistan',
+      'ERCON Manufacturing Kasur Punjab', 'Engineering Excellence Pakistan',
+      'Industrial Electrical Manufacturer Pakistan', 'Busway Trunking Manufacturer Pakistan',
     ],
     ogDescription: aboutSeo.description,
     ogImage: aboutSeo.ogImage,
     ogTitle: aboutSeo.title,
+    ogType: 'website',
+    schema: aboutSeo.schema,
     title: aboutSeo.title,
   })
 

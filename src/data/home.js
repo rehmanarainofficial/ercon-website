@@ -61,16 +61,74 @@ export const finalCta = {
 }
 
 export const seo = {
-  title: 'ERCON Industries | Electrical Engineering and Power Distribution',
+  title: 'ERCON Industries | Electrical & Power Distribution Manufacturer Pakistan',
   description:
-    'ERCON Industries manufactures LV/MV switchgear, power distribution systems, solar energy solutions, cable management systems, and sheet metal fabrication for Pakistan.',
+    'ERCON Industries (Pvt.) Limited — established 2012 — manufactures LV/MV Switchgear, Busway Trunking, Cable Management Systems, Solar Solutions, Stainless Steel products, and Custom Sheet Metal Fabrication in Pakistan.',
   canonical: 'https://erconind.com/',
-  ogImage: media.hero,
-  schema: {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'ERCON Industries',
-    url: 'https://erconind.com/',
-    sameAs: [],
-  },
+  ogImage: 'https://erconind.com/og-image.jpg',
+  schema: [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      '@id': 'https://erconind.com/#organization',
+      name: 'ERCON Industries (Pvt.) Limited',
+      url: 'https://erconind.com/',
+      logo: 'https://erconind.com/logo.png',
+      foundingDate: '2012',
+      description:
+        'Leading manufacturer of LV/MV Switchgear, Busway Trunking Systems, Cable Management, Solar Solutions, Stainless Steel (SS) fabrication for hospitals and healthcare, and Custom Sheet Metal Fabrication in Pakistan.',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '6.2 KM from Lillyani Toll Plaza, Near Pakki Haveli, Mustafabad Bayron',
+        addressLocality: 'Kasur',
+        addressRegion: 'Punjab',
+        addressCountry: 'PK',
+      },
+      contactPoint: [
+        {
+          '@type': 'ContactPoint',
+          telephone: '+92-3111-444-590',
+          email: 'info@erconind.com',
+          contactType: 'sales',
+          areaServed: 'PK',
+          availableLanguage: ['English', 'Urdu'],
+        },
+      ],
+      sameAs: [
+        'https://www.facebook.com/people/ERCON-Industries-PVT-Limited/61591925099821/',
+        'https://www.instagram.com/ercon.ind/',
+        'https://www.linkedin.com/company/ercon-industries-pvt-limited',
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://erconind.com/#localbusiness',
+      name: 'ERCON Industries (Pvt.) Limited',
+      url: 'https://erconind.com/',
+      telephone: '+92-3111-444-590',
+      email: 'info@erconind.com',
+      image: 'https://erconind.com/og-image.jpg',
+      priceRange: 'PKR',
+      openingHours: 'Mo-Fr 09:00-17:00',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '6.2 KM from Lillyani Toll Plaza, Near Pakki Haveli, Mustafabad Bayron',
+        addressLocality: 'Kasur',
+        addressRegion: 'Punjab',
+        addressCountry: 'PK',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 31.1167,
+        longitude: 74.45,
+      },
+      sameAs: [
+        'https://www.facebook.com/people/ERCON-Industries-PVT-Limited/61591925099821/',
+        'https://www.instagram.com/ercon.ind/',
+        'https://www.linkedin.com/company/ercon-industries-pvt-limited',
+      ],
+    },
+  ],
 }
+

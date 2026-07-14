@@ -23,16 +23,18 @@ export default function ClientelePage() {
   useRouteMeta({
     canonical: clienteleSeo.canonical,
     description: clienteleSeo.description,
+    keywords: [
+      'ERCON Industries Clients', 'ERCON Clientele Pakistan', 'Electrical Products Clients Pakistan',
+      'Switchgear Clients Pakistan', 'Industrial Clients ERCON', 'Commercial Clients ERCON',
+      'Healthcare Clients SS Products Pakistan', 'Energy Sector Clients Pakistan',
+      'Infrastructure Clients Electrical Pakistan', 'ERCON Project Portfolio',
+    ],
     ogDescription: clienteleSeo.description,
     ogImage: clienteleSeo.ogImage,
     ogTitle: clienteleSeo.title,
+    ogType: 'website',
     title: clienteleSeo.title,
-    schema: {
-      '@context': 'https://schema.org',
-      '@type': 'CollectionPage',
-      name: 'ERCON Industries Clientele',
-      url: clienteleSeo.canonical,
-    },
+    schema: clienteleSeo.schema,
   })
 
   const filteredClients = useMemo(

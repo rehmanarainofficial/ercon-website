@@ -66,21 +66,37 @@ export default function ProductsPage() {
   useRouteMeta({
     canonical: 'https://erconind.com/products',
     description:
-      'Browse ERCON Industries product families including MV switchgear, LV switchgear, cable management, solar energy systems, and sheet metal fabrication.',
+      'Explore ERCON Industries\' complete product range: LV/MV Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management, Meter Security Boxes, Solar Solutions, Stainless Steel (SS) products, and Custom Sheet Metal Fabrication.',
     keywords: [
-      'ERCON products', 'switchgear catalog Pakistan', 'LV panels Karachi', 'MV type tested switchgear',
-      'cable trays Karachi', 'industrial enclosures', 'solar panels Pakistan', 'sheet metal fabrication'
+      'ERCON Products Catalog', 'LV Switchgear Pakistan Buy', 'MV Switchgear Type-Tested Pakistan',
+      'Busway Trunking System Pakistan', 'Cable Tray Cable Management Pakistan', 'Solar Panel System Pakistan',
+      'Sheet Metal Fabrication Products Pakistan', 'Stainless Steel SS Products Hospital Pakistan',
+      'Meter Security Box Pakistan', 'Electrical Enclosures Type-Tested Pakistan',
+      'Power Distribution Switchgear Pakistan', 'Medium Voltage Switchgear 11kV Pakistan',
+      'LV Distribution Board 415V Pakistan', 'Industrial Cable Tray Karachi',
+      'Solar PV Panel Supplier Pakistan', 'Custom Fabrication Pakistan',
     ],
     ogDescription:
-      'Browse ERCON Industries product families including MV switchgear, LV switchgear, cable management, solar energy systems, and sheet metal fabrication.',
-    ogTitle: 'Products | ERCON Industries',
-    ogImage: productsList[0]?.heroImage,
-    title: 'Products | ERCON Industries',
+      'Explore ERCON Industries\' complete product range: LV/MV Switchgear, Busway Trunking, Cable Management, Solar Solutions, SS products, and Sheet Metal Fabrication.',
+    ogTitle: 'Products & Divisions | ERCON Industries',
+    ogType: 'website',
+    title: 'Products & Divisions | ERCON Industries',
     schema: {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'ERCON Industries Products',
+      '@id': 'https://erconind.com/products#webpage',
+      name: 'ERCON Industries Products & Divisions',
       url: 'https://erconind.com/products',
+      description:
+        'Complete product catalog of ERCON Industries including LV/MV Switchgear, Busway Trunking, Cable Management, Solar Solutions, SS Fabrication, and Sheet Metal products.',
+      isPartOf: { '@id': 'https://erconind.com/#organization' },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Divisions', item: 'https://erconind.com/products' },
+        ],
+      },
     },
   })
 

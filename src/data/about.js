@@ -88,9 +88,29 @@ export const aboutFinalCta = {
 }
 
 export const aboutSeo = {
-  title: 'About ERCON Industries | Electrical Manufacturing Expertise',
+  title: 'About ERCON Industries | Electrical Manufacturing Expertise Since 2012',
   description:
-    'Learn about ERCON Industries, a Pakistan-based electrical manufacturing company focused on LV/MV switchgear, power distribution, solar energy, cable management, and sheet metal fabrication.',
-  canonical: 'https://erconind.com/about',
-  ogImage: aboutMedia.hero,
+    'Established in 2012, ERCON Industries (Pvt.) Limited is a leading manufacturer of LV/MV Switchgear, Busway Trunking, Cable Management, Solar Solutions, Stainless Steel (SS) products for hospitals, and Custom Sheet Metal Fabrication in Pakistan.',
+  canonical: 'https://erconind.com/about-us',
+  ogImage: 'https://erconind.com/og-image.jpg',
+  schema: {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': 'https://erconind.com/about-us#webpage',
+    name: 'About ERCON Industries',
+    url: 'https://erconind.com/about-us',
+    description:
+      'Learn about ERCON Industries — a Pakistan-based electrical and precision engineering manufacturer established in 2012, serving industrial, commercial, healthcare, energy, and infrastructure sectors.',
+    isPartOf: {
+      '@id': 'https://erconind.com/#organization',
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+        { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://erconind.com/about-us' },
+      ],
+    },
+  },
 }
+

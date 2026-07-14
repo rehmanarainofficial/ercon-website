@@ -8,11 +8,34 @@ export default function GalleryPage() {
   const route = routes.find((r) => r.path === '/gallery')
 
   useRouteMeta({
-    title: route.title,
-    description: route.metaDescription,
-    ogTitle: route.title,
-    ogDescription: route.metaDescription,
+    title: 'Gallery | ERCON Industries — Manufacturing & Project Photos Pakistan',
+    description:
+      'Browse ERCON Industries\' manufacturing gallery featuring switchgear assembly, sheet metal fabrication, LV/MV panel production, and completed industrial project photos from Pakistan.',
+    keywords: [
+      'ERCON Industries Gallery', 'Switchgear Manufacturing Photos Pakistan', 'LV MV Panel Assembly Photos',
+      'Sheet Metal Fabrication Factory Pakistan', 'ERCON Factory Images', 'Electrical Panel Manufacturing Pakistan',
+      'ERCON Project Photos', 'Industrial Manufacturing Gallery Pakistan', 'Switchgear Testing Photos',
+    ],
+    ogTitle: 'Gallery | ERCON Industries — Manufacturing & Project Photos',
+    ogDescription:
+      'Explore ERCON Industries manufacturing gallery — switchgear assembly, sheet metal fabrication, and industrial project photography from Pakistan.',
+    ogType: 'website',
     canonical: 'https://erconind.com/gallery',
+    schema: {
+      '@context': 'https://schema.org',
+      '@type': 'ImageGallery',
+      '@id': 'https://erconind.com/gallery#webpage',
+      name: 'ERCON Industries Manufacturing Gallery',
+      url: 'https://erconind.com/gallery',
+      description: 'Manufacturing and project photography from ERCON Industries facilities in Pakistan.',
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://erconind.com/' },
+          { '@type': 'ListItem', position: 2, name: 'Gallery', item: 'https://erconind.com/gallery' },
+        ],
+      },
+    },
   })
 
   const heroCard = (

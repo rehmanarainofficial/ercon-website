@@ -26,17 +26,31 @@ const upsertLink = (selector, attributes) => {
   })
 }
 
-export function useRouteMeta({ canonical, description, keywords, ogDescription, ogImage, ogTitle, schema, title }) {
+export function useRouteMeta({
+  canonical,
+  description,
+  keywords,
+  ogDescription,
+  ogImage,
+  ogTitle,
+  ogType = 'website',
+  robots,
+  schema,
+  title,
+  twitterCard = 'summary_large_image',
+  twitterDescription,
+  twitterImage,
+  twitterTitle,
+}) {
   useEffect(() => {
+    // ── Title ──────────────────────────────────────────────────────────────
     if (title) {
       document.title = title
     }
 
+    // ── Standard Meta ──────────────────────────────────────────────────────
     if (description) {
-      upsertMeta('meta[name="description"]', {
-        name: 'description',
-        content: description,
-      })
+      upsertMeta('meta[name="description"]', { name: 'description', content: description })
     }
 
     if (keywords) {
@@ -46,11 +60,18 @@ export function useRouteMeta({ canonical, description, keywords, ogDescription, 
       })
     }
 
+    if (robots) {
+      upsertMeta('meta[name="robots"]', { name: 'robots', content: robots })
+    }
+
+    // ── Canonical ──────────────────────────────────────────────────────────
+    if (canonical) {
+      upsertLink('link[rel="canonical"]', { rel: 'canonical', href: canonical })
+    }
+
+    // ── Open Graph ─────────────────────────────────────────────────────────
     if (ogTitle || title) {
-      upsertMeta('meta[property="og:title"]', {
-        property: 'og:title',
-        content: ogTitle || title,
-      })
+      upsertMeta('meta[property="og:title"]', { property: 'og:title', content: ogTitle || title })
     }
 
     if (ogDescription || description) {
@@ -61,19 +82,51 @@ export function useRouteMeta({ canonical, description, keywords, ogDescription, 
     }
 
     if (ogImage) {
-      upsertMeta('meta[property="og:image"]', {
-        property: 'og:image',
-        content: ogImage,
-      })
+      upsertMeta('meta[property="og:image"]', { property: 'og:image', content: ogImage })
+    }
+
+    if (ogType) {
+      upsertMeta('meta[property="og:type"]', { property: 'og:type', content: ogType })
     }
 
     if (canonical) {
-      upsertLink('link[rel="canonical"]', {
-        rel: 'canonical',
-        href: canonical,
+      upsertMeta('meta[property="og:url"]', { property: 'og:url', content: canonical })
+    }
+
+    upsertMeta('meta[property="og:site_name"]', {
+      property: 'og:site_name',
+      content: 'ERCON Industries',
+    })
+
+    upsertMeta('meta[property="og:locale"]', { property: 'og:locale', content: 'en_PK' })
+
+    // ── Twitter / X Cards ──────────────────────────────────────────────────
+    if (twitterCard) {
+      upsertMeta('meta[name="twitter:card"]', { name: 'twitter:card', content: twitterCard })
+    }
+
+    if (twitterTitle || ogTitle || title) {
+      upsertMeta('meta[name="twitter:title"]', {
+        name: 'twitter:title',
+        content: twitterTitle || ogTitle || title,
       })
     }
 
+    if (twitterDescription || ogDescription || description) {
+      upsertMeta('meta[name="twitter:description"]', {
+        name: 'twitter:description',
+        content: twitterDescription || ogDescription || description,
+      })
+    }
+
+    if (twitterImage || ogImage) {
+      upsertMeta('meta[name="twitter:image"]', {
+        name: 'twitter:image',
+        content: twitterImage || ogImage,
+      })
+    }
+
+    // ── JSON-LD Structured Data ────────────────────────────────────────────
     const schemaId = 'route-structured-data'
     let schemaNode = document.getElementById(schemaId)
 
@@ -84,10 +137,24 @@ export function useRouteMeta({ canonical, description, keywords, ogDescription, 
         schemaNode.type = 'application/ld+json'
         document.head.appendChild(schemaNode)
       }
-
       schemaNode.textContent = JSON.stringify(schema)
     } else if (schemaNode) {
       schemaNode.remove()
     }
-  }, [canonical, description, keywords, ogDescription, ogImage, ogTitle, schema, title])
+  }, [
+    canonical,
+    description,
+    keywords,
+    ogDescription,
+    ogImage,
+    ogTitle,
+    ogType,
+    robots,
+    schema,
+    title,
+    twitterCard,
+    twitterDescription,
+    twitterImage,
+    twitterTitle,
+  ])
 }
