@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Users } from 'lucide-react'
-import { routes } from '../../data/routes'
 import { PageHero } from '../../components/ui/PageHero'
 import { CompanyCulture } from './sections/CompanyCulture'
 import { OpenPositions } from './sections/OpenPositions'
@@ -9,7 +8,6 @@ import { useRouteMeta } from '../../hooks/useRouteMeta'
 
 export default function CareerPage() {
   const [selectedPosition, setSelectedPosition] = useState('')
-  const route = routes.find((r) => r.path === '/career')
 
   useRouteMeta({
     title: 'Careers at ERCON Industries | Engineering Jobs Pakistan',

@@ -1,12 +1,10 @@
 import { ShieldCheck } from 'lucide-react'
-import { routes } from '../../data/routes'
 import { PageHero } from '../../components/ui/PageHero'
 import { CertificateList } from './sections/CertificateList'
 import { QualitySafety } from '../About/sections/QualitySafety'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 
 export default function AccreditationsPage() {
-  const route = routes.find((r) => r.path === '/accreditations')
   
   useRouteMeta({
     title: 'Accreditations & Certifications | ERCON Industries — ISO 9001 Compliant Pakistan',

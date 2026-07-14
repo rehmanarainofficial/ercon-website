@@ -14,7 +14,7 @@ export function DesktopNavigation() {
   const exploreLinks = [
     { label: 'Accreditations', path: '/accreditations' },
     { label: 'Clientele', path: '/clientele' },
-    { label: 'Gallery', path: '/gallery' },
+    { label: 'Portfolio', path: '/gallery' },
     { label: 'Career', path: '/career' }
   ]
 

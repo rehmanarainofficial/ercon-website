@@ -34,6 +34,8 @@ export function GalleryGrid() {
     }
   }, [])
 
+  const [activeTab, setActiveTab] = useState('facility')
+
   // Handle Lightbox Next / Prev / Close actions
   const showPrev = useCallback((e) => {
     e?.stopPropagation()
@@ -84,64 +86,105 @@ export function GalleryGrid() {
           </SectionHeading>
         </div>
 
-        {/* Gallery Image Grid */}
-        {loading ? (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3, 4, 5, 6].map((idx) => (
-              <div key={idx} className="animate-pulse bg-surface-blue rounded-[var(--radius-card)] aspect-[4/3]" />
-            ))}
-          </div>
-        ) : (
-          <>
+        {/* Tabs Switcher */}
+        <div className="mb-12 flex justify-center gap-4">
+          <button
+            onClick={() => setActiveTab('facility')}
+            className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm ${
+              activeTab === 'facility'
+                ? 'bg-brand text-white'
+                : 'bg-surface-soft text-ink hover:text-brand border border-line'
+            }`}
+          >
+            Facility
+          </button>
+          <button
+            onClick={() => setActiveTab('projects')}
+            className={`px-8 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-sm ${
+              activeTab === 'projects'
+                ? 'bg-brand text-white'
+                : 'bg-surface-soft text-ink hover:text-brand border border-line'
+            }`}
+          >
+            Projects
+          </button>
+        </div>
+
+        {activeTab === 'facility' ? (
+          /* Gallery Image Grid */
+          loading ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {imagesList.map((item, index) => {
-                const isWider = index % 5 === 0 // 1st, 6th, etc. items span 2 columns on large viewports
-                return (
-                  <figure
-                    key={item.id}
-                    className={`group relative overflow-hidden rounded-[20px] bg-surface-dark border border-line cursor-pointer shadow-sm hover:shadow-card-hover transition-all duration-300 ${
-                      isWider ? 'lg:col-span-2 aspect-[16/10]' : 'aspect-[4/3]'
-                    }`}
-                    onClick={() => setLightboxIndex(index)}
-                    data-reveal
-                  >
-                    <SafeImage
-                      src={item.image}
-                      alt={item.alt || 'ERCON media image'}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                      width={isWider ? "1080" : "720"}
-                      height={isWider ? "675" : "540"}
-                    />
-                    
-                    {/* Modern gradient overlay on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 text-white">
-                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">
-                        ERCON Media
-                      </span>
-                      <h4 className="mt-2 text-base md:text-lg font-bold leading-snug">
-                        {item.alt || 'ERCON manufacturing facilities and project execution'}
-                      </h4>
-                      <p className="mt-1.5 text-xs text-white/60">
-                        Click to expand detail view
-                      </p>
-                    </div>
-
-                    {/* Expand icon badge */}
-                    <div className="absolute top-4 right-4 h-9 w-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <Maximize2 size={16} />
-                    </div>
-                  </figure>
-                )
-              })}
+              {[1, 2, 3, 4, 5, 6].map((idx) => (
+                <div key={idx} className="animate-pulse bg-surface-blue rounded-[var(--radius-card)] aspect-[4/3]" />
+              ))}
             </div>
+          ) : (
+            <>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {imagesList.map((item, index) => {
+                  const isWider = index % 5 === 0 // 1st, 6th, etc. items span 2 columns on large viewports
+                  return (
+                    <figure
+                      key={item.id}
+                      className={`group relative overflow-hidden rounded-[20px] bg-surface-dark border border-line cursor-pointer shadow-sm hover:shadow-card-hover transition-all duration-300 ${
+                        isWider ? 'lg:col-span-2 aspect-[16/10]' : 'aspect-[4/3]'
+                      }`}
+                      onClick={() => setLightboxIndex(index)}
+                      data-reveal
+                    >
+                      <SafeImage
+                        src={item.image}
+                        alt={item.alt || 'ERCON media image'}
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        width={isWider ? "1080" : "720"}
+                        height={isWider ? "675" : "540"}
+                      />
+                      
+                      {/* Modern gradient overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 text-white">
+                        <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">
+                          ERCON Media
+                        </span>
+                        <h4 className="mt-2 text-base md:text-lg font-bold leading-snug">
+                          {item.alt || 'ERCON manufacturing facilities and project execution'}
+                        </h4>
+                        <p className="mt-1.5 text-xs text-white/60">
+                          Click to expand detail view
+                        </p>
+                      </div>
 
-            {/* Empty State */}
-            {imagesList.length === 0 && (
-              <div className="py-20 text-center text-muted">
-                <p>No media files found in the database.</p>
+                      {/* Expand icon badge */}
+                      <div className="absolute top-4 right-4 h-9 w-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <Maximize2 size={16} />
+                      </div>
+                    </figure>
+                  )
+                })}
               </div>
-            )}
-          </>
+
+              {/* Empty State */}
+              {imagesList.length === 0 && (
+                <div className="py-20 text-center text-muted">
+                  <p>No media files found in the database.</p>
+                </div>
+              )}
+            </>
+          )
+        ) : (
+          /* Projects Video Player */
+          <div className="mx-auto max-w-4xl" data-reveal>
+            <div className="relative aspect-video w-full overflow-hidden rounded-[20px] border border-line bg-surface-dark shadow-floating">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube.com/embed/sVU976zPMjE?si=j46eHBYQwocZSJOY"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
         )}
       </div>
 

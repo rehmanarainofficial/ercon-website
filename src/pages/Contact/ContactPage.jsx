@@ -1,12 +1,10 @@
 import { PhoneCall } from 'lucide-react'
-import { routes } from '../../data/routes'
 import { PageHero } from '../../components/ui/PageHero'
 import { ContactDetails } from './sections/ContactDetails'
 import { InquiryForm } from './sections/InquiryForm'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 
 export default function ContactPage() {
-  const route = routes.find((r) => r.path === '/contact-us')
 
   useRouteMeta({
     title: 'Contact ERCON Industries | Sales & Engineering Inquiries Pakistan',

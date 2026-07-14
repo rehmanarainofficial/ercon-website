@@ -1,4 +1,4 @@
-import heroImage from '../assets/images/generated/switchgear-manufacturing-floor.jpg'
+import heroImage from '../assets/images/generated/switchgear-manufacturing-floor.png'
 import trustImage from '../assets/images/generated/switchgear-testing-engineer.png'
 
 export const clienteleHero = {

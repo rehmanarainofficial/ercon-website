@@ -1,11 +1,9 @@
 import { Image as ImageIcon } from 'lucide-react'
-import { routes } from '../../data/routes'
 import { PageHero } from '../../components/ui/PageHero'
 import { GalleryGrid } from './sections/GalleryGrid'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 
 export default function GalleryPage() {
-  const route = routes.find((r) => r.path === '/gallery')
 
   useRouteMeta({
     title: 'Gallery | ERCON Industries — Manufacturing & Project Photos Pakistan',

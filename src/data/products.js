@@ -1,4 +1,4 @@
-import generatedHero from "../assets/images/generated/switchgear-manufacturing-floor.jpg";
+import generatedHero from "../assets/images/generated/switchgear-manufacturing-floor.png";
 import generatedTesting from "../assets/images/generated/switchgear-testing-engineer.png";
 
 const erconAsset = (path) => `https://erconind.com${path}`;
