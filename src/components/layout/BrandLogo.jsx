@@ -17,5 +17,5 @@ export function BrandLogo({ className, imageClassName }) {
         width="728"
       />
     </span>
-  )
+  );
 }

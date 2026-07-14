@@ -75,9 +75,9 @@ export const fetchProducts = async () => {
           category: item.category,
           shortDescription: item.description || 'Verified product information from ERCON Industries database.',
           overview: item.description || 'Verified product overview from ERCON Industries database.',
-          heroImage: item.image1 || 'https://erconind.com/ercon/product_img/default.jpg',
-          cardImage: item.image1 || 'https://erconind.com/ercon/product_img/default.jpg',
-          image: item.image1 || 'https://erconind.com/ercon/product_img/default.jpg',
+          heroImage: item.image1 || '',
+          cardImage: item.image1 || '',
+          image: item.image1 || '',
           gallery: [
             item.image1 && { id: `${item.id}-img1`, src: item.image1, alt: item.title, caption: 'Primary product image' },
             item.image2 && { id: `${item.id}-img2`, src: item.image2, alt: item.title, caption: 'Secondary product image' },

@@ -12,6 +12,8 @@ export function ProductDiscovery({
   onClear,
   onSearchChange,
   search,
+  categories,
+  loading,
 }) {
   const sectionRef = useRef(null)
   useScrollReveal(sectionRef, { stagger: 0.05 })
@@ -29,7 +31,7 @@ export function ProductDiscovery({
         </div>
 
         <div className="mt-10" data-reveal>
-          <ProductCategoryFilter activeCategory={activeCategory} onChange={onCategoryChange} />
+          <ProductCategoryFilter activeCategory={activeCategory} categories={categories} onChange={onCategoryChange} />
         </div>
 
         <div className="mt-6" data-reveal>
@@ -37,7 +39,18 @@ export function ProductDiscovery({
         </div>
 
         <div className="mt-10">
-          {filteredProducts.length ? (
+          {loading ? (
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {[1, 2, 3].map((idx) => (
+                <div key={idx} className="animate-pulse bg-white border border-line rounded-[var(--radius-card)] p-4 min-h-[350px]">
+                  <div className="bg-surface-blue rounded-[1.25rem] aspect-[4/3] w-full" />
+                  <div className="h-4 bg-surface-blue rounded w-1/3 mt-6" />
+                  <div className="h-6 bg-surface-blue rounded w-2/3 mt-3" />
+                  <div className="h-4 bg-surface-blue rounded w-full mt-4" />
+                </div>
+              ))}
+            </div>
+          ) : filteredProducts.length ? (
             <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
               {filteredProducts.map((product, index) => (
                 <ProductCard index={index} key={product.id} product={product} />

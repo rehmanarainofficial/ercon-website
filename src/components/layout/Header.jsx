@@ -1,30 +1,35 @@
-import { Menu } from 'lucide-react'
-import { useEffect, useRef, useState } from 'react'
-import { BrandHomeLink } from './BrandHomeLink'
-import { DesktopNavigation } from './DesktopNavigation'
-import { MobileNavigation } from './MobileNavigation'
+import { Menu } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { BrandHomeLink } from "./BrandHomeLink";
+import { DesktopNavigation } from "./DesktopNavigation";
+import { MobileNavigation } from "./MobileNavigation";
 
 export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const menuButtonRef = useRef(null)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const menuButtonRef = useRef(null);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24)
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
       <header
         className={`fixed left-0 right-0 top-0 z-50 transition duration-300 ${
-          scrolled ? 'bg-surface-dark/84 shadow-floating backdrop-blur-xl' : 'bg-transparent'
+          scrolled
+            ? "bg-surface-dark/84 shadow-floating backdrop-blur-xl"
+            : "bg-transparent"
         }`}
       >
         <div className="container-main flex h-(--header-height) items-center justify-between gap-4">
-          <BrandHomeLink className="text-white" logoClassName="h-16 w-[184px] group-hover:-translate-y-0.5 sm:w-[208px]" />
+          <BrandHomeLink
+            className="text-white"
+            logoClassName="h-[76px] w-[218px] group-hover:-translate-y-0.5 sm:w-[248px]"
+          />
 
           <div className="flex items-center gap-3">
             <DesktopNavigation />
@@ -49,5 +54,5 @@ export function Header() {
         triggerRef={menuButtonRef}
       />
     </>
-  )
+  );
 }

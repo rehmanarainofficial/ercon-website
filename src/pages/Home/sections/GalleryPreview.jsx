@@ -1,13 +1,38 @@
 import { ArrowUpRight } from 'lucide-react'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { SafeImage } from '../../../components/ui/SafeImage'
-import { galleryPreviewImages } from '../../../data/gallery'
+import { fetchGallery } from '../../../services/api'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
 
 export function GalleryPreview() {
   const sectionRef = useRef(null)
+  const [imagesList, setImagesList] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    const loadGallery = async () => {
+      try {
+        setLoading(true)
+        const apiImages = await fetchGallery()
+        if (apiImages && active) {
+          setImagesList(apiImages)
+        }
+      } catch (err) {
+        console.error('Error loading gallery in preview:', err)
+      } finally {
+        if (active) setLoading(false)
+      }
+    }
+    loadGallery()
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const displayImages = imagesList.slice(0, 5)
   useScrollReveal(sectionRef, { stagger: 0.05 })
 
   return (
@@ -18,7 +43,17 @@ export function GalleryPreview() {
         </SectionHeading>
 
         <div className="mt-12 grid gap-4 lg:grid-cols-12">
-          {galleryPreviewImages.slice(0, 5).map((item, index) => (
+          {loading ? (
+            [0, 1, 2, 3, 4].map((idx) => (
+              <div
+                key={idx}
+                className={`animate-pulse bg-surface-blue rounded-[var(--radius-card)] ${
+                  idx === 0 ? 'lg:col-span-6 min-h-[300px] lg:row-span-2' : 'lg:col-span-3 min-h-[140px]'
+                } ${idx === 3 ? 'lg:col-span-4' : ''} ${idx === 4 ? 'lg:col-span-5' : ''}`}
+              />
+            ))
+          ) : (
+            displayImages.map((item, index) => (
             <figure
               className={`group relative overflow-hidden rounded-[var(--radius-card)] bg-surface-dark ${
                 index === 0 ? 'lg:col-span-6 lg:row-span-2' : 'lg:col-span-3'
@@ -39,7 +74,7 @@ export function GalleryPreview() {
                 <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-light">{item.category}</p>
               </figcaption>
             </figure>
-          ))}
+          )))}
 
           <Link
             className="group grid min-h-56 place-items-start rounded-[var(--radius-card)] border border-line bg-surface-blue p-6 transition hover:border-brand lg:col-span-4"

@@ -1,5 +1,5 @@
 import heroImage from '../assets/images/generated/switchgear-manufacturing-floor.jpg'
-import trustImage from '../assets/images/generated/switchgear-testing-engineer.jpg'
+import trustImage from '../assets/images/generated/switchgear-testing-engineer.png'
 
 export const clienteleHero = {
   eyebrow: 'Clients and industries',

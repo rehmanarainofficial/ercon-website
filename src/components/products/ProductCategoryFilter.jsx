@@ -1,7 +1,7 @@
-import { allProductsCategory, productCategories } from '../../data/productCategories'
+import { allProductsCategory as localAll, productCategories as localCats } from '../../data/productCategories'
 
-export function ProductCategoryFilter({ activeCategory, onChange }) {
-  const categories = [allProductsCategory, ...productCategories]
+export function ProductCategoryFilter({ activeCategory, categories: propCategories, onChange }) {
+  const categories = propCategories || [localAll, ...localCats]
 
   return (
     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" role="list" aria-label="Product categories">

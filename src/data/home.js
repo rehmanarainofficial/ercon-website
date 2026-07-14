@@ -1,5 +1,5 @@
 import generatedHero from '../assets/images/generated/switchgear-manufacturing-floor.jpg'
-import generatedTesting from '../assets/images/generated/switchgear-testing-engineer.jpg'
+import generatedTesting from '../assets/images/generated/switchgear-testing-engineer.png'
 
 export const media = {
   hero: generatedHero,
@@ -30,11 +30,13 @@ export const homeHero = {
 }
 
 export const homeIntroduction = {
-  label: 'About ERCON',
+  label: 'ABOUT ERCON',
   title:
-    'ERCON Industries brings global switchgear experience into local manufacturing for Pakistan’s industrial and infrastructure market.',
-  description:
-    'Established in 2012 as an associated company of the ERCON Group, ERCON Industries focuses on LV/MV switchgear, power distribution systems, solar energy systems, cable tray solutions, and sheet metal fabrication. Its public positioning emphasizes advanced technology, a skilled technical team, quality, safety, and standards-compliant delivery.',
+    'Our Engineering & Power Solutions: What We Do at ERCON Industries',
+  description1:
+    'At ERCON Industries (Pvt.) Limited, we specialize in delivering integrated power distribution and energy solutions for industrial and infrastructure projects across Pakistan. As part of the ERCON Group with operations in the UAE and KSA since 2002, we bring global expertise to the local market with a strong focus on LV/MV switchgear, solar energy systems, and cable tray & sheet metal fabrication.',
+  description2:
+    'Our manufacturing facility is equipped with advanced technology and driven by a skilled technical team committed to quality, safety, and performance. From powering critical systems to supporting energy transitions, we provide reliable and standards-compliant solutions that help clients build with confidence and scale with efficiency.',
   image: media.introduction,
   imageAlt: 'ERCON electrical engineering and power solutions visual',
   link: {

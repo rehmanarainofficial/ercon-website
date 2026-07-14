@@ -1,5 +1,5 @@
 import generatedHero from '../assets/images/generated/switchgear-manufacturing-floor.jpg'
-import generatedTesting from '../assets/images/generated/switchgear-testing-engineer.jpg'
+import generatedTesting from '../assets/images/generated/switchgear-testing-engineer.png'
 
 export const aboutMedia = {
   hero: generatedHero,

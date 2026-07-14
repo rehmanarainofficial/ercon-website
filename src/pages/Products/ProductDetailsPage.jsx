@@ -1,88 +1,101 @@
-import { useState, useEffect } from 'react'
-import { Home } from 'lucide-react'
-import { useParams } from 'react-router-dom'
-import { ProductGallery } from '../../components/products/ProductGallery'
-import { ProductSpecificationTable } from '../../components/products/ProductSpecificationTable'
-import { Button } from '../../components/ui/Button'
-import { getProductBySlug, getRelatedProducts } from '../../data/products'
-import { fetchProducts } from '../../services/api'
-import { useRouteMeta } from '../../hooks/useRouteMeta'
-import { ProductDetailHero } from './sections/ProductDetailHero'
-import { ProductFeaturesApplications } from './sections/ProductFeaturesApplications'
-import { ProductInquiryCTA } from './sections/ProductInquiryCTA'
-import { ProductOverview } from './sections/ProductOverview'
-import { RelatedProducts } from './sections/RelatedProducts'
-import { LoadingScreen } from '../../components/ui/LoadingScreen'
+import { useState, useEffect } from "react";
+import { Home } from "lucide-react";
+import { useParams } from "react-router-dom";
+import { ProductGallery } from "../../components/products/ProductGallery";
+import { ProductSpecificationTable } from "../../components/products/ProductSpecificationTable";
+import { Button } from "../../components/ui/Button";
+import { getProductBySlug, getRelatedProducts } from "../../data/products";
+import { fetchProducts } from "../../services/api";
+import { useRouteMeta } from "../../hooks/useRouteMeta";
+import { ProductDetailHero } from "./sections/ProductDetailHero";
+import { ProductFeaturesApplications } from "./sections/ProductFeaturesApplications";
+import { ProductInquiryCTA } from "./sections/ProductInquiryCTA";
+import { ProductOverview } from "./sections/ProductOverview";
+import { RelatedProducts } from "./sections/RelatedProducts";
+import { LoadingScreen } from "../../components/ui/LoadingScreen";
 
 function ProductNotFound() {
   useRouteMeta({
-    description: 'The requested ERCON Industries product could not be found.',
-    title: 'Product Not Found | ERCON Industries',
-  })
+    description: "The requested ERCON Industries product could not be found.",
+    title: "Product Not Found | ERCON Industries",
+  });
 
   return (
-    <article className="grid min-h-screen place-items-center bg-surface-dark px-5 text-center text-white" data-page-reveal>
+    <article
+      className="grid min-h-screen place-items-center bg-surface-dark px-5 text-center text-white"
+      data-page-reveal
+    >
       <div className="max-w-2xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">Product not found</p>
-        <h1 className="mt-5 text-compact-display font-bold">The requested product is not available.</h1>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-light">
+          Product not found
+        </p>
+        <h1 className="mt-5 text-compact-display font-bold">
+          The requested product is not available.
+        </h1>
         <p className="mt-6 text-white/68">
-          Browse the product range or return home to continue exploring ERCON Industries.
+          Browse the product range or return home to continue exploring ERCON
+          Industries.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Button to="/products">Back to Products</Button>
-          <Button icon={<Home aria-hidden="true" size={18} />} to="/" variant="dark">
+          <Button
+            icon={<Home aria-hidden="true" size={18} />}
+            to="/"
+            variant="dark"
+          >
             Home
           </Button>
         </div>
       </div>
     </article>
-  )
+  );
 }
 
 export default function ProductDetailsPage() {
-  const { slug } = useParams()
-  const [product, setProduct] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const { slug } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let active = true
+    let active = true;
     const loadProduct = async () => {
       try {
-        setLoading(true)
-        // Try local products first
-        const localProduct = getProductBySlug(slug)
+        setLoading(true);
+        const localProduct = getProductBySlug(slug);
         if (localProduct) {
           if (active) {
-            setProduct(localProduct)
-            setLoading(false)
+            setProduct(localProduct);
+            setLoading(false);
           }
-          return
+          return;
         }
 
-        // Try API products
-        const apiProds = await fetchProducts()
+        const apiProds = await fetchProducts();
         if (apiProds && active) {
           const apiProduct = apiProds.find(
-            (p) => String(p.id) === String(slug) || String(p.slug) === String(slug)
-          )
+            (p) =>
+              String(p.id) === String(slug) || String(p.slug) === String(slug),
+          );
           if (apiProduct) {
-            setProduct(apiProduct)
+            setProduct(apiProduct);
           }
         }
       } catch (err) {
-        console.error('Error fetching product detail:', err)
+        console.error("Error fetching product detail:", err);
       } finally {
-        if (active) setLoading(false)
+        if (active) setLoading(false);
       }
-    }
-    loadProduct()
+    };
+    loadProduct();
     return () => {
-      active = false
-    }
-  }, [slug])
+      active = false;
+    };
+  }, [slug]);
 
   useRouteMeta({
-    canonical: product ? `https://erconind.com/products/${product.slug}` : undefined,
+    canonical: product
+      ? `https://erconind.com/products/${product.slug}`
+      : undefined,
     description: product?.shortDescription,
     ogDescription: product?.shortDescription,
     ogImage: product?.heroImage,
@@ -90,25 +103,25 @@ export default function ProductDetailsPage() {
     title: product ? `${product.name} | ERCON Industries` : undefined,
     schema: product
       ? {
-          '@context': 'https://schema.org',
-          '@type': 'Product',
+          "@context": "https://schema.org",
+          "@type": "Product",
           name: product.name,
           description: product.shortDescription,
           category: product.categoryLabel,
           image: product.heroImage,
         }
       : undefined,
-  })
+  });
 
   if (loading) {
-    return <LoadingScreen />
+    return <LoadingScreen />;
   }
 
   if (!product) {
-    return <ProductNotFound />
+    return <ProductNotFound />;
   }
 
-  const relatedProducts = getRelatedProducts(product, 3)
+  const relatedProducts = getRelatedProducts(product, 3);
 
   return (
     <article className="overflow-hidden bg-surface-soft" data-page-reveal>
@@ -120,5 +133,5 @@ export default function ProductDetailsPage() {
       <RelatedProducts products={relatedProducts} />
       <ProductInquiryCTA product={product} />
     </article>
-  )
+  );
 }

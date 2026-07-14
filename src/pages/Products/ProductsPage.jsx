@@ -3,39 +3,61 @@ import { useSearchParams } from 'react-router-dom'
 import { ProductDiscovery } from './sections/ProductDiscovery'
 import { ProductsEngineeringCTA } from './sections/ProductsEngineeringCTA'
 import { ProductsHero } from './sections/ProductsHero'
-import { productCategories } from '../../data/productCategories'
-import { products as localProducts } from '../../data/products'
-import { fetchProducts } from '../../services/api'
+import { fetchProducts, fetchCategories } from '../../services/api'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 import { filterProducts } from '../../utils/productFilters'
-
-const validCategoryIds = new Set(['all', ...productCategories.map((category) => category.id)])
 
 export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams()
   const requestedCategory = searchParams.get('category') || 'all'
-  const activeCategory = validCategoryIds.has(requestedCategory) ? requestedCategory : 'all'
   const search = searchParams.get('search') || ''
 
-  const [productsList, setProductsList] = useState(localProducts)
+  const [productsList, setProductsList] = useState([])
+  const [categoriesList, setCategoriesList] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     let active = true
-    const loadProducts = async () => {
+    const loadData = async () => {
       try {
+        setLoading(true)
         const apiProds = await fetchProducts()
-        if (apiProds && apiProds.length > 0 && active) {
+        if (apiProds && active) {
           setProductsList(apiProds)
+          const apiCats = await fetchCategories(apiProds)
+          if (apiCats && active) {
+            setCategoriesList(apiCats)
+          }
         }
       } catch (err) {
         console.error('Error loading products api:', err)
+      } finally {
+        if (active) setLoading(false)
       }
     }
-    loadProducts()
+    loadData()
     return () => {
       active = false
     }
   }, [])
+
+  const categoriesWithAll = useMemo(() => {
+    if (categoriesList.length === 0) return []
+    const allCategory = {
+      id: 'all',
+      slug: 'all',
+      label: 'All Products',
+      description: 'Browse the full ERCON product range.',
+      productCount: productsList.length,
+    }
+    return [allCategory, ...categoriesList]
+  }, [categoriesList, productsList])
+
+  const activeCategory = useMemo(() => {
+    if (requestedCategory === 'all') return 'all'
+    const exists = categoriesList.some((cat) => cat.id === requestedCategory)
+    return exists ? requestedCategory : 'all'
+  }, [requestedCategory, categoriesList])
 
   useRouteMeta({
     canonical: 'https://erconind.com/products',
@@ -93,6 +115,8 @@ export default function ProductsPage() {
         onClear={clearFilters}
         onSearchChange={(value) => updateParams({ search: value.trim() })}
         search={search}
+        categories={categoriesWithAll}
+        loading={loading}
       />
       <ProductsEngineeringCTA />
     </article>

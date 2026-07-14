@@ -1,15 +1,14 @@
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
-import { X, ChevronLeft, ChevronRight, Image as ImageIcon, LayoutGrid } from 'lucide-react'
-import { galleryPreviewImages } from '../../../data/gallery'
+import { useState, useEffect, useRef, useCallback } from 'react'
+import { X, ChevronLeft, ChevronRight, Maximize2 } from 'lucide-react'
 import { fetchGallery } from '../../../services/api'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { SafeImage } from '../../../components/ui/SafeImage'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
 
 export function GalleryGrid() {
-  const [activeCategory, setActiveCategory] = useState('All')
   const [lightboxIndex, setLightboxIndex] = useState(null)
-  const [imagesList, setImagesList] = useState(galleryPreviewImages)
+  const [imagesList, setImagesList] = useState([])
+  const [loading, setLoading] = useState(true)
   
   const sectionRef = useRef(null)
   useScrollReveal(sectionRef, { stagger: 0.05 })
@@ -18,12 +17,15 @@ export function GalleryGrid() {
     let active = true
     const loadGallery = async () => {
       try {
+        setLoading(true)
         const apiImages = await fetchGallery()
         if (apiImages && apiImages.length > 0 && active) {
           setImagesList(apiImages)
         }
       } catch (err) {
         console.error('Error loading gallery api:', err)
+      } finally {
+        if (active) setLoading(false)
       }
     }
     loadGallery()
@@ -32,28 +34,16 @@ export function GalleryGrid() {
     }
   }, [])
 
-  // Extract unique categories (first-letter capitalized)
-  const categories = useMemo(() => {
-    const cats = new Set(imagesList.map((img) => img.category))
-    return ['All', ...Array.from(cats)]
-  }, [imagesList])
-
-  // Filtered list of images based on active category
-  const filteredImages = useMemo(() => {
-    if (activeCategory === 'All') return imagesList
-    return imagesList.filter((img) => img.category === activeCategory)
-  }, [activeCategory, imagesList])
-
   // Handle Lightbox Next / Prev / Close actions
   const showPrev = useCallback((e) => {
     e?.stopPropagation()
-    setLightboxIndex((prev) => (prev === 0 ? filteredImages.length - 1 : prev - 1))
-  }, [filteredImages.length])
+    setLightboxIndex((prev) => (prev === 0 ? imagesList.length - 1 : prev - 1))
+  }, [imagesList.length])
 
   const showNext = useCallback((e) => {
     e?.stopPropagation()
-    setLightboxIndex((prev) => (prev === filteredImages.length - 1 ? 0 : prev + 1))
-  }, [filteredImages.length])
+    setLightboxIndex((prev) => (prev === imagesList.length - 1 ? 0 : prev + 1))
+  }, [imagesList.length])
 
   const closeLightbox = useCallback(() => {
     setLightboxIndex(null)
@@ -94,68 +84,69 @@ export function GalleryGrid() {
           </SectionHeading>
         </div>
 
-        {/* Category Filters */}
-        <div className="mb-10 flex flex-wrap gap-2 border-b border-line pb-6" data-reveal>
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => {
-                setActiveCategory(category)
-                setLightboxIndex(null) // Reset lightbox context when filter changes
-              }}
-              className={`flex items-center gap-1.5 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${
-                activeCategory === category
-                  ? 'bg-brand text-white shadow-md'
-                  : 'bg-surface-soft text-ink hover:bg-surface-blue hover:text-brand'
-              }`}
-            >
-              {category === 'All' ? <LayoutGrid size={16} /> : <ImageIcon size={16} />}
-              <span>{category}</span>
-            </button>
-          ))}
-        </div>
-
         {/* Gallery Image Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredImages.map((item, index) => (
-            <figure
-              key={item.id}
-              className="group relative overflow-hidden rounded-[var(--radius-card)] bg-surface-dark border border-line cursor-pointer aspect-[4/3] shadow-sm hover:shadow-card transition-all duration-300"
-              onClick={() => setLightboxIndex(index)}
-              data-reveal
-            >
-              <SafeImage
-                src={item.image}
-                alt={item.alt}
-                className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-[1.03]"
-                width="720"
-                height="540"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/80 via-surface-dark/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-5 text-white">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-light">
-                  {item.category}
-                </span>
-                <p className="mt-2 text-sm leading-relaxed text-white/90">
-                  {item.alt}
-                </p>
-              </div>
-              <figcaption className="absolute top-4 left-4 bg-white/90 text-ink backdrop-blur-md px-3 py-1 text-xs font-semibold rounded-full border border-line shadow-sm">
-                {item.category}
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-
-        {/* Empty State */}
-        {filteredImages.length === 0 && (
-          <div className="py-20 text-center text-muted">
-            <p>No media files found in this category.</p>
+        {loading ? (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3, 4, 5, 6].map((idx) => (
+              <div key={idx} className="animate-pulse bg-surface-blue rounded-[var(--radius-card)] aspect-[4/3]" />
+            ))}
           </div>
+        ) : (
+          <>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {imagesList.map((item, index) => {
+                const isWider = index % 5 === 0 // 1st, 6th, etc. items span 2 columns on large viewports
+                return (
+                  <figure
+                    key={item.id}
+                    className={`group relative overflow-hidden rounded-[20px] bg-surface-dark border border-line cursor-pointer shadow-sm hover:shadow-card-hover transition-all duration-300 ${
+                      isWider ? 'lg:col-span-2 aspect-[16/10]' : 'aspect-[4/3]'
+                    }`}
+                    onClick={() => setLightboxIndex(index)}
+                    data-reveal
+                  >
+                    <SafeImage
+                      src={item.image}
+                      alt={item.alt || 'ERCON media image'}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                      width={isWider ? "1080" : "720"}
+                      height={isWider ? "675" : "540"}
+                    />
+                    
+                    {/* Modern gradient overlay on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-surface-dark/95 via-surface-dark/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6 text-white">
+                      <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">
+                        ERCON Media
+                      </span>
+                      <h4 className="mt-2 text-base md:text-lg font-bold leading-snug">
+                        {item.alt || 'ERCON manufacturing facilities and project execution'}
+                      </h4>
+                      <p className="mt-1.5 text-xs text-white/60">
+                        Click to expand detail view
+                      </p>
+                    </div>
+
+                    {/* Expand icon badge */}
+                    <div className="absolute top-4 right-4 h-9 w-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Maximize2 size={16} />
+                    </div>
+                  </figure>
+                )
+              })}
+            </div>
+
+            {/* Empty State */}
+            {imagesList.length === 0 && (
+              <div className="py-20 text-center text-muted">
+                <p>No media files found in the database.</p>
+              </div>
+            )}
+          </>
         )}
       </div>
 
       {/* Lightbox Dialog Modal */}
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && imagesList[lightboxIndex] && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-surface-dark/95 p-4 backdrop-blur-md transition-opacity duration-300"
           onClick={closeLightbox}
@@ -185,8 +176,8 @@ export function GalleryGrid() {
           >
             <div className="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-floating">
               <SafeImage
-                src={filteredImages[lightboxIndex].image}
-                alt={filteredImages[lightboxIndex].alt}
+                src={imagesList[lightboxIndex].image}
+                alt={imagesList[lightboxIndex].alt || 'ERCON media image'}
                 className="max-h-[70vh] w-auto max-w-full object-contain mx-auto"
                 width="1200"
                 height="900"
@@ -196,13 +187,13 @@ export function GalleryGrid() {
             {/* Image Details Caption */}
             <div className="mt-4 text-center max-w-xl text-white">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-brand-light">
-                {filteredImages[lightboxIndex].category}
+                ERCON Media
               </span>
               <p className="mt-2 text-sm text-white/80 leading-relaxed">
-                {filteredImages[lightboxIndex].alt}
+                {imagesList[lightboxIndex].alt || 'ERCON manufacturing facilities and project execution'}
               </p>
               <div className="mt-2 text-xs text-white/50 font-medium">
-                {lightboxIndex + 1} of {filteredImages.length}
+                {lightboxIndex + 1} of {imagesList.length}
               </div>
             </div>
           </div>
