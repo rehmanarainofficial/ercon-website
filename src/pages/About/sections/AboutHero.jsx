@@ -37,7 +37,7 @@ export function AboutHero() {
   return (
     <section className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white sm:pt-10" ref={sectionRef}>
       <div className="absolute inset-0 -z-10 technical-grid opacity-55" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(45_163_119/0.34),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(16_185_129/0.24),transparent_28rem),linear-gradient(150deg,#051610_0%,#092218_52%,#102f22_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(76_175_80/0.24),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(22_58_95/0.34),transparent_28rem),linear-gradient(150deg,#163A5F_0%,#112C48_52%,#0F6B4A_100%)]" />
 
       <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
         <div className="max-w-5xl">

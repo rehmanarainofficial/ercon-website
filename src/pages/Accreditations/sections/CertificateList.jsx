@@ -28,7 +28,7 @@ export function CertificateList() {
   }, [activeCert])
 
   return (
-    <section className="bg-white section-space" ref={sectionRef}>
+    <section className="bg-surface-soft section-space" ref={sectionRef}>
       <div className="container-main">
         <SectionHeading
           eyebrow="Verification"

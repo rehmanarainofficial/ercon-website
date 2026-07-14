@@ -5,6 +5,7 @@ import { cn } from '../../utils/cn'
 const variants = {
   primary: 'button-primary',
   secondary: 'button-secondary',
+  outline: 'button-outline',
   dark: 'button-on-dark',
 }
 

@@ -73,10 +73,10 @@ export function HomeHero() {
           width="1800"
         />
       </div>
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(5_22_16/0.95)_0%,rgb(5_22_16/0.72)_42%,rgb(5_22_16/0.2)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgb(22_58_95/0.95)_0%,rgb(22_58_95/0.78)_42%,rgb(15_107_74/0.25)_100%)]" />
       <div className="absolute inset-0 -z-10 technical-grid opacity-35" />
-      <div className="absolute left-[8%] top-[18%] -z-10 h-72 w-72 rounded-full bg-brand/28 blur-3xl" />
-      <div className="absolute bottom-[8%] right-[10%] -z-10 h-80 w-80 rounded-full bg-accent/18 blur-3xl" />
+      <div className="absolute left-[8%] top-[18%] -z-10 h-72 w-72 rounded-full bg-brand/20 blur-3xl" />
+      <div className="absolute bottom-[8%] right-[10%] -z-10 h-80 w-80 rounded-full bg-accent/12 blur-3xl" />
 
       <div className="container-main grid gap-12 pb-12 pt-34 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-1 lg:items-end lg:pb-16">
         <div className="max-w-6xl lg:pb-10">

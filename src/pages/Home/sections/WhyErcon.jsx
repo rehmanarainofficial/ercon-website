@@ -11,7 +11,7 @@ export function WhyErcon() {
   useScrollReveal(sectionRef, { stagger: 0.07 })
 
   return (
-    <section className="bg-white section-space border-t border-line" ref={sectionRef}>
+    <section className="bg-surface-blue section-space border-t border-line" ref={sectionRef}>
       <div className="container-main">
         {/* Full-width Section Heading */}
         <SectionHeading

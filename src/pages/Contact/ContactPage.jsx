@@ -72,7 +72,7 @@ export default function ContactPage() {
   )
 
   return (
-    <article className="overflow-hidden bg-surface-soft" data-page-reveal>
+    <article className="overflow-hidden bg-white" data-page-reveal>
       <PageHero
         eyebrow="Connect with ERCON"
         title="Contact Our Sales & Engineering Offices"

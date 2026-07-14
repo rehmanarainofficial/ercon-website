@@ -25,8 +25,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-surface-dark text-white border-t border-white/10">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgb(15_107_74/0.2),transparent_35rem),radial-gradient(circle_at_92%_18%,rgb(15_107_74/0.08),transparent_25rem)] pointer-events-none" />
+    <footer className="relative overflow-hidden bg-surface-dark-2 text-white border-t border-white/10">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_20%,rgb(22_58_95/0.24),transparent_35rem),radial-gradient(circle_at_92%_18%,rgb(15_107_74/0.1),transparent_25rem)] pointer-events-none" />
 
       <div className="container-main relative pt-16 pb-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] border-b border-white/10 pb-12">
@@ -42,15 +42,15 @@ export function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
+            <h3 className="text-base sm:text-lg font-extrabold text-white tracking-wide mb-5">
               Quick Links
             </h3>
-            <ul className="space-y-2 text-base">
+            <ul className="space-y-2 text-[15px] sm:text-base">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <Link
                     to={link.path}
-                    className="text-white/60 hover:text-white transition-colors duration-200 block py-0.5"
+                    className="text-white/80 hover:text-white transition-colors duration-200 block py-0.5"
                   >
                     {link.label}
                   </Link>
@@ -61,15 +61,15 @@ export function Footer() {
 
           {/* Column 3: Products */}
           <div>
-            <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
+            <h3 className="text-base sm:text-lg font-extrabold text-white tracking-wide mb-5">
               Divisions
             </h3>
-            <ul className="space-y-2 text-base">
+            <ul className="space-y-2 text-[15px] sm:text-base">
               {productsList.map((prod, i) => (
                 <li key={i}>
                   <Link
                     to={prod.path}
-                    className="text-white/60 hover:text-white transition-colors duration-200 block py-0.5"
+                    className="text-white/80 hover:text-white transition-colors duration-200 block py-0.5"
                   >
                     {prod.label}
                   </Link>
@@ -80,18 +80,18 @@ export function Footer() {
 
           {/* Column 4: Follow Us & Contact Details */}
           <div>
-            <h3 className="text-sm font-bold text-brand-light tracking-wider mb-5">
+            <h3 className="text-base sm:text-lg font-extrabold text-white tracking-wide mb-5">
               Follow us
             </h3>
-            <ul className="space-y-3.5 text-base mb-6">
+            <ul className="space-y-3.5 text-[15px] sm:text-base mb-6">
               <li>
                 <a
                   href="https://www.facebook.com/people/ERCON-Industries-PVT-Limited/61591925099821/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-white/60 hover:text-white transition-all duration-200 group"
+                  className="inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-200 group"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/60 group-hover:bg-[#1877F2] group-hover:text-white group-hover:border-transparent transition-all">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white/80 group-hover:bg-[#1877F2] group-hover:text-white group-hover:border-transparent transition-all">
                     <svg
                       className="h-4.5 w-4.5 fill-current"
                       viewBox="0 0 24 24"
@@ -108,9 +108,9 @@ export function Footer() {
                   href="https://www.instagram.com/ercon.ind/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-white/60 hover:text-white transition-all duration-200 group"
+                  className="inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-200 group"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/60 group-hover:bg-[#E1306C] group-hover:text-white group-hover:border-transparent transition-all">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white/80 group-hover:bg-[#E1306C] group-hover:text-white group-hover:border-transparent transition-all">
                     <svg
                       className="h-4 w-4 fill-current"
                       viewBox="0 0 24 24"
@@ -127,9 +127,9 @@ export function Footer() {
                   href="https://www.linkedin.com/company/ercon-industries-pvt-limited"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 text-white/60 hover:text-white transition-all duration-200 group"
+                  className="inline-flex items-center gap-3 text-white/80 hover:text-white transition-all duration-200 group"
                 >
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white/60 group-hover:bg-[#0A66C2] group-hover:text-white group-hover:border-transparent transition-all">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 border border-white/20 text-white/80 group-hover:bg-[#0A66C2] group-hover:text-white group-hover:border-transparent transition-all">
                     <svg
                       className="h-3.5 w-3.5 fill-current"
                       viewBox="0 0 24 24"
@@ -143,28 +143,28 @@ export function Footer() {
               </li>
             </ul>
 
-            <div className="text-sm text-white/60 space-y-2.5 max-w-sm border-t border-white/10 pt-5">
+            <div className="text-[14px] sm:text-[15px] text-white/85 space-y-2.5 max-w-sm border-t border-white/10 pt-5">
               <p className="flex items-start gap-2">
-                <span className="font-bold text-brand-light">Address:</span>
-                <span>
+                <span className="font-extrabold text-white">Address:</span>
+                <span className="text-white/80">
                   6.2 KM from lillyani Toll plaza Near Pakki Haveli Mustafabad
                   Bayron Kasur
                 </span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="font-bold text-brand-light">UAN:</span>
+                <span className="font-extrabold text-white">UAN:</span>
                 <a
                   href="tel:+923111444590"
-                  className="hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors"
                 >
                   +92 3111 444 590
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <span className="font-bold text-brand-light">Email:</span>
+                <span className="font-extrabold text-white">Email:</span>
                 <a
                   href="mailto:info@erconind.com"
-                  className="hover:text-white transition-colors"
+                  className="text-white/80 hover:text-white transition-colors"
                 >
                   info@erconind.com
                 </a>
