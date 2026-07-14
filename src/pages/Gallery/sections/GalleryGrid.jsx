@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { X, ChevronLeft, ChevronRight, Image as ImageIcon, LayoutGrid } from 'lucide-react'
 import { galleryPreviewImages } from '../../../data/gallery'
+import { fetchGallery } from '../../../services/api'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { SafeImage } from '../../../components/ui/SafeImage'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
@@ -8,21 +9,40 @@ import { useScrollReveal } from '../../../hooks/useScrollReveal'
 export function GalleryGrid() {
   const [activeCategory, setActiveCategory] = useState('All')
   const [lightboxIndex, setLightboxIndex] = useState(null)
+  const [imagesList, setImagesList] = useState(galleryPreviewImages)
   
   const sectionRef = useRef(null)
   useScrollReveal(sectionRef, { stagger: 0.05 })
 
+  useEffect(() => {
+    let active = true
+    const loadGallery = async () => {
+      try {
+        const apiImages = await fetchGallery()
+        if (apiImages && apiImages.length > 0 && active) {
+          setImagesList(apiImages)
+        }
+      } catch (err) {
+        console.error('Error loading gallery api:', err)
+      }
+    }
+    loadGallery()
+    return () => {
+      active = false
+    }
+  }, [])
+
   // Extract unique categories (first-letter capitalized)
   const categories = useMemo(() => {
-    const cats = new Set(galleryPreviewImages.map((img) => img.category))
+    const cats = new Set(imagesList.map((img) => img.category))
     return ['All', ...Array.from(cats)]
-  }, [])
+  }, [imagesList])
 
   // Filtered list of images based on active category
   const filteredImages = useMemo(() => {
-    if (activeCategory === 'All') return galleryPreviewImages
-    return galleryPreviewImages.filter((img) => img.category === activeCategory)
-  }, [activeCategory])
+    if (activeCategory === 'All') return imagesList
+    return imagesList.filter((img) => img.category === activeCategory)
+  }, [activeCategory, imagesList])
 
   // Handle Lightbox Next / Prev / Close actions
   const showPrev = useCallback((e) => {

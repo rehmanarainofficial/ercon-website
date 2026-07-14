@@ -1,15 +1,36 @@
+import { useState, useEffect, useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { SectionHeading } from '../../../components/ui/SectionHeading'
 import { SafeImage } from '../../../components/ui/SafeImage'
 import { TextLink } from '../../../components/ui/TextLink'
 import { productFamilies } from '../../../data/products'
+import { fetchProducts } from '../../../services/api'
 import { useScrollReveal } from '../../../hooks/useScrollReveal'
-import { useRef } from 'react'
 
 export function FeaturedProducts() {
   const sectionRef = useRef(null)
-  const featured = productFamilies.filter((product) => product.featured).slice(0, 6)
+  const [productsList, setProductsList] = useState(productFamilies)
+  
+  useEffect(() => {
+    let active = true
+    const loadProducts = async () => {
+      try {
+        const apiProds = await fetchProducts()
+        if (apiProds && apiProds.length > 0 && active) {
+          setProductsList(apiProds)
+        }
+      } catch (err) {
+        console.error('Error loading featured products:', err)
+      }
+    }
+    loadProducts()
+    return () => {
+      active = false
+    }
+  }, [])
+
+  const featured = productsList.filter((product) => product.featured).slice(0, 6)
   useScrollReveal(sectionRef, { stagger: 0.06 })
 
   return (

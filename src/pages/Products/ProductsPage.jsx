@@ -1,10 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ProductDiscovery } from './sections/ProductDiscovery'
 import { ProductsEngineeringCTA } from './sections/ProductsEngineeringCTA'
 import { ProductsHero } from './sections/ProductsHero'
 import { productCategories } from '../../data/productCategories'
-import { products } from '../../data/products'
+import { products as localProducts } from '../../data/products'
+import { fetchProducts } from '../../services/api'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 import { filterProducts } from '../../utils/productFilters'
 
@@ -15,6 +16,26 @@ export default function ProductsPage() {
   const requestedCategory = searchParams.get('category') || 'all'
   const activeCategory = validCategoryIds.has(requestedCategory) ? requestedCategory : 'all'
   const search = searchParams.get('search') || ''
+
+  const [productsList, setProductsList] = useState(localProducts)
+
+  useEffect(() => {
+    let active = true
+    const loadProducts = async () => {
+      try {
+        const apiProds = await fetchProducts()
+        if (apiProds && apiProds.length > 0 && active) {
+          setProductsList(apiProds)
+        }
+      } catch (err) {
+        console.error('Error loading products api:', err)
+      }
+    }
+    loadProducts()
+    return () => {
+      active = false
+    }
+  }, [])
 
   useRouteMeta({
     canonical: 'https://erconind.com/products',
@@ -27,7 +48,7 @@ export default function ProductsPage() {
     ogDescription:
       'Browse ERCON Industries product families including MV switchgear, LV switchgear, cable management, solar energy systems, and sheet metal fabrication.',
     ogTitle: 'Products | ERCON Industries',
-    ogImage: products[0]?.heroImage,
+    ogImage: productsList[0]?.heroImage,
     title: 'Products | ERCON Industries',
     schema: {
       '@context': 'https://schema.org',
@@ -38,8 +59,8 @@ export default function ProductsPage() {
   })
 
   const filteredProducts = useMemo(
-    () => filterProducts(products, { category: activeCategory, search }),
-    [activeCategory, search],
+    () => filterProducts(productsList, { category: activeCategory, search }),
+    [productsList, activeCategory, search],
   )
 
   const updateParams = (next) => {

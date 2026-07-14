@@ -1,15 +1,18 @@
+import { useState, useEffect } from 'react'
 import { Home } from 'lucide-react'
 import { useParams } from 'react-router-dom'
 import { ProductGallery } from '../../components/products/ProductGallery'
 import { ProductSpecificationTable } from '../../components/products/ProductSpecificationTable'
 import { Button } from '../../components/ui/Button'
 import { getProductBySlug, getRelatedProducts } from '../../data/products'
+import { fetchProducts } from '../../services/api'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
 import { ProductDetailHero } from './sections/ProductDetailHero'
 import { ProductFeaturesApplications } from './sections/ProductFeaturesApplications'
 import { ProductInquiryCTA } from './sections/ProductInquiryCTA'
 import { ProductOverview } from './sections/ProductOverview'
 import { RelatedProducts } from './sections/RelatedProducts'
+import { LoadingScreen } from '../../components/ui/LoadingScreen'
 
 function ProductNotFound() {
   useRouteMeta({
@@ -38,7 +41,45 @@ function ProductNotFound() {
 
 export default function ProductDetailsPage() {
   const { slug } = useParams()
-  const product = getProductBySlug(slug)
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    let active = true
+    const loadProduct = async () => {
+      try {
+        setLoading(true)
+        // Try local products first
+        const localProduct = getProductBySlug(slug)
+        if (localProduct) {
+          if (active) {
+            setProduct(localProduct)
+            setLoading(false)
+          }
+          return
+        }
+
+        // Try API products
+        const apiProds = await fetchProducts()
+        if (apiProds && active) {
+          const apiProduct = apiProds.find(
+            (p) => String(p.id) === String(slug) || String(p.slug) === String(slug)
+          )
+          if (apiProduct) {
+            setProduct(apiProduct)
+          }
+        }
+      } catch (err) {
+        console.error('Error fetching product detail:', err)
+      } finally {
+        if (active) setLoading(false)
+      }
+    }
+    loadProduct()
+    return () => {
+      active = false
+    }
+  }, [slug])
 
   useRouteMeta({
     canonical: product ? `https://erconind.com/products/${product.slug}` : undefined,
@@ -58,6 +99,10 @@ export default function ProductDetailsPage() {
         }
       : undefined,
   })
+
+  if (loading) {
+    return <LoadingScreen />
+  }
 
   if (!product) {
     return <ProductNotFound />

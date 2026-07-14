@@ -8,17 +8,17 @@ export function DesktopNavigation() {
   const mainLinks = [
     { label: 'Home', path: '/' },
     { label: 'About Us', path: '/about-us' },
-    { label: 'Accreditations', path: '/accreditations' },
+    { label: 'Divisions', path: '/products' },
   ]
 
   const exploreLinks = [
-    { label: 'Products', path: '/products' },
+    { label: 'Accreditations', path: '/accreditations' },
     { label: 'Clientele', path: '/clientele' },
     { label: 'Gallery', path: '/gallery' },
     { label: 'Career', path: '/career' }
   ]
 
-  const explorePaths = ['/products', '/clientele', '/gallery', '/career']
+  const explorePaths = ['/accreditations', '/clientele', '/gallery', '/career']
   const isExploreActive = explorePaths.some(path => location.pathname.startsWith(path))
 
   const dots = (

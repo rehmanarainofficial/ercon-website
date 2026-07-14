@@ -1,7 +1,7 @@
 export const mainNavigation = [
   { label: 'Home', path: '/' },
   { label: 'About Us', path: '/about-us' },
-  { label: 'Products', path: '/products' },
+  { label: 'Divisions', path: '/products' },
   { label: 'Clientele', path: '/clientele' },
   { label: 'Accreditations', path: '/accreditations' },
   { label: 'Gallery', path: '/gallery' },
