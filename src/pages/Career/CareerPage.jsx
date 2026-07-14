@@ -4,6 +4,7 @@ import { PageHero } from '../../components/ui/PageHero'
 import { OpenPositions } from './sections/OpenPositions'
 import { ApplicationForm } from './sections/ApplicationForm'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
+import careerBg from '../../assets/images/generated/career.png'
 
 export default function CareerPage() {
   const [selectedPosition, setSelectedPosition] = useState('')
@@ -61,6 +62,7 @@ export default function CareerPage() {
         infoCard={heroCard}
         ctaTo="#open-positions"
         ctaLabel="View Open Roles"
+        bgImage={careerBg}
       />
       <OpenPositions onSelectPosition={(title) => setSelectedPosition(title)} />
       <ApplicationForm

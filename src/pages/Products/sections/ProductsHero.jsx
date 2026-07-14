@@ -4,6 +4,7 @@ import { useRef } from "react";
 
 import { useReducedMotion } from "../../../hooks/useReducedMotion";
 import { ScrollTrigger, gsap } from "../../../utils/gsap";
+import productBg from "../../../assets/images/generated/product.png";
 
 export function ProductsHero() {
   const sectionRef = useRef(null);
@@ -37,8 +38,15 @@ export function ProductsHero() {
       className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white sm:pt-10"
       ref={sectionRef}
     >
+      <div className="absolute inset-0 -z-10">
+        <img
+          alt="ERCON Products Hero Background"
+          className="h-full w-full object-cover opacity-60 saturate-110"
+          src={productBg}
+        />
+      </div>
       <div className="absolute inset-0 -z-10 technical-grid opacity-55" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(76_175_80/0.24),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(22_58_95/0.34),transparent_28rem),linear-gradient(150deg,#163A5F_0%,#112C48_52%,#0F6B4A_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(76_175_80/0.24),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(22_58_95/0.34),transparent_28rem),linear-gradient(150deg,rgb(22_58_95/0.95)_0%,rgb(22_58_95/0.78)_42%,rgb(15_107_74/0.25)_100%)]" />
       <div className="container-main grid min-h-[76svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
         <div>
           <p

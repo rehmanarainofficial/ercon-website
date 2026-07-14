@@ -29,24 +29,40 @@ export function ApplicationForm({ selectedPosition, onResetPosition }) {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate submission API call
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setShowSuccess(true)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        position: '',
-        resumeLink: '',
-        coverLetter: '',
+    try {
+      const response = await fetch('https://formspree.io/f/xpzgeeag', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-      if (onResetPosition) onResetPosition()
-    }, 1500)
+
+      if (response.ok) {
+        setShowSuccess(true)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          position: '',
+          resumeLink: '',
+          coverLetter: '',
+        })
+        if (onResetPosition) onResetPosition()
+      } else {
+        alert('Something went wrong. Please try again.')
+      }
+    } catch (err) {
+      console.error('Job application submission error:', err)
+      alert('Failed to submit application. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -149,7 +165,7 @@ export function ApplicationForm({ selectedPosition, onResetPosition }) {
             {/* Resume Link */}
             <div className="sm:col-span-2">
               <label htmlFor="resumeLink" className="block text-xs font-bold uppercase tracking-wider text-ink mb-2">
-                Resume Link <span className="text-brand">*</span>
+                Resume Link (Google Drive / Dropbox) <span className="text-brand">*</span>
               </label>
               <input
                 type="url"

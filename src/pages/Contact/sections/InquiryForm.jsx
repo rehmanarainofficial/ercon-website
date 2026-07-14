@@ -22,23 +22,48 @@ export function InquiryForm() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate API call submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setShowSuccess(true)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        inquiryType: '',
-        message: '',
+    console.log('[ERCON Contact] Submitting form data:', formData)
+
+    try {
+      const response = await fetch('https://formspree.io/f/xpzgeeag', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-    }, 1500)
+
+      const responseData = await response.json().catch(() => null)
+
+      console.log('[ERCON Contact] Formspree response status:', response.status)
+      console.log('[ERCON Contact] Formspree response body:', responseData)
+
+      if (response.ok) {
+        console.log('[ERCON Contact] Submission SUCCESS ✅')
+        setShowSuccess(true)
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          inquiryType: '',
+          message: '',
+        })
+      } else {
+        console.error('[ERCON Contact] Submission FAILED ❌ Status:', response.status, responseData)
+        alert(`Submission failed (${response.status}): ${responseData?.error || 'Please try again.'}`)
+      }
+    } catch (err) {
+      console.error('[ERCON Contact] Network error:', err)
+      alert('Failed to send message. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
