@@ -23,12 +23,13 @@ export function CompanyIntroduction() {
             <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight">
               {homeIntroduction.title}
             </h3>
-            <p className="mt-5 text-md leading-relaxed text-muted text-justify">
-              {homeIntroduction.description1}
-            </p>
-            <p className="mt-4 text-md leading-relaxed text-muted text-justify">
-              {homeIntroduction.description2}
-            </p>
+            <div className="mt-5 grid gap-4">
+              {homeIntroduction.paragraphs.map((paragraph) => (
+                <p className="text-md leading-relaxed text-muted" key={paragraph}>
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
             <div className="mt-8">
               <Link to="/about-us" className="button-base button-primary inline-flex items-center gap-2">

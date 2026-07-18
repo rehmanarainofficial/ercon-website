@@ -38,11 +38,34 @@ export function Footer() {
           {/* Column 1: Brand Info */}
           <div>
             <BrandHomeLink logoClassName="h-23 w-[250px]" />
-            <p className="mt-5 max-w-sm text-[13px] leading-relaxed text-white/60 text-justify">
-              Delivering reliable electrical power distribution and precision
-              manufacturing solutions with quality, innovation, and engineering
-              excellence.
-            </p>
+            <div className="relative mt-5 aspect-[1.75] max-w-[270px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgb(255_255_255/0.08),rgb(255_255_255/0.025))]">
+              <div className="absolute inset-0 technical-grid opacity-15" />
+              <svg
+                aria-hidden="true"
+                className="absolute inset-0 h-full w-full"
+                preserveAspectRatio="none"
+                viewBox="0 0 800 360"
+              >
+                <path d="M106 76 L197 58 L296 94 L281 162 L177 176 L91 132 Z" fill="rgb(255 255 255 / 0.08)" />
+                <path d="M336 82 L496 58 L628 118 L589 218 L421 215 L310 153 Z" fill="rgb(255 255 255 / 0.1)" />
+                <path d="M515 202 L654 185 L738 236 L696 312 L552 295 Z" fill="rgb(255 255 255 / 0.075)" />
+                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(255 255 255 / 0.16)" strokeLinecap="round" strokeWidth="10" />
+                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(76 175 80 / 0.75)" strokeDasharray="8 10" strokeLinecap="round" strokeWidth="3" />
+              </svg>
+
+              {globalFootprints.map((footprint) => (
+                <div
+                  className="absolute"
+                  key={footprint.label}
+                  style={{ left: footprint.x, top: footprint.y }}
+                >
+                  <span className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20" />
+                  <span className="relative grid h-3.5 w-3.5 place-items-center rounded-full bg-accent shadow-[0_0_0_5px_rgb(76_175_80/0.16)]">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Column 2: Quick Links */}
@@ -174,80 +197,6 @@ export function Footer() {
                   info@erconind.com
                 </a>
               </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid gap-8 border-b border-white/10 py-10 xl:grid-cols-[0.7fr_1.3fr] xl:items-center">
-          <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/55">
-              Global Footprints
-            </p>
-            <h3 className="mt-3 text-2xl font-extrabold leading-tight text-white sm:text-3xl">
-              Local manufacturing with regional group presence.
-            </h3>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-white/66">
-              ERCON Industries operates from Pakistan with ERCON Group footprint context across UAE and KSA, supporting industrial and infrastructure clients through engineering-led manufacturing capability.
-            </p>
-            <div className="mt-5 flex flex-wrap gap-2">
-              {globalFootprints.map((footprint) => (
-                <span className="rounded-full border border-white/12 bg-white/10 px-3 py-1 text-xs font-semibold text-white/78" key={footprint.label}>
-                  {footprint.label}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid gap-4 lg:grid-cols-[1fr_260px]">
-            <div className="relative min-h-[300px] overflow-hidden rounded-[var(--radius-card)] border border-white/10 bg-[linear-gradient(135deg,rgb(255_255_255/0.08),rgb(255_255_255/0.025))]">
-              <div className="absolute inset-0 technical-grid opacity-20" />
-              <svg
-                aria-hidden="true"
-                className="absolute inset-0 h-full w-full"
-                preserveAspectRatio="none"
-                viewBox="0 0 800 360"
-              >
-                <path d="M106 76 L197 58 L296 94 L281 162 L177 176 L91 132 Z" fill="rgb(255 255 255 / 0.08)" />
-                <path d="M336 82 L496 58 L628 118 L589 218 L421 215 L310 153 Z" fill="rgb(255 255 255 / 0.1)" />
-                <path d="M515 202 L654 185 L738 236 L696 312 L552 295 Z" fill="rgb(255 255 255 / 0.075)" />
-                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(255 255 255 / 0.16)" strokeLinecap="round" strokeWidth="10" />
-                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(76 175 80 / 0.75)" strokeDasharray="8 10" strokeLinecap="round" strokeWidth="3" />
-              </svg>
-
-              {globalFootprints.map((footprint) => (
-                <div
-                  className="absolute"
-                  key={footprint.label}
-                  style={{ left: footprint.x, top: footprint.y }}
-                >
-                  <span className="absolute left-1/2 top-1/2 h-10 w-10 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20" />
-                  <span className="relative grid h-5 w-5 place-items-center rounded-full bg-accent shadow-[0_0_0_7px_rgb(76_175_80/0.16),0_18px_44px_rgb(0_0_0/0.28)]">
-                    <span className="h-2 w-2 rounded-full bg-white" />
-                  </span>
-                </div>
-              ))}
-
-              <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-surface-dark-2/72 p-4 backdrop-blur">
-                <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-white/56">Regional route</p>
-                <p className="mt-2 text-sm font-semibold leading-6 text-white">
-                  Pakistan manufacturing connected with UAE and KSA group footprint.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
-              {globalFootprints.map((footprint) => (
-                <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4" key={footprint.label}>
-                  <div className="flex items-start gap-3 sm:flex-col lg:flex-row">
-                    <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-accent shadow-[0_0_0_5px_rgb(76_175_80/0.13)]" />
-                    <div>
-                      <h4 className="text-base font-extrabold text-white">{footprint.label}</h4>
-                      <p className="mt-1 text-sm font-semibold text-white/72">{footprint.detail}</p>
-                      <p className="mt-2 text-xs uppercase tracking-[0.14em] text-white/45">{footprint.status}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

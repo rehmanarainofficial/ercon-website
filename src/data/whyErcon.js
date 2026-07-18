@@ -1,20 +1,20 @@
 export const whyErcon = [
   {
     id: 'local-manufacturing',
-    title: 'Localized Manufacturing',
+    title: 'Advanced Localized Manufacturing',
     description:
-      'ERCON Industries (Pvt.) Limited is committed to manufacturing high-quality electrical power distribution systems, renewable energy solutions, and precision fabricated products in Pakistan. With advanced manufacturing facilities and a skilled engineering team, we deliver reliable, innovative, and standards-compliant solutions for industrial, commercial, healthcare, and infrastructure projects.',
+      "ERCON Industries (Pvt.) Limited is committed to localized manufacturing of LV & MV Switchgear, Busway Systems, Cable Management Systems, Renewable Energy Solutions, and precision sheet metal products. Our modern facility features high-precision CNC punching, fiber laser cutting, a 110-ton CNC press brake, laser welding, and Pakistan's first automated gasket application machine, enabling us to manufacture high-quality, precision-engineered products that meet international standards for industrial, commercial, healthcare, and infrastructure projects.",
   },
   {
     id: 'technical-focus',
-    title: 'Engineering and Technical Focus',
+    title: 'Engineering & Technical Excellence',
     description:
-      'Engineering excellence drives everything we do at ERCON Industries (Pvt.) Limited. Our experienced engineering and technical team utilizes advanced design tools, modern manufacturing technologies, and rigorous quality control processes to develop reliable, efficient, and standards-compliant solutions. From concept and engineering to production, testing, and commissioning, we are committed to delivering innovative products that ensure safety, performance, and long-term value for our customers across Pakistan.',
+      'Engineering excellence is at the core of ERCON Industries (Pvt.) Limited. Our experienced engineers utilize advanced design tools including AutoCAD, ETAP, E-Design, Rhapsody, Sirius, SolidWorks, and integrated resource planning systems to develop safe, reliable, and standards-compliant power distribution solutions. From design and engineering to manufacturing, testing, and commissioning, we deliver products that ensure superior performance, quality, and long-term reliability.',
   },
   {
     id: 'quality-safety',
-    title: 'Quality, Safety, Performance',
+    title: 'Quality, Safety & Performance',
     description:
-      'ERCON Industries (Pvt.) Limited is committed to delivering products that meet the highest standards of quality, safety, and performance. Our rigorous manufacturing processes, advanced testing, and continuous quality assurance ensure reliable, durable, and efficient solutions for every project.',
+      'At ERCON Industries (Pvt.) Limited, quality, safety, and performance are integral to every product we manufacture. Our advanced manufacturing processes, comprehensive testing, and strict quality controls ensure reliable, durable, and standards-compliant solutions. Our commitment is supported by management systems certified by a PNAC-accredited certification body: ISO 9001:2015 - Quality Management System, ISO 14001:2015 - Environmental Management System, and ISO 45001:2018 - Occupational Health & Safety Management System. These certifications demonstrate our commitment to consistent quality, environmental responsibility, workplace safety, and continuous improvement.',
   },
 ]
