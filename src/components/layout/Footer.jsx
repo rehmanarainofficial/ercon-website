@@ -24,9 +24,9 @@ export function Footer() {
   ];
 
   const globalFootprints = [
-    { label: "Pakistan", detail: "Manufacturing facility", status: "Local production", x: "67%", y: "47%" },
-    { label: "UAE", detail: "Group footprint", status: "Regional presence", x: "52%", y: "50%" },
-    { label: "KSA", detail: "Group footprint", status: "Regional presence", x: "44%", y: "57%" },
+    { label: "Pakistan", x: "67%", y: "47%" },
+    { label: "UAE", x: "52%", y: "50%" },
+    { label: "KSA", x: "44%", y: "57%" },
   ];
 
   return (
