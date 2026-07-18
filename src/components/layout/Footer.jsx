@@ -39,7 +39,7 @@ export function Footer() {
           <div>
             <BrandHomeLink logoClassName="h-23 w-[250px]" />
             <div
-              className="group relative mt-5 aspect-[1.9] max-w-[300px] overflow-hidden rounded-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_78%_22%,rgb(76_175_80/0.24),transparent_8rem),linear-gradient(135deg,rgb(22_58_95/0.98),rgb(10_44_69/0.95)_58%,rgb(8_35_57/0.98))] shadow-[0_22px_60px_rgb(0_0_0/0.22),inset_0_1px_0_rgb(255_255_255/0.12)]"
+              className="group relative mt-3 h-55 aspect-[1.9] max-w-[300px] overflow-hidden rounded-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_78%_22%,rgb(76_175_80/0.24),transparent_8rem),linear-gradient(135deg,rgb(22_58_95/0.98),rgb(10_44_69/0.95)_58%,rgb(8_35_57/0.98))] shadow-[0_22px_60px_rgb(0_0_0/0.22),inset_0_1px_0_rgb(255_255_255/0.12)]"
               aria-label="ERCON regional footprint map"
             >
               <div className="absolute inset-0 technical-grid opacity-10" />
