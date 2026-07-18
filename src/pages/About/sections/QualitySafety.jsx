@@ -20,6 +20,22 @@ export function QualitySafety() {
           <p className="mt-7 max-w-3xl text-body-fluid leading-8 text-muted" data-reveal>
             {qualitySafety.description}
           </p>
+          <div className="mt-7 rounded-[var(--radius-card)] border border-line bg-surface-soft p-6" data-reveal>
+            <p className="text-sm font-semibold leading-7 text-ink">
+              {qualitySafety.certificationIntro}
+            </p>
+            <ul className="mt-4 grid gap-3">
+              {qualitySafety.certifications.map((certification) => (
+                <li className="flex items-start gap-3 text-sm font-semibold leading-6 text-muted" key={certification}>
+                  <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand" />
+                  <span>{certification}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-sm leading-7 text-muted">
+              {qualitySafety.certificationSummary}
+            </p>
+          </div>
           <div className="mt-9 grid gap-4 sm:grid-cols-2">
             {qualitySafety.pillars.map(({ description, icon: Icon, id, title }) => (
               <article className="rounded-[var(--radius-card)] border border-line bg-surface-soft p-5" data-reveal key={id}>

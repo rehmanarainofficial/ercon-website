@@ -47,7 +47,7 @@ export const fetchCategories = async (products = []) => {
           id: slug,
           slug: slug,
           label: rawName,
-          description: `${rawName} product families for power distribution and protection roles.`,
+          description: item.description || item.category_description || item.short_description || '',
           icon: getCategoryIcon(slug),
           productCount: products.filter(p => p.categoryId === slug).length,
         }

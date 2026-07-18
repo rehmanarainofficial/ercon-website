@@ -28,16 +28,16 @@ export function Header() {
         <div className="container-main flex h-(--header-height) items-center justify-between gap-4">
           <BrandHomeLink
             className="text-white"
-            logoClassName="h-[88px] w-[250px] group-hover:-translate-y-0.5 sm:w-[280px]"
+            logoClassName="h-[72px] w-[200px] group-hover:-translate-y-0.5 md:h-[76px] md:w-[220px] lg:h-[88px] lg:w-[280px]"
           />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             <DesktopNavigation />
             <button
               aria-controls="mobile-navigation"
               aria-expanded={menuOpen}
               aria-label="Open menu"
-              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur sm:h-12 sm:w-12 lg:hidden"
               onClick={() => setMenuOpen(true)}
               ref={menuButtonRef}
               type="button"

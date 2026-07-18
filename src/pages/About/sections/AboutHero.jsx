@@ -36,7 +36,7 @@ export function AboutHero() {
   )
 
   return (
-    <section className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white sm:pt-10" ref={sectionRef}>
+    <section className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white lg:pt-10" ref={sectionRef}>
       <div className="absolute inset-0 -z-10">
         <img
           alt="ERCON About Hero Background"

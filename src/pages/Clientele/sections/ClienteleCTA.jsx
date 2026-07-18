@@ -12,7 +12,7 @@ export function ClienteleCTA() {
       <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-accent/18 blur-3xl" />
       <div className="container-main relative grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_auto] lg:items-end">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-brand mb-3 tracking-wide" data-reveal>
+          <h2 className="text-sm font-extrabold uppercase tracking-[0.18em] text-white/68" data-reveal>
             Project inquiries
           </h2>
           <h3 className="mt-5 max-w-4xl text-lg sm:text-xl font-bold text-white leading-snug tracking-tight" data-reveal>
@@ -34,4 +34,3 @@ export function ClienteleCTA() {
     </section>
   )
 }
-

@@ -18,6 +18,16 @@ export function EngineeringExpertise() {
           <h3 className="text-lg sm:text-xl font-bold text-ink leading-snug tracking-tight" data-reveal>
             {engineeringExpertise.title}
           </h3>
+          <p className="mt-5 text-base leading-8 text-muted" data-reveal>
+            {engineeringExpertise.description}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2" data-reveal>
+            {engineeringExpertise.tools.map((tool) => (
+              <span className="rounded-full border border-line bg-surface-soft px-3 py-1 text-xs font-semibold text-brand-dark" key={tool}>
+                {tool}
+              </span>
+            ))}
+          </div>
           <div className="mt-8" data-reveal>
             <ImageReveal className="bg-surface-blue">
               <SafeImage

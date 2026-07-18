@@ -24,13 +24,13 @@ export default function ProductsPage() {
       try {
         setLoading(true)
         const apiProds = await fetchProducts()
-        if (apiProds && active) {
-          setProductsList(apiProds)
-          const apiCats = await fetchCategories(apiProds)
-          if (apiCats && active) {
-            setProductsList(apiProds)
-            setCategoriesList(apiCats)
-          }
+        const nextProducts = Array.isArray(apiProds) ? apiProds : []
+        const apiCats = await fetchCategories(nextProducts)
+        const nextCategories = Array.isArray(apiCats) ? apiCats : []
+
+        if (active) {
+          setProductsList(nextProducts)
+          setCategoriesList(nextCategories)
         }
       } catch (err) {
         console.error('Error loading products api:', err)

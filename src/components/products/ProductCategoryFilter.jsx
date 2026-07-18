@@ -4,7 +4,7 @@ export function ProductCategoryFilter({ activeCategory, categories: propCategori
   const categories = propCategories || [localAll, ...localCats]
 
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" role="list" aria-label="Product categories">
+    <div className="flex gap-3 overflow-x-auto pb-3 sm:grid sm:overflow-visible sm:pb-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" role="list" aria-label="Product categories">
       {categories.map((category) => {
         const active = activeCategory === category.id
         const Icon = category.icon
@@ -12,7 +12,7 @@ export function ProductCategoryFilter({ activeCategory, categories: propCategori
         return (
           <button
             aria-pressed={active}
-            className={`group min-h-32 rounded-card border p-4 text-left transition duration-200 ${
+            className={`group min-h-28 min-w-[184px] rounded-[20px] border p-4 text-left transition duration-200 sm:min-h-32 sm:min-w-0 sm:rounded-card ${
               active
                 ? 'border-brand bg-brand text-white shadow-card'
                 : 'border-line bg-white text-ink hover:border-brand/35'
@@ -27,9 +27,11 @@ export function ProductCategoryFilter({ activeCategory, categories: propCategori
               </span>
             </div>
             <span className="mt-5 block text-base font-bold leading-tight">{category.label}</span>
-            <span className={`mt-2 block text-xs leading-5 ${active ? 'text-white/68' : 'text-muted'}`}>
-              {category.description}
-            </span>
+            {category.description ? (
+              <span className={`mt-2 hidden text-xs leading-5 sm:block ${active ? 'text-white/68' : 'text-muted'}`}>
+                {category.description}
+              </span>
+            ) : null}
           </button>
         )
       })}

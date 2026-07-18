@@ -32,28 +32,28 @@ export function VisionMission() {
             return (
               <article
                 key={item.title}
-                className={`rounded-[var(--radius-card)] p-6 sm:p-8 border flex flex-col justify-between transition-all duration-300 hover:shadow-card ${
+                className={`rounded-card p-6 sm:p-8 border flex flex-col justify-between transition-all duration-300 hover:shadow-card ${
                   item.isDark
                     ? 'bg-surface-dark border-transparent text-white'
-                    : 'border-line bg-surface-blue text-ink'
+                    : 'border-transparent bg-brand text-white'
                 }`}
                 data-reveal
               >
                 <div>
                   <div className="flex items-center gap-3 mb-5">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${
-                      item.isDark ? 'bg-white/10 text-brand-light' : 'bg-brand/10 text-brand'
+                      item.isDark ? 'bg-white/10 text-brand-light' : 'bg-white/10 text-white'
                     }`}>
                       <Icon size={20} />
                     </div>
                     <p className={`text-lg font-bold tracking-[0.16em] ${
-                      item.isDark ? 'text-brand-light' : 'text-brand'
+                      item.isDark ? 'text-brand-light' : 'text-white/72'
                     }`}>
                       {item.title}
                     </p>
                   </div>
 
-                  <h3 className="text-xl sm:text-2xl font-bold leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-bold leading-snug text-white">
                     {item.statement}
                   </h3>
                 </div>

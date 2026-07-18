@@ -7,14 +7,14 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contact ERCON on WhatsApp"
-      className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-floating transition-all duration-300 hover:scale-108 hover:bg-[#20ba5a] group"
+      className="fixed bottom-4 right-4 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-floating transition-all duration-300 hover:scale-108 hover:bg-[#20ba5a] sm:bottom-6 sm:right-6 sm:h-14 sm:w-14 group"
     >
       {/* Ripple/Pulse effect */}
       <span className="absolute inset-0 rounded-full bg-[#25D366]/40 animate-ping group-hover:animate-none pointer-events-none" />
 
       {/* WhatsApp SVG Icon */}
       <svg
-        className="h-7 w-7 fill-current"
+        className="h-6 w-6 fill-current sm:h-7 sm:w-7"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
       >

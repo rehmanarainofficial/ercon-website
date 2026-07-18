@@ -2,10 +2,19 @@ import { ClipboardCheck, FileCheck2, Gauge, ShieldCheck } from 'lucide-react'
 import { aboutMedia } from './about'
 
 export const qualitySafety = {
-  label: 'Quality and safety',
-  title: 'Reliability starts before delivery.',
+  label: 'Quality, Safety & Performance',
+  title: 'Quality, safety, and performance are integral to every product we manufacture.',
   description:
-    'ERCON’s public positioning emphasizes quality, safety, performance, and standards-compliant solutions. Specific certificate titles and numbers should remain on the Accreditations page once verified.',
+    'At ERCON Industries (Pvt.) Limited, quality, safety, and performance are integral to every product we manufacture. Our advanced manufacturing processes, comprehensive testing, and strict quality controls ensure reliable, durable, and standards-compliant solutions.',
+  certificationIntro:
+    'Our commitment is supported by management systems certified by a PNAC-accredited certification body:',
+  certifications: [
+    'ISO 9001:2015 - Quality Management System',
+    'ISO 14001:2015 - Environmental Management System',
+    'ISO 45001:2018 - Occupational Health & Safety Management System',
+  ],
+  certificationSummary:
+    'These certifications demonstrate our commitment to consistent quality, environmental responsibility, workplace safety, and continuous improvement.',
   image: aboutMedia.testing,
   imageAlt: 'Switchgear panel testing and inspection scene',
   pillars: [

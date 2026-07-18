@@ -107,7 +107,13 @@
   }
 
   p {
-    text-align: justify;
+    text-align: left;
+  }
+
+  @media (min-width: 1024px) {
+    p {
+      text-align: justify;
+    }
   }
 
   button {

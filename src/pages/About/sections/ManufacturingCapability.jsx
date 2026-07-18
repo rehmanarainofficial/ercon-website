@@ -68,10 +68,10 @@ export function ManufacturingCapability() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-brand-light">
                     <Shield size={18} />
                   </div>
-                  <p className="text-xs font-extrabold uppercase tracking-wider text-white">ISO 9001 Factory</p>
+                  <p className="text-xs font-extrabold uppercase tracking-wider text-white">Precision Manufacturing</p>
                 </div>
                 <p className="text-xs leading-relaxed text-white/68">
-                  Our Karachi workshop is equipped with CNC shearing, bending, and specialized assembly bays to build electrical components that conform to IEC standards.
+                  CNC punching, fiber laser cutting, CNC press brake, laser welding, and automated gasket application support precision-built electrical products.
                 </p>
               </GlassCard>
             </div>
@@ -81,4 +81,3 @@ export function ManufacturingCapability() {
     </section>
   )
 }
-

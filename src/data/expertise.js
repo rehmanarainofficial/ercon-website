@@ -2,42 +2,45 @@ import { CircuitBoard, ClipboardCheck, Cog, Gauge } from 'lucide-react'
 import { aboutMedia } from './about'
 
 export const engineeringExpertise = {
-  label: 'Engineering expertise',
-  title: 'Technical work that connects products, projects, and reliable power distribution.',
+  label: 'Engineering & Technical Excellence',
+  title: 'Engineering excellence is at the core of ERCON Industries (Pvt.) Limited.',
+  description:
+    'Our experienced engineers utilize advanced design tools including AutoCAD, ETAP, E-Design, Rhapsody, Sirius, SolidWorks, and integrated resource planning systems to develop safe, reliable, and standards-compliant power distribution solutions. From design and engineering to manufacturing, testing, and commissioning, we deliver products that ensure superior performance, quality, and long-term reliability.',
+  tools: ['AutoCAD', 'ETAP', 'E-Design', 'Rhapsody', 'Sirius', 'SolidWorks', 'Integrated resource planning systems'],
   image: aboutMedia.testing,
   imageAlt: 'Engineer testing a blue electrical control panel',
   items: [
     {
       id: 'system-planning',
-      title: 'System Planning',
+      title: 'Design & Engineering',
       description:
-        'Requirement analysis, product selection, and practical planning for electrical distribution needs.',
+        'Advanced design and engineering workflows for safe, reliable, and standards-compliant power distribution solutions.',
       icon: ClipboardCheck,
-      highlights: ['Project requirements', 'Product fit', 'Technical coordination'],
+      highlights: ['Design tools', 'System analysis', 'Standards compliance'],
     },
     {
       id: 'panel-engineering',
-      title: 'Panel and Switchgear Engineering',
+      title: 'Manufacturing Coordination',
       description:
-        'Engineering support around LV/MV switchgear, panels, and power distribution equipment.',
+        'Technical coordination between engineering, fabrication, assembly, and production teams.',
       icon: CircuitBoard,
-      highlights: ['LV/MV focus', 'Electrical panels', 'Distribution control'],
+      highlights: ['LV/MV switchgear', 'Busway systems', 'Fabrication'],
     },
     {
       id: 'manufacturing-support',
-      title: 'Manufacturing Support',
+      title: 'Testing & Commissioning',
       description:
-        'Technical coordination between fabrication, assembly, inspection, and project delivery.',
+        'Testing and commissioning support to verify performance, quality, and long-term reliability.',
       icon: Cog,
-      highlights: ['Fabrication', 'Assembly', 'Delivery support'],
+      highlights: ['Inspection', 'Testing', 'Commissioning'],
     },
     {
       id: 'testing-readiness',
-      title: 'Testing Readiness',
+      title: 'Performance Assurance',
       description:
-        'Quality and safety checks support dependable electrical equipment before handover.',
+        'Engineering-led quality checks that support dependable operation in demanding project environments.',
       icon: Gauge,
-      highlights: ['Inspection', 'Testing', 'Performance focus'],
+      highlights: ['Reliability', 'Safety', 'Long-term performance'],
     },
   ],
 }

@@ -22,16 +22,17 @@ export const aboutHero = {
 }
 
 export const companyOverview = {
-  label: 'Company overview',
+  label: 'About US',
   title:
-    'Established in 2012, ERCON Industries (Pvt.) Limited is a leading manufacturer of electrical power distribution and precision engineering solutions in Pakistan.',
+    'Established in 2012, ERCON Industries (Pvt.) Limited is a leading Pakistani manufacturer of electrical power distribution and precision engineering solutions.',
   paragraphs: [
-    'The company specializes in the design, engineering, and manufacturing of Low Voltage (LV) & Medium Voltage (MV) Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, Custom Sheet Metal Fabrication, and Stainless Steel (SS) products for hospitals and healthcare facilities.',
-    'Equipped with state-of-the-art manufacturing facilities, advanced production technologies, and a highly experienced engineering team, ERCON Industries delivers safe, reliable, and innovative products that comply with international quality standards. Serving the industrial, commercial, healthcare, energy, and infrastructure sectors, the company is committed to engineering excellence, continuous innovation, and supporting the sustainable development of Pakistan through high-quality electrical and fabricated metal solutions.',
+    'We specialize in the design, engineering, and manufacturing of LV & MV Switchgear, Type-Tested Enclosures, Busway Trunking Systems, Cable Management Systems, Meter Security Boxes, Solar Solutions, Custom Sheet Metal Fabrication, and Stainless Steel (SS) products for industrial, commercial, and healthcare applications.',
+    "Operating from a company-owned 5-acre manufacturing facility, ERCON is equipped with state-of-the-art production machinery, advanced testing and commissioning laboratories, and modern manufacturing technologies. Our facility features high-precision CNC punching, fiber laser cutting, a 110-ton CNC press brake, laser welding, and Pakistan's first automated gasket application machine, ensuring exceptional quality and manufacturing precision.",
+    "With a team of 50+ highly qualified engineers and over 200 skilled professionals and technical staff, ERCON has successfully delivered 1,500+ industrial, infrastructure, and high-rise building projects across Pakistan. Backed by engineering excellence, strict quality standards, and continuous innovation, we deliver reliable, safe, and high-performance solutions that support the nation's industrial and infrastructure development.",
   ],
   image: aboutMedia.testing,
   imageAlt: 'Engineer inspecting a blue electrical switchgear panel with testing instruments',
-  highlight: 'Engineering excellence and continuous innovation serving the industry.',
+  highlight: 'Reliable, safe, and high-performance solutions for industrial and infrastructure development.',
 }
 
 export const visionMission = {
@@ -113,4 +114,3 @@ export const aboutSeo = {
     },
   },
 }
-

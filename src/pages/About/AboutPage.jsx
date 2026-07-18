@@ -1,6 +1,9 @@
 import { AboutHero } from './sections/AboutHero'
 import { CompanyOverview } from './sections/CompanyOverview'
 import { CoreValues } from './sections/CoreValues'
+import { EngineeringExpertise } from './sections/EngineeringExpertise'
+import { ManufacturingCapability } from './sections/ManufacturingCapability'
+import { QualitySafety } from './sections/QualitySafety'
 import { VisionMission } from './sections/VisionMission'
 import { aboutSeo } from '../../data/about'
 import { useRouteMeta } from '../../hooks/useRouteMeta'
@@ -30,6 +33,9 @@ export default function AboutPage() {
     <article className="overflow-hidden bg-surface-soft" data-page-reveal>
       <AboutHero />
       <CompanyOverview />
+      <ManufacturingCapability />
+      <EngineeringExpertise />
+      <QualitySafety />
       <VisionMission />
       <CoreValues />
     </article>

@@ -109,8 +109,10 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
           {mainNavigation.map((item) => (
             <NavLink
               className={({ isActive }) =>
-                `rounded-3xl px-1 py-3 text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-tight transition ${
-                  isActive ? 'text-brand-light' : 'text-white'
+                `rounded-3xl py-3 text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-tight transition ${
+                  isActive
+                    ? 'bg-white px-4 text-brand shadow-[0_18px_48px_rgb(0_0_0/0.16)]'
+                    : 'px-1 text-white/88 hover:text-white'
                 }`
               }
               data-mobile-item
