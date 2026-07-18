@@ -42,12 +42,12 @@ export function VisionMission() {
                 <div>
                   <div className="flex items-center gap-3 mb-5">
                     <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${
-                      item.isDark ? 'bg-white/10 text-brand-light' : 'bg-white/10 text-white'
+                      item.isDark ? 'bg-white/10 text-white' : 'bg-white/10 text-white'
                     }`}>
                       <Icon size={20} />
                     </div>
-                    <p className={`text-lg font-bold tracking-[0.16em] ${
-                      item.isDark ? 'text-brand-light' : 'text-white/72'
+                    <p className={`text-2xl font-bold tracking-[0.16em] ${
+                      item.isDark ? 'text-white' : 'text-white/72'
                     }`}>
                       {item.title}
                     </p>

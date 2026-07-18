@@ -38,33 +38,66 @@ export function Footer() {
           {/* Column 1: Brand Info */}
           <div>
             <BrandHomeLink logoClassName="h-23 w-[250px]" />
-            <div className="relative mt-5 aspect-[1.75] max-w-[270px] overflow-hidden rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgb(255_255_255/0.08),rgb(255_255_255/0.025))]">
-              <div className="absolute inset-0 technical-grid opacity-15" />
+            <div
+              className="group relative mt-5 aspect-[1.9] max-w-[300px] overflow-hidden rounded-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_78%_22%,rgb(76_175_80/0.24),transparent_8rem),linear-gradient(135deg,rgb(22_58_95/0.98),rgb(10_44_69/0.95)_58%,rgb(8_35_57/0.98))] shadow-[0_22px_60px_rgb(0_0_0/0.22),inset_0_1px_0_rgb(255_255_255/0.12)]"
+              aria-label="ERCON regional footprint map"
+            >
+              <div className="absolute inset-0 technical-grid opacity-10" />
+              <div className="absolute -left-10 top-8 h-24 w-24 rounded-full bg-accent/15 blur-2xl" />
+              <div className="absolute right-3 top-3 rounded-full border border-white/10 bg-white/10 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-[0.18em] text-white/70">
+                Footprint
+              </div>
               <svg
                 aria-hidden="true"
                 className="absolute inset-0 h-full w-full"
                 preserveAspectRatio="none"
                 viewBox="0 0 800 360"
               >
-                <path d="M106 76 L197 58 L296 94 L281 162 L177 176 L91 132 Z" fill="rgb(255 255 255 / 0.08)" />
-                <path d="M336 82 L496 58 L628 118 L589 218 L421 215 L310 153 Z" fill="rgb(255 255 255 / 0.1)" />
-                <path d="M515 202 L654 185 L738 236 L696 312 L552 295 Z" fill="rgb(255 255 255 / 0.075)" />
-                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(255 255 255 / 0.16)" strokeLinecap="round" strokeWidth="10" />
-                <path d="M77 252 C172 168 264 187 358 217 C463 251 538 245 707 150" fill="none" stroke="rgb(76 175 80 / 0.75)" strokeDasharray="8 10" strokeLinecap="round" strokeWidth="3" />
+                <defs>
+                  <linearGradient id="footerMapLand" x1="0" x2="1" y1="0" y2="1">
+                    <stop stopColor="rgb(255 255 255 / 0.16)" />
+                    <stop offset="1" stopColor="rgb(255 255 255 / 0.05)" />
+                  </linearGradient>
+                  <linearGradient id="footerMapRoute" x1="0" x2="1">
+                    <stop stopColor="#22b8f0" />
+                    <stop offset="0.5" stopColor="#4caf50" />
+                    <stop offset="1" stopColor="#ffd51e" />
+                  </linearGradient>
+                  <filter id="footerMapGlow" x="-20%" y="-80%" width="140%" height="260%">
+                    <feGaussianBlur stdDeviation="7" result="blur" />
+                    <feMerge>
+                      <feMergeNode in="blur" />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+                <path d="M100 82 L198 60 L308 103 L285 172 L174 188 L78 137 Z" fill="url(#footerMapLand)" />
+                <path d="M338 82 L506 55 L649 128 L602 224 L419 219 L304 150 Z" fill="url(#footerMapLand)" opacity="0.95" />
+                <path d="M512 207 L665 184 L743 237 L705 314 L545 296 Z" fill="url(#footerMapLand)" opacity="0.68" />
+                <path d="M82 255 C177 166 275 188 365 218 C470 253 544 246 714 145" fill="none" stroke="rgb(255 255 255 / 0.13)" strokeLinecap="round" strokeWidth="16" />
+                <path d="M82 255 C177 166 275 188 365 218 C470 253 544 246 714 145" fill="none" filter="url(#footerMapGlow)" stroke="url(#footerMapRoute)" strokeLinecap="round" strokeWidth="5" />
+                <path d="M82 255 C177 166 275 188 365 218 C470 253 544 246 714 145" fill="none" stroke="rgb(255 255 255 / 0.78)" strokeDasharray="2 16" strokeLinecap="round" strokeWidth="3" />
               </svg>
 
               {globalFootprints.map((footprint) => (
                 <div
-                  className="absolute"
+                  className="absolute -translate-x-1/2 -translate-y-1/2"
                   key={footprint.label}
                   style={{ left: footprint.x, top: footprint.y }}
                 >
-                  <span className="absolute left-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20" />
-                  <span className="relative grid h-3.5 w-3.5 place-items-center rounded-full bg-accent shadow-[0_0_0_5px_rgb(76_175_80/0.16)]">
-                    <span className="h-1.5 w-1.5 rounded-full bg-white" />
+                  <span className="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/20 blur-[1px]" />
+                  <span className="relative grid h-7 w-7 place-items-center rounded-full border border-white/40 bg-accent shadow-[0_0_0_7px_rgb(76_175_80/0.18),0_10px_22px_rgb(0_0_0/0.25)]">
+                    <span className="h-2.5 w-2.5 rounded-full bg-white" />
                   </span>
                 </div>
               ))}
+              <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-full border border-white/10 bg-surface-dark/55 px-3 py-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/75 backdrop-blur-md">
+                <span>Pakistan</span>
+                <span className="h-1 w-1 rounded-full bg-accent" />
+                <span>UAE</span>
+                <span className="h-1 w-1 rounded-full bg-accent" />
+                <span>KSA</span>
+              </div>
             </div>
           </div>
 
