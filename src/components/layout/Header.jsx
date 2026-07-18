@@ -28,7 +28,7 @@ export function Header() {
         <div className="container-main flex h-(--header-height) items-center justify-between gap-4">
           <BrandHomeLink
             className="text-white"
-            logoClassName="h-[72px] w-[200px] group-hover:-translate-y-0.5 md:h-[76px] md:w-[220px] lg:h-[88px] lg:w-[280px]"
+            logoClassName="h-[52px] w-[146px] group-hover:-translate-y-0.5 sm:h-[64px] sm:w-[180px] md:h-[76px] md:w-[220px] lg:h-[88px] lg:w-[280px]"
           />
 
           <div className="flex items-center gap-2 sm:gap-3">

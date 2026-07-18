@@ -93,7 +93,7 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
     >
       <div className="container-main flex min-h-dvh flex-col py-5">
         <div className="flex items-center justify-between" data-mobile-item>
-          <BrandHomeLink logoClassName="h-15 w-[176px]" onNavigate={onClose} />
+          <BrandHomeLink logoClassName="h-12 w-[142px] sm:h-15 sm:w-[176px]" onNavigate={onClose} />
           <button
             aria-label="Close menu"
             className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white"
@@ -105,11 +105,11 @@ export function MobileNavigation({ id, open, onClose, triggerRef }) {
           </button>
         </div>
 
-        <nav aria-label="Mobile primary navigation" className="mt-12 grid gap-2">
+        <nav aria-label="Mobile primary navigation" className="mt-8 grid gap-1.5 sm:mt-12 sm:gap-2">
           {mainNavigation.map((item) => (
             <NavLink
               className={({ isActive }) =>
-                `rounded-3xl py-3 text-[clamp(1.75rem,8vw,2.5rem)] font-extrabold leading-tight transition ${
+                `rounded-3xl py-2.5 text-[clamp(1.35rem,6.5vw,2rem)] font-extrabold leading-tight transition sm:py-3 sm:text-[clamp(1.75rem,8vw,2.5rem)] ${
                   isActive
                     ? 'bg-white px-4 text-brand shadow-[0_18px_48px_rgb(0_0_0/0.16)]'
                     : 'px-1 text-white/88 hover:text-white'

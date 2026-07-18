@@ -35,7 +35,7 @@ export function ProductsHero() {
 
   return (
     <section
-      className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white lg:pt-10"
+      className="relative isolate overflow-hidden bg-surface-dark pt-28 text-white sm:pt-32 lg:pt-10"
       ref={sectionRef}
     >
       <div className="absolute inset-0 -z-10">
@@ -47,16 +47,16 @@ export function ProductsHero() {
       </div>
       <div className="absolute inset-0 -z-10 technical-grid opacity-55" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(76_175_80/0.24),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(22_58_95/0.34),transparent_28rem),linear-gradient(150deg,rgb(22_58_95/0.95)_0%,rgb(22_58_95/0.78)_42%,rgb(15_107_74/0.25)_100%)]" />
-      <div className="container-main grid min-h-[42svh] gap-10 pb-12 sm:min-h-[58svh] sm:pb-14 lg:min-h-[76svh] lg:grid-cols-1 lg:items-end">
+      <div className="container-main grid min-h-[36svh] gap-8 pb-10 sm:min-h-[58svh] sm:gap-10 sm:pb-14 lg:min-h-[76svh] lg:grid-cols-1 lg:items-end">
         <div>
           <p
-            className="mt-6 text-lg font-bold tracking-[0.16em] text-white sm:mt-8 sm:text-xl"
+            className="mt-4 text-sm font-bold tracking-[0.08em] text-white sm:mt-8 sm:text-xl sm:tracking-[0.16em]"
             data-products-hero
           >
             Products and solutions
           </p>
           <h1
-            className="mt-5 max-w-[820px] text-[clamp(1.8rem,6vw,2.6rem)] font-bold leading-[1.12] text-white sm:mt-6 sm:text-[clamp(2rem,3.1vw,3rem)] 2xl:max-w-5xl 2xl:text-[clamp(2.5rem,3.8vw,3.5rem)]"
+            className="mt-4 max-w-[820px] text-[clamp(1.5rem,7vw,2.05rem)] font-bold leading-[1.14] text-white sm:mt-6 sm:text-[clamp(2rem,3.1vw,3rem)] sm:leading-[1.12] 2xl:max-w-5xl 2xl:text-[clamp(2.5rem,3.8vw,3.5rem)]"
             data-products-hero
           >
             <span className="block">Engineered Products </span>

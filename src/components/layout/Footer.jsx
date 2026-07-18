@@ -64,9 +64,9 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1.4fr] border-b border-white/10 pb-12">
           {/* Column 1: Brand Info */}
           <div>
-            <BrandHomeLink logoClassName="h-23 w-[250px]" />
+            <BrandHomeLink logoClassName="h-16 w-[180px] sm:h-23 sm:w-[250px]" />
             <div
-              className="group relative mt-3 h-55 aspect-[1.9] max-w-[300px] overflow-hidden rounded-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_78%_22%,rgb(76_175_80/0.24),transparent_8rem),linear-gradient(135deg,rgb(22_58_95/0.98),rgb(10_44_69/0.95)_58%,rgb(8_35_57/0.98))] shadow-[0_22px_60px_rgb(0_0_0/0.22),inset_0_1px_0_rgb(255_255_255/0.12)]"
+              className="group relative mt-3 aspect-[1.9] max-w-[260px] overflow-hidden rounded-[1.2rem] border border-white/15 bg-[radial-gradient(circle_at_78%_22%,rgb(76_175_80/0.24),transparent_8rem),linear-gradient(135deg,rgb(22_58_95/0.98),rgb(10_44_69/0.95)_58%,rgb(8_35_57/0.98))] shadow-[0_22px_60px_rgb(0_0_0/0.22),inset_0_1px_0_rgb(255_255_255/0.12)] sm:h-55 sm:max-w-[300px] sm:rounded-[1.4rem]"
               aria-label="ERCON regional footprint map"
             >
               <div className="absolute inset-0 technical-grid opacity-10" />

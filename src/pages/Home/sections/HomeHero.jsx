@@ -78,22 +78,22 @@ export function HomeHero() {
       <div className="absolute left-[8%] top-[18%] -z-10 h-72 w-72 rounded-full bg-brand/20 blur-3xl" />
       <div className="absolute bottom-[8%] right-[10%] -z-10 h-80 w-80 rounded-full bg-accent/12 blur-3xl" />
 
-      <div className="container-main grid gap-12 pb-12 pt-34 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-1 lg:items-end lg:pb-16">
+      <div className="container-main grid gap-10 pb-10 pt-28 sm:gap-12 sm:pb-12 sm:pt-38 lg:min-h-[100svh] lg:grid-cols-1 lg:items-end lg:pb-16">
         <div className="max-w-6xl lg:pb-10">
-          <p data-hero-reveal className="text-xl font-bold tracking-[0.16em] text-white">
+          <p data-hero-reveal className="text-sm font-bold uppercase tracking-[0.08em] text-white sm:text-xl sm:tracking-[0.16em]">
             {homeHero.eyebrow}
           </p>
-          <h1 data-hero-reveal className="mt-6 text-[clamp(2.1rem,4.8vw,4.8rem)] font-bold text-white leading-[1.08] max-w-4xl">
+          <h1 data-hero-reveal className="mt-4 max-w-4xl text-[clamp(1.75rem,7.4vw,2.25rem)] font-bold leading-[1.12] text-white sm:mt-6 sm:text-[clamp(2.1rem,4.8vw,4.8rem)] sm:leading-[1.08]">
             Engineering Reliable<br className="hidden sm:inline" />
             Power Distribution<br className="hidden sm:inline" />
             Solutions
           </h1>
-          <p data-hero-reveal className="mt-7 max-w-3xl text-body-fluid leading-8 text-white/76">
+          <p data-hero-reveal className="mt-5 max-w-3xl text-sm leading-6 text-white/76 sm:mt-7 sm:text-body-fluid sm:leading-8">
             {homeHero.description}
           </p>
           
 
-          <div data-hero-reveal className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div data-hero-reveal className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
             <Button to={homeHero.primaryCta.href}>{homeHero.primaryCta.label}</Button>
           </div>
         </div>

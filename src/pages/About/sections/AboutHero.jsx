@@ -36,7 +36,7 @@ export function AboutHero() {
   )
 
   return (
-    <section className="relative isolate overflow-hidden bg-surface-dark pt-32 text-white lg:pt-10" ref={sectionRef}>
+    <section className="relative isolate overflow-hidden bg-surface-dark pt-28 text-white sm:pt-32 lg:pt-10" ref={sectionRef}>
       <div className="absolute inset-0 -z-10">
         <img
           alt="ERCON About Hero Background"
@@ -47,18 +47,18 @@ export function AboutHero() {
       <div className="absolute inset-0 -z-10 technical-grid opacity-55" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_16%,rgb(76_175_80/0.24),transparent_34rem),radial-gradient(circle_at_86%_20%,rgb(22_58_95/0.34),transparent_28rem),linear-gradient(150deg,rgb(22_58_95/0.95)_0%,rgb(22_58_95/0.78)_42%,rgb(15_107_74/0.25)_100%)]" />
 
-      <div className="container-main grid min-h-[78svh] gap-10 pb-14 lg:grid-cols-1 lg:items-end">
+      <div className="container-main grid min-h-[64svh] gap-8 pb-12 sm:min-h-[78svh] sm:gap-10 sm:pb-14 lg:grid-cols-1 lg:items-end">
         <div className="max-w-5xl">
-          <p className="text-xl font-bold tracking-[0.16em] text-white" data-about-hero>
+          <p className="text-sm font-bold tracking-[0.08em] text-white sm:text-xl sm:tracking-[0.16em]" data-about-hero>
             {aboutHero.eyebrow}
           </p>
-          <h1 className="mt-6 text-[clamp(2rem,4.2vw,3.65rem)] max-w-5xl font-bold text-white leading-tight" data-about-hero>
+          <h1 className="mt-4 max-w-5xl text-[clamp(1.75rem,7.6vw,2.35rem)] font-bold leading-[1.13] text-white sm:mt-6 sm:text-[clamp(2rem,4.2vw,3.65rem)] sm:leading-tight" data-about-hero>
             {aboutHero.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-body-fluid leading-8 text-white/74" data-about-hero>
+          <p className="mt-5 max-w-3xl text-sm leading-6 text-white/74 sm:mt-6 sm:text-body-fluid sm:leading-8" data-about-hero>
             {aboutHero.description}
           </p>
-          <div className="mt-9" data-about-hero>
+          <div className="mt-7 sm:mt-9" data-about-hero>
             <Button icon={<ArrowRight aria-hidden="true" size={18} />} to={aboutHero.primaryCta.href}>
               {aboutHero.primaryCta.label}
             </Button>
