@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { BrandHomeLink } from "./BrandHomeLink";
+import { fetchCategories } from "../../services/api";
 
 export function Footer() {
+  const [divisionLinks, setDivisionLinks] = useState([]);
+  const [divisionsLoading, setDivisionsLoading] = useState(true);
+
   const quickLinks = [
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about-us" },
@@ -13,21 +18,43 @@ export function Footer() {
     { label: "Contact Us", path: "/contact-us" },
   ];
 
-  const productsList = [
-    { label: "MV Type Tested switchgear", path: "/products?category=medium-voltage" },
-    { label: "Automation", path: "/products?category=low-voltage" },
-    { label: "Solar System", path: "/products?category=energy-solutions" },
-    { label: "Cable Management Systems", path: "/products?category=cable-management" },
-    { label: "Busway", path: "/products?category=cable-management" },
-    { label: "Electrical cabinets", path: "/products?category=low-voltage" },
-    { label: "Sheet Metal Fabrication", path: "/products?category=all" },
-  ];
-
   const globalFootprints = [
     { label: "Pakistan", x: "67%", y: "47%" },
     { label: "UAE", x: "52%", y: "50%" },
     { label: "KSA", x: "44%", y: "57%" },
   ];
+
+  useEffect(() => {
+    let active = true;
+
+    const loadDivisionLinks = async () => {
+      try {
+        setDivisionsLoading(true);
+        const apiCategories = await fetchCategories();
+        if (!active) return;
+
+        const nextLinks = Array.isArray(apiCategories)
+          ? apiCategories.slice(0, 8).map((category) => ({
+              label: category.label,
+              path: `/products?category=${encodeURIComponent(category.id)}`,
+            }))
+          : [];
+
+        setDivisionLinks(nextLinks);
+      } catch (err) {
+        console.error("Error loading footer divisions:", err);
+        if (active) setDivisionLinks([]);
+      } finally {
+        if (active) setDivisionsLoading(false);
+      }
+    };
+
+    loadDivisionLinks();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   return (
     <footer className="relative overflow-hidden bg-surface-dark-2 text-white border-t border-white/10">
@@ -126,13 +153,19 @@ export function Footer() {
               Divisions
             </h3>
             <ul className="space-y-2 text-[15px] sm:text-base">
-              {productsList.map((prod, i) => (
-                <li key={i}>
+              {divisionsLoading ? (
+                <li className="text-white/60">Loading divisions...</li>
+              ) : null}
+              {!divisionsLoading && divisionLinks.length === 0 ? (
+                <li className="text-white/60">Divisions unavailable</li>
+              ) : null}
+              {divisionLinks.map((division) => (
+                <li key={division.path}>
                   <Link
-                    to={prod.path}
+                    to={division.path}
                     className="text-white/80 hover:text-white transition-colors duration-200 block py-0.5"
                   >
-                    {prod.label}
+                    {division.label}
                   </Link>
                 </li>
               ))}
